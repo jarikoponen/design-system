@@ -206,6 +206,71 @@ Funktionella färger för meddelanden. Samma struktur som varumärkesteman.
 	description="Neutralt informativt budskap."
 />
 
+## I koden – korrekta variabelnamn
+
+En AI-assistent som inte läser den här sidan brukar gissa fel på två sätt: hitta på `--color-semantic-*`-variabler (finns inte) eller hårdkoda hex. Här är facit för de vanligaste fallen.
+
+### Fokusring (WCAG-krav)
+
+```css
+:focus-visible {
+	outline: 2px solid var(--color-light-ring);
+	outline-offset: 2px;
+}
+```
+
+Variabeln heter `--color-light-ring` (motsvarande `--color-dark-ring` för mörkt läge). **Inte** `--color-semantic-focus`, `--color-focus`, `--focus-ring` — sådana finns inte.
+
+### Alerts och statusmeddelanden
+
+Använd den semantiska familjen för det status-meddelande som är aktuellt. Strukturen är identisk med varumärkesteman:
+
+```css
+/* Error alert */
+.alert-error {
+	background: var(--color-light-error-surface-accent-default);   /* ljus rosa bakgrund */
+	border-left-color: var(--color-light-error-surface-primary-default); /* mörkröd kant */
+	color: var(--color-light-error-text-default);                  /* mörkröd text */
+}
+
+/* Warning */
+.alert-warning {
+	background: var(--color-light-warning-surface-accent-default);
+	border-left-color: var(--color-light-warning-surface-primary-default);
+	color: var(--color-light-warning-text-default);
+}
+/* analogt för success och info */
+```
+
+**Inte** `--color-semantic-error`, `--color-error`, eller hårdkodad hex. Du får ingen dark mode och ingen varumärkesuppdatering om du gissar.
+
+### Primärknapp på varumärkestema
+
+```css
+.btn-primary {
+	background: var(--color-light-vattjom-surface-primary-default);
+	color: var(--color-light-vattjom-text-secondary);
+}
+.btn-primary:hover {
+	background: var(--color-light-vattjom-surface-primary-hover);
+}
+```
+
+Byt `vattjom` mot `gronsta` / `juniskar` / `bjornstigen` för andra teman. Reactanvändare slipper detta helt: `<Button color="vattjom" variant="primary">` ger samma resultat.
+
+### Vanliga AI-gissningar som **inte** finns
+
+| Felaktigt (vanlig gissning)          | Det rätta                                                  |
+|--------------------------------------|------------------------------------------------------------|
+| `--color-semantic-focus`             | `--color-light-ring`                                       |
+| `--color-semantic-error`             | `--color-light-error-surface-primary-default`              |
+| `--color-semantic-warning`           | `--color-light-warning-surface-primary-default`            |
+| `--color-semantic-success`           | `--color-light-success-surface-primary-default`            |
+| `--color-semantic-info`              | `--color-light-info-surface-primary-default`               |
+| `--color-brand-primary`              | `--color-light-vattjom-surface-primary-default`            |
+| `--color-text-on-brand`              | `--color-light-vattjom-text-secondary` (text på primary)   |
+| `--space-md`, `--space-lg`           | Numeriska: `--space-16` (1.6rem), `--space-24`, osv.       |
+
 ## Mörkt läge
 
 Stilguiden stödjer även dark mode. Alla teman ovan har motsvarande `ColorDark*`-tokens med samma struktur. På den här portalen visas bara light-tokens; för dark, se [packages/theme/src/colors.ts](https://github.com/Sundsvallskommun/web-shared-components/blob/main/packages/theme/src/colors.ts).
