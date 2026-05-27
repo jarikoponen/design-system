@@ -10,8 +10,33 @@ import { Aside } from '@astrojs/starlight/components';
 
 Sundsvalls designsystem bygger på en bred färgpalett av **primitiver** (rena kulörskalor i 10 steg, 50–900) och **semantiska teman** som mappar primitiverna mot meningsbärande färger för olika kontexter. Värden på den här sidan läses live från `src/data/tokens.json` – som i sin tur genereras från `@sk-web-gui/theme`. Inget är hårdkodat.
 
+<Aside type="danger" title="Återskapa aldrig designsystemet">
+	**Gör inte detta:**
+
+	```css
+	/* En parallell implementation. Driver isär från upstream. */
+	:root {
+		--color-light-vattjom-surface-primary-default: #005595;
+		--color-light-juniskar-surface-primary-default: #a90074;
+	}
+	```
+
+	**Gör detta i stället:** installera `@sk-web-gui/core` – paketet registrerar samma variabler i `:root` automatiskt och uppdateras med `npm update`.
+
+	```bash
+	npm install @sk-web-gui/core
+	```
+
+	```ts
+	// I din rot eller layout
+	import '@sk-web-gui/core/dist/index.css';
+	```
+
+	Då har du tillgång till alla `--color-light-*`, `--space-*`, `--font-size-*` och `--radius-*` runtime, inklusive dark-mode-stöd.
+</Aside>
+
 <Aside type="caution" title="Aldrig hårdkoda hex">
-	**Vad du ska göra:** Använd CSS-variabel: `var(--color-light-vattjom-surface-primary-default)` eller motsvarande Tailwind-klass från `@sk-web-gui/core`.
+	**Vad du ska göra i komponentkod:** Använd CSS-variabel: `var(--color-light-vattjom-surface-primary-default)` eller motsvarande Tailwind-klass från `@sk-web-gui/core`.
 
 	**Vad du *inte* ska göra:** Skriva `background: #005595` direkt. Då fungerar inte dark mode, varumärkesuppdateringar måste sökas/ersättas manuellt, och en AI som läser din kod kan inte veta vilken semantik färgen har.
 </Aside>

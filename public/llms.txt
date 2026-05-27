@@ -28,7 +28,7 @@ Den här filen följer llmstxt.org-konventionen. Varje länk pekar på sidans HT
 
 ## För AI-agenter
 
-- [För AI-agenter](https://ui.sundsvall.dev/for-ai/): Hur en AI-assistent läser och använder Sundsvalls designsystem.
+- [För AI-agenter](https://ui.sundsvall.dev/for-ai/): Regler för en AI-assistent som producerar kod mot Sundsvalls designsystem. Läs detta först.
 
 ## Riktlinjer
 

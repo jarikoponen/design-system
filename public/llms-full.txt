@@ -1094,22 +1094,54 @@ import { TypingSequence } from '@sk-web-gui/react';
 
 # För AI-agenter
 
-> Hur en AI-assistent läser och använder Sundsvalls designsystem.
+> Regler för en AI-assistent som producerar kod mot Sundsvalls designsystem. Läs detta först.
 
 URL: https://ui.sundsvall.dev/for-ai/
 Källa (markdown): https://ui.sundsvall.dev/for-ai.md
 
 Den här portalen är byggd för att en AI-agent (Claude, Cursor, Copilot, ChatGPT m.fl.) ska kunna producera kod som följer Sundsvalls kommuns designsystem utan mänsklig redigering i mellanled.
 
-## Vad du kan peka din AI mot
+## Grundregler
 
-- **`https://ui.sundsvall.dev/llms.txt`** – kortfattad innehållsöversikt enligt llms.txt-konventionen.
-- **`https://ui.sundsvall.dev/llms-full.txt`** – hela portalens innehåll i en fil. Bäst för en engångsuppladdning i kontexten.
+Följ dessa **innan** du läser komponentdokumentationen.
+
+### 1. Bygg aldrig om designsystemet lokalt
+
+Designsystemet konsumeras genom npm-paketen [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react) (komponenter) och [`@sk-web-gui/core`](https://www.npmjs.com/package/@sk-web-gui/core) (tokens + Tailwind-preset). Den här portalen är **dokumentation** – paketen är **implementationen**.
+
+```bash
+npm install @sk-web-gui/react @sk-web-gui/core
+```
+
+- ✅ Importera komponenter: `import { Button } from '@sk-web-gui/react'`.
+- ✅ Använd CSS-variabler från paketet: `background: var(--color-light-vattjom-surface-primary-default)`.
+- ✅ Använd Tailwind-klasser från presetet: `<div className="bg-vattjom-surface-primary">`.
+- ❌ Definiera aldrig `:root { --color-light-vattjom-...: #...; }` i din egen kod – det är en parallell implementation som garanterat driver isär.
+- ❌ Hårdkoda aldrig hex-värden, ens i CSS-variabler du själv skapar.
+- ❌ Återskapa aldrig en HTML-imitation av designsystemet med kopierade värden.
+
+### 2. Standalone HTML utan bygg-process
+
+Om uppgiften kräver en enskild HTML-fil utan React eller npm-bygg (t.ex. en e-mail, ett bildexport-utkast, en intro-prototyp): säg uttryckligen i ditt svar att resultatet **inte är produktionsmässigt** och inte följer designsystemets implementationsmodell. Föreslå att produktionsversionen ska skrivas om till en React-applikation som använder `@sk-web-gui/react`. Hårdkodning är då ett medvetet kompromissval, inte ett följt mönster.
+
+### 3. Språk och tillgänglighet
+
+- Skriv på svenska. Du-tilltal, aktiv form, korta meningar.
+- Knapptexter är verb i imperativ ("Skicka ansökan"), aldrig "OK" eller "Klicka här".
+- Använd HTML-semantik: `<button>` för åtgärder, `<a>` för navigering. Aldrig `<div onClick>`.
+- Synlig fokusring, kontrast ≥ 4.5:1, `<label>` på alla formulärfält.
+
+Se [/guidelines/tonalitet/](/guidelines/tonalitet/) och [/guidelines/tillganglighet/](/guidelines/tillganglighet/) för detaljer.
+
+## Var du läser portalen
+
+- **`https://ui.sundsvall.dev/llms.txt`** – kortfattad innehållsöversikt enligt llmstxt.org-konventionen.
+- **`https://ui.sundsvall.dev/llms-full.txt`** – hela portalens innehåll i en fil. Bäst för engångsuppladdning i kontexten.
 - **Rå markdown per sida** – varje HTML-sida har en `.md`-variant på samma URL. Exempel: `/komponenter/button/` ↔ `/komponenter/button.md`.
 
 ## Rekommenderad prompt-mall
 
-> Läs `https://ui.sundsvall.dev/llms-full.txt` och bygg [uppgift] som följer Sundsvalls kommuns designsystem. Använd endast tokens och komponenter som dokumenteras där. Skriv på svenska. Knapptexter ska vara verb i imperativ.
+> Läs `https://ui.sundsvall.dev/llms-full.txt` och bygg [uppgift] som följer Sundsvalls kommuns designsystem. Importera komponenter från `@sk-web-gui/react` och tokens från `@sk-web-gui/core`. **Hårdkoda inga hex-värden eller CSS-variabler i mitt projekt** – allt ska komma från paketen. Skriv på svenska. Knapptexter ska vara verb i imperativ.
 
 ## Tekniska detaljer
 
@@ -1216,8 +1248,33 @@ import { Aside } from '@astrojs/starlight/components';
 
 Sundsvalls designsystem bygger på en bred färgpalett av **primitiver** (rena kulörskalor i 10 steg, 50–900) och **semantiska teman** som mappar primitiverna mot meningsbärande färger för olika kontexter. Värden på den här sidan läses live från `src/data/tokens.json` – som i sin tur genereras från `@sk-web-gui/theme`. Inget är hårdkodat.
 
+<Aside type="danger" title="Återskapa aldrig designsystemet">
+	**Gör inte detta:**
+
+	```css
+	/* En parallell implementation. Driver isär från upstream. */
+	:root {
+		--color-light-vattjom-surface-primary-default: #005595;
+		--color-light-juniskar-surface-primary-default: #a90074;
+	}
+	```
+
+	**Gör detta i stället:** installera `@sk-web-gui/core` – paketet registrerar samma variabler i `:root` automatiskt och uppdateras med `npm update`.
+
+	```bash
+	npm install @sk-web-gui/core
+	```
+
+	```ts
+	// I din rot eller layout
+	import '@sk-web-gui/core/dist/index.css';
+	```
+
+	Då har du tillgång till alla `--color-light-*`, `--space-*`, `--font-size-*` och `--radius-*` runtime, inklusive dark-mode-stöd.
+</Aside>
+
 <Aside type="caution" title="Aldrig hårdkoda hex">
-	**Vad du ska göra:** Använd CSS-variabel: `var(--color-light-vattjom-surface-primary-default)` eller motsvarande Tailwind-klass från `@sk-web-gui/core`.
+	**Vad du ska göra i komponentkod:** Använd CSS-variabel: `var(--color-light-vattjom-surface-primary-default)` eller motsvarande Tailwind-klass från `@sk-web-gui/core`.
 
 	**Vad du *inte* ska göra:** Skriva `background: #005595` direkt. Då fungerar inte dark mode, varumärkesuppdateringar måste sökas/ersättas manuellt, och en AI som läser din kod kan inte veta vilken semantik färgen har.
 </Aside>
@@ -1586,7 +1643,36 @@ Typsnittsstack: [packages/theme/src/fonts.ts](https://github.com/Sundsvallskommu
 URL: https://ui.sundsvall.dev/
 Källa (markdown): https://ui.sundsvall.dev/index.md
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
+
+## Hur du använder systemet
+
+Designsystemet **konsumeras genom npm-paket**, inte genom att kopiera värden härifrån. Den här portalen är dokumentation – paketen är implementationen.
+
+```bash
+npm install @sk-web-gui/react @sk-web-gui/core
+```
+
+```tsx
+import { Button, Alert, FormControl } from '@sk-web-gui/react';
+
+export function MinSida() {
+	return (
+		<>
+			<Button color="vattjom" variant="primary">Skicka ansökan</Button>
+			<Alert type="info">Bra att veta...</Alert>
+		</>
+	);
+}
+```
+
+`@sk-web-gui/core` registrerar alla CSS-variabler (`--color-light-vattjom-*`, `--space-16`, `--font-size-h-1` osv.) i `:root` automatiskt och inkluderar ett Tailwind-preset. Du kommer aldrig på en hex-kod i din egen kod.
+
+<Aside type="caution" title="Återskapa aldrig designsystemet">
+	**Gör inte:** Kopiera in CSS-variabler eller hex-värden i ditt eget projekt. Det är en parallell implementation som ofelbart driver isär från upstream.
+
+	**Gör:** Installera npm-paketen ovan. När designsystemet uppdateras kör du `npm update @sk-web-gui/core @sk-web-gui/react` och får automatiskt nya värden, nya komponenter och dark mode.
+</Aside>
 
 ## Vad finns här
 
@@ -1595,23 +1681,23 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 		Färger, typografi, ikoner och logotyper. Värdena hämtas live från `@sk-web-gui/theme`.
 	</Card>
 	<Card title="Komponenter" icon="puzzle">
-		Auto-genererad dokumentation per komponent från `web-shared-components`-Storybook: props, varianter, källa-länkar.
+		66 komponenter med riktiga props, varianter och källa-länkar — auto-genererade från `web-shared-components`-Storybook.
+	</Card>
+	<Card title="AI-komponenter" icon="rocket">
+		19 specialiserade komponenter för AI-flöden: AICornerModule, AIServiceModule, AssistantPresentation, ChatInput m.fl.
 	</Card>
 	<Card title="Riktlinjer" icon="open-book">
 		Tillgänglighet (WCAG 2.2 AA), tonalitet och språkbruk för Sundsvalls digitala tjänster.
-	</Card>
-	<Card title="För AI-agenter" icon="rocket">
-		`llms.txt`, rå markdown på varje URL och tillåten crawling. Bygg rätt från start med en AI-assistent.
 	</Card>
 </CardGrid>
 
 ## Snabblänkar
 
 <CardGrid>
+	<LinkCard title="För AI-agenter" href="/for-ai/" description="Regler och prompt-mall för en AI som ska producera kod mot designsystemet." />
 	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Hela portalens innehåll i en fil – för engångsuppladdning i en AI-assistent." />
 	<LinkCard title="Färger" href="/identitet/farger/" description="Primitiver + de fyra varumärkesteman vattjom, grönsta, juniskär, björnstigen." />
-	<LinkCard title="Typografi" href="/identitet/typografi/" description="Raleway för rubriker, Arial för brödtext." />
-	<LinkCard title="Button" href="/komponenter/button/" description="Den primära interaktiva komponenten. Props, varianter, kodexempel." />
+	<LinkCard title="Button" href="/komponenter/button/" description="Den primära interaktiva komponenten. Props, varianter, källa-länk." />
 </CardGrid>
 
 ## Förhållande till stilguide.sundsvall.se

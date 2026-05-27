@@ -6,8 +6,8 @@ hero:
   title: Designsystem för Sundsvalls kommun
   tagline: Tokens, komponenter och riktlinjer från @sk-web-gui — sökbart för människor, maskinläsbart för AI-agenter.
   actions:
-    - text: Färgpalett
-      link: /identitet/farger/
+    - text: Hur du använder systemet
+      link: '#hur-du-anvander-systemet'
       icon: right-arrow
       variant: primary
     - text: För AI-agenter
@@ -15,7 +15,36 @@ hero:
       icon: external
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
+
+## Hur du använder systemet
+
+Designsystemet **konsumeras genom npm-paket**, inte genom att kopiera värden härifrån. Den här portalen är dokumentation – paketen är implementationen.
+
+```bash
+npm install @sk-web-gui/react @sk-web-gui/core
+```
+
+```tsx
+import { Button, Alert, FormControl } from '@sk-web-gui/react';
+
+export function MinSida() {
+	return (
+		<>
+			<Button color="vattjom" variant="primary">Skicka ansökan</Button>
+			<Alert type="info">Bra att veta...</Alert>
+		</>
+	);
+}
+```
+
+`@sk-web-gui/core` registrerar alla CSS-variabler (`--color-light-vattjom-*`, `--space-16`, `--font-size-h-1` osv.) i `:root` automatiskt och inkluderar ett Tailwind-preset. Du kommer aldrig på en hex-kod i din egen kod.
+
+<Aside type="caution" title="Återskapa aldrig designsystemet">
+	**Gör inte:** Kopiera in CSS-variabler eller hex-värden i ditt eget projekt. Det är en parallell implementation som ofelbart driver isär från upstream.
+
+	**Gör:** Installera npm-paketen ovan. När designsystemet uppdateras kör du `npm update @sk-web-gui/core @sk-web-gui/react` och får automatiskt nya värden, nya komponenter och dark mode.
+</Aside>
 
 ## Vad finns här
 
@@ -24,23 +53,23 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 		Färger, typografi, ikoner och logotyper. Värdena hämtas live från `@sk-web-gui/theme`.
 	</Card>
 	<Card title="Komponenter" icon="puzzle">
-		Auto-genererad dokumentation per komponent från `web-shared-components`-Storybook: props, varianter, källa-länkar.
+		66 komponenter med riktiga props, varianter och källa-länkar — auto-genererade från `web-shared-components`-Storybook.
+	</Card>
+	<Card title="AI-komponenter" icon="rocket">
+		19 specialiserade komponenter för AI-flöden: AICornerModule, AIServiceModule, AssistantPresentation, ChatInput m.fl.
 	</Card>
 	<Card title="Riktlinjer" icon="open-book">
 		Tillgänglighet (WCAG 2.2 AA), tonalitet och språkbruk för Sundsvalls digitala tjänster.
-	</Card>
-	<Card title="För AI-agenter" icon="rocket">
-		`llms.txt`, rå markdown på varje URL och tillåten crawling. Bygg rätt från start med en AI-assistent.
 	</Card>
 </CardGrid>
 
 ## Snabblänkar
 
 <CardGrid>
+	<LinkCard title="För AI-agenter" href="/for-ai/" description="Regler och prompt-mall för en AI som ska producera kod mot designsystemet." />
 	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Hela portalens innehåll i en fil – för engångsuppladdning i en AI-assistent." />
 	<LinkCard title="Färger" href="/identitet/farger/" description="Primitiver + de fyra varumärkesteman vattjom, grönsta, juniskär, björnstigen." />
-	<LinkCard title="Typografi" href="/identitet/typografi/" description="Raleway för rubriker, Arial för brödtext." />
-	<LinkCard title="Button" href="/komponenter/button/" description="Den primära interaktiva komponenten. Props, varianter, kodexempel." />
+	<LinkCard title="Button" href="/komponenter/button/" description="Den primära interaktiva komponenten. Props, varianter, källa-länk." />
 </CardGrid>
 
 ## Förhållande till stilguide.sundsvall.se
