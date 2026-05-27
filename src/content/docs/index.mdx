@@ -1,13 +1,13 @@
 ---
 title: Sundsvalls designsystem
-description: AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer i ett predikterbart format som både människor och AI-agenter kan läsa.
+description: AI-vänlig portal för Sundsvalls kommuns designsystem. Tokens, komponenter och riktlinjer hämtade direkt från @sk-web-gui på predikterbara URL:er.
 template: splash
 hero:
   title: Designsystem för Sundsvalls kommun
-  tagline: Tokens, komponenter och riktlinjer. Sökbart för människor. Maskinläsbart för AI-agenter.
+  tagline: Tokens, komponenter och riktlinjer från @sk-web-gui — sökbart för människor, maskinläsbart för AI-agenter.
   actions:
-    - text: Läs riktlinjerna
-      link: /guidelines/tillganglighet/
+    - text: Färgpalett
+      link: /identitet/farger/
       icon: right-arrow
       variant: primary
     - text: För AI-agenter
@@ -20,14 +20,14 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 ## Vad finns här
 
 <CardGrid>
-	<Card title="Tokens" icon="seti:json">
-		Designvariabler för färg, typografi och avstånd. Källan är W3C-formaterad JSON som kompileras till CSS-variabler.
+	<Card title="Identitet" icon="approve-check">
+		Färger, typografi, ikoner och logotyper. Värdena hämtas live från `@sk-web-gui/theme`.
 	</Card>
 	<Card title="Komponenter" icon="puzzle">
-		Dokumentation per komponent: när, hur, varianter, tillgänglighet och kodexempel.
+		Auto-genererad dokumentation per komponent från `web-shared-components`-Storybook: props, varianter, källa-länkar.
 	</Card>
 	<Card title="Riktlinjer" icon="open-book">
-		Tillgänglighet enligt WCAG 2.2 AA, tonalitet, språkbruk och beslutsstöd.
+		Tillgänglighet (WCAG 2.2 AA), tonalitet och språkbruk för Sundsvalls digitala tjänster.
 	</Card>
 	<Card title="För AI-agenter" icon="rocket">
 		`llms.txt`, rå markdown på varje URL och tillåten crawling. Bygg rätt från start med en AI-assistent.
@@ -37,8 +37,12 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 ## Snabblänkar
 
 <CardGrid>
-	<LinkCard title="llms.txt" href="/llms.txt" description="Maskinläsbar innehållsöversikt." />
-	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Komplett innehåll på en sida." />
-	<LinkCard title="Tillgänglighet" href="/guidelines/tillganglighet/" description="Lagkrav och kommunens regler." />
-	<LinkCard title="Knapp" href="/komponenter/button/" description="Primär komponent. Exempel och API." />
+	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Hela portalens innehåll i en fil – för engångsuppladdning i en AI-assistent." />
+	<LinkCard title="Färger" href="/identitet/farger/" description="Primitiver + de fyra varumärkesteman vattjom, grönsta, juniskär, björnstigen." />
+	<LinkCard title="Typografi" href="/identitet/typografi/" description="Raleway för rubriker, Arial för brödtext." />
+	<LinkCard title="Button" href="/komponenter/button/" description="Den primära interaktiva komponenten. Props, varianter, kodexempel." />
 </CardGrid>
+
+## Förhållande till stilguide.sundsvall.se
+
+Den här portalen speglar [`Sundsvallskommun/web-shared-components`](https://github.com/Sundsvallskommun/web-shared-components) i ett AI-vänligt format. Den **ursprungliga stilguiden** ([stilguide.sundsvall.se](https://stilguide.sundsvall.se)) är fortfarande den primära referensen för människor med interaktiv Storybook och fullständiga SiteVision-designriktlinjer. Den här portalen är optimerad för att en AI-assistent ska kunna producera korrekt kod direkt mot designsystemet, utan att människor i mellanled.

@@ -1,0 +1,88 @@
+---
+title: Färger
+description: Sundsvalls kommuns färgpalett. Primitiver per kulör och de fyra varumärkesteman vattjom, grönsta, juniskär och björnstigen.
+---
+
+import ColorPalette from '../../../components/ColorPalette.astro';
+import ColorSwatch from '../../../components/ColorSwatch.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+Sundsvalls designsystem bygger på en bred färgpalett av **primitiver** (rena kulörskalor i 10 steg, 50–900) och **semantiska teman** som mappar primitiverna mot meningsbärande färger för olika kontexter. Värden hämtas live från `@sk-web-gui/theme`.
+
+<Aside type="caution" title="Aldrig hårdkoda hex">
+	Använd CSS-variabler (`var(--color-primitives-blue-700)`, `var(--color-light-vattjom-surface-primary-default)`) eller Tailwind-klasser från `@sk-web-gui/core`. Hex direkt i kod gör det omöjligt att stödja dark mode och varumärkesuppdateringar.
+</Aside>
+
+## Primitiver
+
+Detta är basskalorna. Använd dem för att bygga semantik, inte direkt i komponentkod.
+
+<ColorPalette group="Gray" prefix="ColorPrimitivesGray" />
+<ColorPalette group="Blue" prefix="ColorPrimitivesBlue" />
+<ColorPalette group="Green" prefix="ColorPrimitivesGreen" />
+<ColorPalette group="Purple" prefix="ColorPrimitivesPurple" />
+<ColorPalette group="Pink" prefix="ColorPrimitivesPink" />
+<ColorPalette group="Orange" prefix="ColorPrimitivesOrange" />
+<ColorPalette group="Red" prefix="ColorPrimitivesRed" />
+
+## Varumärkesteman
+
+Sundsvall har fyra teman uppkallade efter platser i kommunen. Varje tema har en `surface.primary`, `surface.accent`, `text` och tre `background`-nyanser. På Button-komponenten exponeras dem som `color="vattjom"` etc.
+
+### Vattjom – blå
+
+Det primära varumärkestemat. Används för standard primärknappar, länkar och fokusringar.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#005595" />
+	<ColorSwatch name="surface.primary hover" value="#004070" />
+	<ColorSwatch name="surface.accent" value="#cfe0ec" />
+	<ColorSwatch name="surface.accent hover" value="#e1ecf4" />
+	<ColorSwatch name="text" value="#004c85" />
+	<ColorSwatch name="background 100" value="#f0f5f9" />
+</div>
+
+### Grönsta – grön
+
+För framgångsindikationer, miljö- och hållbarhetsbudskap.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#00733b" />
+	<ColorSwatch name="surface.primary hover" value="#00592d" />
+	<ColorSwatch name="surface.accent" value="#c9e4d7" />
+	<ColorSwatch name="text" value="#00592d" />
+	<ColorSwatch name="background 100" value="#f1f9f5" />
+</div>
+
+### Juniskär – orange
+
+För framträdande, expressiva ytor – men sparsamt.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#b94e18" />
+	<ColorSwatch name="surface.accent" value="#ffd3a8" />
+</div>
+
+### Björnstigen – lila
+
+För att differentiera sekundära flöden från huvudbudskapet.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#5b1f78" />
+	<ColorSwatch name="surface.accent" value="#e4d8e9" />
+</div>
+
+## Status
+
+Funktionella färger för meddelanden.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="success" value="#00733b" />
+	<ColorSwatch name="warning" value="#b6620c" />
+	<ColorSwatch name="error" value="#a90074" />
+	<ColorSwatch name="info" value="#005595" />
+</div>
+
+## Källa
+
+Färgerna definieras i [packages/theme/src/colors.ts](https://github.com/Sundsvallskommun/web-shared-components/blob/main/packages/theme/src/colors.ts) i web-shared-components. Importeras i runtime via `@sk-web-gui/theme`. CSS-variabler genereras av `@sk-web-gui/core`.

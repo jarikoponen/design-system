@@ -1,50 +1,49 @@
 ---
 title: Översikt
-description: Sundsvalls designsystem använder design tokens i W3C-format. Allt visuellt – färg, typografi, avstånd – kommer härifrån.
+description: Hur designtokens fungerar i Sundsvalls designsystem. Värdena hämtas live från @sk-web-gui/theme och kompileras till CSS-variabler.
 ---
 
-Tokens är källan till sanning för allt visuellt i Sundsvalls designsystem. De definieras i `tokens-src/*.json` (W3C Design Tokens-format) och kompileras med [Style Dictionary](https://styledictionary.com/) till CSS custom properties som komponenter konsumerar.
+Sundsvalls designsystem definierar alla visuella värden – färger, typografi, avstånd, hörnradier, breakpoints – som **designtokens**. Tokens är källan till sanning. **Aldrig hårdkoda färg eller storlek**, alltid använd CSS-variabel eller Tailwind-klass.
 
-## Hur du använder dem
+## Hur portalen läser tokens
 
-I CSS:
+Den här portalen importerar tokens från npm-paketet `@sk-web-gui/theme` vid sync, konverterar till W3C Design Tokens-format i `tokens-src/*.json`, och kompilerar till `src/styles/tokens.css` via [Style Dictionary](https://styledictionary.com/). Resultatet är CSS-variabler i `:root`.
 
-```css
-.knapp-primary {
-	background: var(--color-brand-primary);
-	color: var(--color-semantic-text-on-brand);
-	padding: var(--space-3) var(--space-4);
-	border-radius: var(--radius-md);
-	font-family: var(--font-family-sans);
-	font-weight: var(--font-weight-medium);
-}
+## CSS-variabelnamn
+
+Mönstret är `--<kategori>-<grupp>-<nyans>`:
+
+| Mönster                                            | Exempel                                                 |
+|----------------------------------------------------|---------------------------------------------------------|
+| `--color-primitives-<kulör>-<steg>`                | `--color-primitives-blue-700` → `#005595`                |
+| `--color-light-<tema>-<roll>-<variant>`            | `--color-light-vattjom-surface-primary-default`          |
+| `--color-dark-<tema>-<roll>-<variant>`             | `--color-dark-vattjom-text-default`                      |
+| `--font-family-<stack>`                            | `--font-family-header` → `Raleway, Arial, ...`           |
+| `--font-size-<kategori>-<step>`                    | `--font-size-h-1-default` → `4rem`                       |
+| `--space-<n>`                                      | `--space-16` → `1.6rem`                                  |
+| `--radius-<roll>`                                  | `--radius-button-md` → `1.2rem`                          |
+
+## I React-kod
+
+Med `@sk-web-gui/react` får du tokens via komponent-props:
+
+```tsx
+import { Button } from '@sk-web-gui/react';
+
+<Button color="vattjom" variant="primary">Skicka</Button>
+<Button color="gronsta" variant="secondary">Spara</Button>
 ```
 
-**Aldrig** hårdkoda färger eller storlekar. Om värdet du behöver inte finns – lägg till en ny token, dokumentera den, och använd referensen.
+Eller via Tailwind (paketet `@sk-web-gui/core` exponerar en preset):
 
-## Tre nivåer
+```html
+<div class="bg-vattjom-surface-primary text-vattjom-text-DEFAULT p-4 rounded-button">
+  ...
+</div>
+```
 
-1. **Primitiver** – råa värden (`color.neutral.900`, `space.4`).
-2. **Semantiska** – meningsbärande alias (`color.semantic.text.default`, `color.semantic.focus`). **Föredra dessa i komponentkod.**
-3. **Komponent-specifika** – om en komponent behöver egna tokens, prefixa med komponentnamnet.
+## Mer
 
-## Tokens som finns nu
-
-### Färger
-
-- **Varumärke**: `--color-brand-primary`, `--color-brand-primary-hover`, `--color-brand-accent`
-- **Neutrala**: `--color-neutral-0` … `--color-neutral-900`
-- **Status**: `--color-status-success`, `--color-status-warning`, `--color-status-error`, `--color-status-info`
-- **Semantiska**: `--color-semantic-text-default`, `--color-semantic-text-muted`, `--color-semantic-text-on-brand`, `--color-semantic-surface-default`, `--color-semantic-surface-subtle`, `--color-semantic-border-default`, `--color-semantic-focus`
-
-### Avstånd och radius
-
-- **Avstånd**: `--space-0` … `--space-8` (skala 0 → 64 px)
-- **Hörnradier**: `--radius-none`, `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-full`
-
-### Typografi
-
-- **Familjer**: `--font-family-sans`, `--font-family-mono`
-- **Storlekar**: `--font-size-xs` … `--font-size-3xl`
-- **Vikter**: `--font-weight-regular`, `--font-weight-medium`, `--font-weight-semibold`
-- **Radhöjder**: `--font-line-height-tight`, `--font-line-height-normal`
+- **[Färger](/identitet/farger/)** – fullständig palett inkl. de fyra varumärkesteman
+- **[Typografi](/identitet/typografi/)** – Raleway + Arial, semantiska storlekar
+- Source code: [packages/theme](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/theme)

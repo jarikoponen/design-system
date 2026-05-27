@@ -78,6 +78,35 @@ public/                  ← Statiska assets som kopieras orörda till dist/.
 - Skriv på svenska. Hänvisa till lag/standard när relevant (WCAG, DOS-lagen,
   Språklagen).
 
+## Sync-flöde
+
+Innehållet i `tokens-src/*.json` och `src/content/docs/komponenter/*.mdx`
+är **auto-genererat** från [Sundsvallskommun/web-shared-components](https://github.com/Sundsvallskommun/web-shared-components)
+via en import-pipeline. Redigera inte dessa filer direkt – ändringar
+skrivs över vid nästa sync.
+
+### Hur det fungerar
+
+- `vendor/sk-web-gui/` är en git-submodul pinnad till en specifik upstream-SHA.
+- `npm run tokens:sync` importerar designtokens från `@sk-web-gui/theme` (publicerat npm-paket) och skriver `tokens-src/*.json` i W3C-format.
+- `npm run components:sync` parsar `vendor/sk-web-gui/packages/*/stories/*.stories.tsx` + tillhörande `src/<comp>.tsx` med ts-morph och genererar MDX i `src/content/docs/komponenter/`.
+- `npm run sync` kör båda + Style Dictionary i ordning.
+- GitHub Action `.github/workflows/sync-upstream.yml` (manuell trigger via `workflow_dispatch`) bumpar submodulen + npm-paketet och öppnar en PR med diffen.
+
+### MVP-scope
+
+Pipelinen körs idag mot dessa paket: `button`, `link`, `alert`, `spinner`, `forms` (= TextField, Textarea, Checkbox, RadioButton, Select, FormControl, Combobox, DatePicker, Switch). Resten av designsystemets ~38 paket lämnas till en framtida iteration när pipelinen verifierats.
+
+### AUTO-GENERATED-marker
+
+Auto-genererade MDX-filer har raden:
+
+```
+{/* AUTO-GENERATED från @sk-web-gui/<paket>@<version>. Manuella ändringar skrivs över vid nästa sync. */}
+```
+
+Identitetssidorna (`src/content/docs/identitet/`) och riktlinjerna är *inte* auto-genererade och hanteras manuellt.
+
 ## Deploy-flöde
 
 - **Produktion:** `https://ui.sundsvall.dev` driftas av Dokploy som en

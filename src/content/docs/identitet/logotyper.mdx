@@ -1,0 +1,40 @@
+---
+title: Logotyper
+description: Sundsvalls kommuns logotyp – språkversioner, frizon, färgval och favicon-beskärning.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Sundsvalls kommuns logotyp finns i tre språkversioner och fyra färgval. Den ska aldrig modifieras, lutas eller dekoreras.
+
+## Vad du behöver veta
+
+| Egenskap        | Regel                                                                                                  |
+|-----------------|--------------------------------------------------------------------------------------------------------|
+| **Frizon**      | Minst lika stor som logotypens "S" runt hela märket. Inget får placeras inom denna zon.                 |
+| **Minsta storlek** | Logotypen ska vara läsbar. Sätt aldrig under 16 px hög för digital användning.                       |
+| **Bakgrund**    | Använd den variant som har tillräcklig kontrast mot bakgrunden (4.5:1 minst).                            |
+| **Beskärning**  | Endast som favicon (16/32/64 px) får logotypen beskäras till "S"-märket utan kommunnamn.                 |
+
+<Aside type="caution" title="Aldrig">
+	- Aldrig rotera, luta eller spegla logotypen.
+	- Aldrig byta typsnitt eller färg utanför de godkända paletterna.
+	- Aldrig placera logotypen mot bakgrund med otillräcklig kontrast.
+</Aside>
+
+## Implementation
+
+Logotypen finns som React-komponent:
+
+```tsx
+import { Logo } from '@sk-web-gui/react';
+
+<Logo variant="primary" />
+```
+
+Se [Logo-komponenten](/komponenter/logo/) för API och varianter.
+
+## Källa
+
+- Riktlinjer: [stilguide.sundsvall.se → Identitet → Logotyper](https://stilguide.sundsvall.se/?path=/docs/identitet-logotyper--dokumentation)
+- Komponent: [packages/logo](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/logo)

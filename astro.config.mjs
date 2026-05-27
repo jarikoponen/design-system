@@ -31,6 +31,10 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Identitet',
+					items: [{ autogenerate: { directory: 'identitet' } }],
+				},
+				{
 					label: 'Riktlinjer',
 					items: [{ autogenerate: { directory: 'guidelines' } }],
 				},

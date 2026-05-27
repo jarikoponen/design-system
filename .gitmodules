@@ -1,0 +1,3 @@
+[submodule "vendor/sk-web-gui"]
+	path = vendor/sk-web-gui
+	url = https://github.com/Sundsvallskommun/web-shared-components

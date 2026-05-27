@@ -1,0 +1,89 @@
+---
+title: Typografi
+description: Sundsvalls kommun använder Raleway för rubriker och Arial för brödtext. Storlekarna är semantiska – ingen pixel-direktanvändning.
+---
+
+import TypeSample from '../../../components/TypeSample.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+## Typsnitt
+
+Sundsvalls kommun använder **Raleway** för rubriker och display-text, och **Arial** för brödtext och UI. Båda används för att de redan finns installerade på de flesta system.
+
+| Stack            | Använd för                                | Token                          |
+|------------------|-------------------------------------------|--------------------------------|
+| Raleway, Arial   | Rubriker, hero, display                   | `--font-family-header`         |
+| Arial, Helvetica | Brödtext, knappar, formulär, navigering   | `--font-family-default`        |
+| monospace        | Kod, tabeller med fast bredd              | `--font-family-mono`           |
+
+<Aside type="tip" title="Webbfont">
+	Raleway laddas inte från CDN i `@sk-web-gui/core`-paketet. Det är upp till applikationen att inkludera den (t.ex. via Google Fonts eller självhost). Om Raleway saknas faller stacken tillbaka på Arial automatiskt.
+</Aside>
+
+## Rubriker (Raleway)
+
+<TypeSample
+	fontFamily="Raleway, Arial, sans-serif"
+	fontWeight={400}
+	sizes={[52, 40, 32, 24, 20, 18]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+### Raleway Bold
+
+<TypeSample
+	fontFamily="Raleway, Arial, sans-serif"
+	fontWeight={700}
+	sizes={[52, 40, 32, 24, 20, 18]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+## Brödtext (Arial)
+
+<TypeSample
+	fontFamily="Arial, Helvetica, sans-serif"
+	fontWeight={400}
+	sizes={[24, 20, 18, 16, 14, 12, 10]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+### Arial Bold
+
+<TypeSample
+	fontFamily="Arial, Helvetica, sans-serif"
+	fontWeight={700}
+	sizes={[24, 20, 18, 16, 14, 12, 10]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+## Knapptext (Raleway Bold)
+
+<TypeSample
+	fontFamily="Raleway, Arial, sans-serif"
+	fontWeight={700}
+	sizes={[16, 14, 12]}
+	sampleText="Skicka ansökan"
+/>
+
+## Semantiska storlekar
+
+Designsystemets `fontSizes` är **semantiska**, inte numeriska. Använd dessa i kod – inte rå pixel-storlek.
+
+| Token                   | Värde      | När använda                           |
+|-------------------------|------------|---------------------------------------|
+| `font-size-display-1`   | 8rem       | Hero / landningssida                  |
+| `font-size-h-1`         | 4rem       | Sidans huvudrubrik                    |
+| `font-size-h-2`         | 3.2rem     | Sektionsrubrik                        |
+| `font-size-h-3`         | 2.6rem     | Underrubrik                           |
+| `font-size-h-4`         | 2.4rem     | Mindre rubrik                         |
+| `font-size-lead`        | 2rem       | Ingress                               |
+| `font-size-base`        | 1.6rem     | Brödtext (standard)                   |
+| `font-size-large`       | 1.8rem     | Större brödtext                       |
+| `font-size-small`       | 1.4rem     | Metadata, hjälptext                   |
+| `font-size-label-*`     | 1.2–1.8rem | Formuläretiketter (storlek per size)  |
+
+Storlekarna har responsiva varianter (`lg`, `md`, `sm`) — komponenterna i `@sk-web-gui/react` plockar rätt storlek per breakpoint automatiskt.
+
+## Källa
+
+Typsnittsstack: [packages/theme/src/fonts.ts](https://github.com/Sundsvallskommun/web-shared-components/blob/main/packages/theme/src/fonts.ts). Storlekar: [packages/theme/src/units.ts](https://github.com/Sundsvallskommun/web-shared-components/blob/main/packages/theme/src/units.ts).

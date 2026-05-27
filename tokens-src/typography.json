@@ -1,34 +1,427 @@
 {
   "font": {
+    "$description": "__auto-generated__ från @sk-web-gui/theme@2.7.1. Ändra i upstream eller i descriptions-overlay/, aldrig direkt här.",
     "family": {
+      "DEFAULT": {
+        "$value": "Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
+      "header": {
+        "$value": "Raleway, Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
+      "display": {
+        "$value": "Raleway, Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
       "sans": {
-        "$value": "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-        "$type": "fontFamily",
-        "$description": "Bröd- och UI-text. Inter när tillgängligt, annars systemets sans-serif."
+        "$value": "Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
+      "serif": {
+        "$value": "serif",
+        "$type": "string"
       },
       "mono": {
-        "$value": "ui-monospace, SFMono-Regular, Menlo, monospace",
-        "$type": "fontFamily",
-        "$description": "Kod, tabeller med fasta kolumner."
+        "$value": "monospace",
+        "$type": "string"
+      },
+      "flag": {
+        "$value": "\"Twemoji Country Flags\", Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
+      "flag-header": {
+        "$value": "\"Twemoji Country Flags\", Raleway, Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
+      "flag-display": {
+        "$value": "\"Twemoji Country Flags\", Raleway, Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
+      "flag-sans": {
+        "$value": "\"Twemoji Country Flags\", Arial, Helvetica, sans-serif",
+        "$type": "string"
+      },
+      "flag-serif": {
+        "$value": "\"Twemoji Country Flags\", serif",
+        "$type": "string"
+      },
+      "flag-mono": {
+        "$value": "\"Twemoji Country Flags\", monospace",
+        "$type": "string"
       }
     },
     "size": {
-      "xs":   { "$value": "0.75rem",  "$type": "dimension", "$description": "Metadata, etiketter." },
-      "sm":   { "$value": "0.875rem", "$type": "dimension", "$description": "Sekundär text." },
-      "md":   { "$value": "1rem",     "$type": "dimension", "$description": "Standard brödtext." },
-      "lg":   { "$value": "1.125rem", "$type": "dimension", "$description": "Ingress." },
-      "xl":   { "$value": "1.5rem",   "$type": "dimension", "$description": "Rubrik nivå 3." },
-      "2xl":  { "$value": "2rem",     "$type": "dimension", "$description": "Rubrik nivå 2." },
-      "3xl":  { "$value": "2.5rem",   "$type": "dimension", "$description": "Rubrik nivå 1." }
-    },
-    "weight": {
-      "regular":  { "$value": "400", "$type": "fontWeight", "$description": "Normal vikt för brödtext." },
-      "medium":   { "$value": "500", "$type": "fontWeight", "$description": "Knappar, mellanrubriker." },
-      "semibold": { "$value": "600", "$type": "fontWeight", "$description": "Rubriker." }
+      "display": {
+        "1": {
+          "DEFAULT": {
+            "$value": "8rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "8rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "7.2rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "5.6rem",
+            "$type": "dimension"
+          }
+        },
+        "2": {
+          "DEFAULT": {
+            "$value": "6.4rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "6.4rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "5.6rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "4.4rem",
+            "$type": "dimension"
+          }
+        },
+        "3": {
+          "DEFAULT": {
+            "$value": "4.8rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "4.8rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "4rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "3.2rem",
+            "$type": "dimension"
+          }
+        }
+      },
+      "h": {
+        "1": {
+          "DEFAULT": {
+            "$value": "4rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "4rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "3.4rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "3.2rem",
+            "$type": "dimension"
+          }
+        },
+        "2": {
+          "DEFAULT": {
+            "$value": "3.2rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "3.2rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "2.8rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "2.6rem",
+            "$type": "dimension"
+          }
+        },
+        "3": {
+          "DEFAULT": {
+            "$value": "2.6rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "2.6rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "2.2rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "2rem",
+            "$type": "dimension"
+          }
+        },
+        "4": {
+          "DEFAULT": {
+            "$value": "2.4rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "2.4rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "2rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "1.8rem",
+            "$type": "dimension"
+          }
+        }
+      },
+      "label": {
+        "large": {
+          "$value": "1.8rem",
+          "$type": "dimension"
+        },
+        "medium": {
+          "$value": "1.6rem",
+          "$type": "dimension"
+        },
+        "small": {
+          "$value": "1.4rem",
+          "$type": "dimension"
+        },
+        "extra-small": {
+          "$value": "1.2rem",
+          "$type": "dimension"
+        }
+      },
+      "input": {
+        "large": {
+          "$value": "1.8rem",
+          "$type": "dimension"
+        },
+        "medium": {
+          "$value": "1.6rem",
+          "$type": "dimension"
+        },
+        "small": {
+          "$value": "1.4rem",
+          "$type": "dimension"
+        }
+      },
+      "logo": {
+        "header": {
+          "$value": "2.2rem",
+          "$type": "dimension"
+        }
+      },
+      "lead": {
+        "$value": "2rem",
+        "$type": "dimension"
+      },
+      "base": {
+        "$value": "1.6rem",
+        "$type": "dimension"
+      },
+      "large": {
+        "$value": "1.8rem",
+        "$type": "dimension"
+      },
+      "small": {
+        "$value": "1.4rem",
+        "$type": "dimension"
+      }
     },
     "line-height": {
-      "tight":  { "$value": "1.2", "$type": "number", "$description": "Rubriker." },
-      "normal": { "$value": "1.5", "$type": "number", "$description": "Brödtext." }
+      "display": {
+        "1": {
+          "DEFAULT": {
+            "$value": "9.6rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "9.6rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "8rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "6.4rem",
+            "$type": "dimension"
+          }
+        },
+        "2": {
+          "DEFAULT": {
+            "$value": "7.2rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "7.2rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "6.4rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "5.6rem",
+            "$type": "dimension"
+          }
+        },
+        "3": {
+          "DEFAULT": {
+            "$value": "5.6rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "5.6rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "4.8rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "3.6rem",
+            "$type": "dimension"
+          }
+        }
+      },
+      "h": {
+        "1": {
+          "DEFAULT": {
+            "$value": "5.6rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "5.6rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "4.8rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "4.4rem",
+            "$type": "dimension"
+          }
+        },
+        "2": {
+          "DEFAULT": {
+            "$value": "4rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "4rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "3.6rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "3.2rem",
+            "$type": "dimension"
+          }
+        },
+        "3": {
+          "DEFAULT": {
+            "$value": "3.4rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "3.4rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "3rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "2.8rem",
+            "$type": "dimension"
+          }
+        },
+        "4": {
+          "DEFAULT": {
+            "$value": "3.2rem",
+            "$type": "dimension"
+          },
+          "lg": {
+            "$value": "3.2rem",
+            "$type": "dimension"
+          },
+          "md": {
+            "$value": "2.8rem",
+            "$type": "dimension"
+          },
+          "sm": {
+            "$value": "2.4rem",
+            "$type": "dimension"
+          }
+        }
+      },
+      "label": {
+        "large": {
+          "$value": "3.2rem",
+          "$type": "dimension"
+        },
+        "medium": {
+          "$value": "2.4rem",
+          "$type": "dimension"
+        },
+        "small": {
+          "$value": "1.6rem",
+          "$type": "dimension"
+        },
+        "extra-small": {
+          "$value": "1.8rem",
+          "$type": "dimension"
+        }
+      },
+      "input": {
+        "large": {
+          "$value": "2.4rem",
+          "$type": "dimension"
+        },
+        "medium": {
+          "$value": "2.4rem",
+          "$type": "dimension"
+        },
+        "small": {
+          "$value": "2rem",
+          "$type": "dimension"
+        }
+      },
+      "logo": {
+        "header": {
+          "$value": "2.8rem",
+          "$type": "dimension"
+        }
+      },
+      "lead": {
+        "$value": "2.8rem",
+        "$type": "dimension"
+      },
+      "base": {
+        "$value": "2.4rem",
+        "$type": "dimension"
+      },
+      "large": {
+        "$value": "2.6rem",
+        "$type": "dimension"
+      },
+      "small": {
+        "$value": "1.8rem",
+        "$type": "dimension"
+      }
     }
   }
 }

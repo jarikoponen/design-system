@@ -1,0 +1,40 @@
+---
+interface Props {
+	name: string;
+	value: string;
+}
+const { name, value } = Astro.props;
+const isLight = (() => {
+	const m = value.match(/^#([0-9a-f]{6})/i);
+	if (!m) return true;
+	const r = parseInt(m[1].slice(0, 2), 16);
+	const g = parseInt(m[1].slice(2, 4), 16);
+	const b = parseInt(m[1].slice(4, 6), 16);
+	return (r * 299 + g * 587 + b * 114) / 1000 > 160;
+})();
+---
+
+<div class="swatch" style={`background: ${value}; color: ${isLight ? '#111' : '#fff'};`}>
+	<div class="name">{name}</div>
+	<code class="hex">{value}</code>
+</div>
+
+<style>
+	.swatch {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		min-height: 6rem;
+		border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+	}
+	.name {
+		font-weight: 600;
+		font-size: 0.875rem;
+	}
+	.hex {
+		font-size: 0.75rem;
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	}
+</style>

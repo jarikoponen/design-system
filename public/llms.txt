@@ -13,15 +13,39 @@ Den här filen följer llmstxt.org-konventionen. Varje länk pekar på sidans HT
 - [Tillgänglighet](https://ui.sundsvall.dev/guidelines/tillganglighet/): Sundsvalls kommun följer WCAG 2.2 AA. Detta är de praktiska reglerna utvecklare och designers ska följa.
 - [Tonalitet och språk](https://ui.sundsvall.dev/guidelines/tonalitet/): Hur Sundsvalls kommun pratar i sina digitala tjänster. Klarspråk, du-tilltal och verb i imperativ på knappar.
 
+## identitet
+
+- [Färger](https://ui.sundsvall.dev/identitet/farger/): Sundsvalls kommuns färgpalett. Primitiver per kulör och de fyra varumärkesteman vattjom, grönsta, juniskär och björnstigen.
+- [Ikoner](https://ui.sundsvall.dev/identitet/ikoner/): Sundsvalls designsystem använder Lucide som primärt ikonbibliotek, integrerat via @sk-web-gui/icon och @sk-web-gui/lucide-icon.
+- [Logotyper](https://ui.sundsvall.dev/identitet/logotyper/): Sundsvalls kommuns logotyp – språkversioner, frizon, färgval och favicon-beskärning.
+- [SiteVision-design](https://ui.sundsvall.dev/identitet/sitevision/): Designriktlinjer för Sundsvalls kommuns SiteVision-baserade webbplatser. Underhålls direkt i stilguiden.
+- [Typografi](https://ui.sundsvall.dev/identitet/typografi/): Sundsvalls kommun använder Raleway för rubriker och Arial för brödtext. Storlekarna är semantiska – ingen pixel-direktanvändning.
+
 ## Översikt
 
-- [Sundsvalls designsystem](https://ui.sundsvall.dev/): AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer i ett predikterbart format som både människor och AI-agenter kan läsa.
+- [Sundsvalls designsystem](https://ui.sundsvall.dev/): AI-vänlig portal för Sundsvalls kommuns designsystem. Tokens, komponenter och riktlinjer hämtade direkt från @sk-web-gui på predikterbara URL:er.
 
 ## Komponenter
 
-- [Knapp (Button)](https://ui.sundsvall.dev/komponenter/button/): Primär interaktiv komponent för åtgärder. Använd för allt som triggar en handling – navigering använder länkar.
+- [Alert](https://ui.sundsvall.dev/komponenter/alert/): Alert.Component – komponent från @sk-web-gui/alert.
+- [Button.Group](https://ui.sundsvall.dev/komponenter/button-button-group/): Button.Group – komponent från @sk-web-gui/button.
+- [Button](https://ui.sundsvall.dev/komponenter/button/): Button – komponent från @sk-web-gui/button.
+- [Checkbox.Group](https://ui.sundsvall.dev/komponenter/checkbox-checkbox-group/): Checkbox.Group – komponent från @sk-web-gui/forms.
+- [Checkbox](https://ui.sundsvall.dev/komponenter/checkbox/): Checkbox – komponent från @sk-web-gui/forms.
+- [Combobox](https://ui.sundsvall.dev/komponenter/combobox/): Combobox.Input – komponent från @sk-web-gui/forms.
+- [DatePicker](https://ui.sundsvall.dev/komponenter/datepicker/): DatePicker – komponent från @sk-web-gui/forms.
+- [FormControl](https://ui.sundsvall.dev/komponenter/formular-formcontrol/): FormControl – komponent från @sk-web-gui/forms.
+- [Formulär](https://ui.sundsvall.dev/komponenter/formular/): Input – komponent från @sk-web-gui/forms.
+- [Link](https://ui.sundsvall.dev/komponenter/link/): Link – komponent från @sk-web-gui/link.
+- [RadioButton.Group](https://ui.sundsvall.dev/komponenter/radiobutton-radiobutton-group/): RadioButton.Group – komponent från @sk-web-gui/forms.
+- [RadioButton](https://ui.sundsvall.dev/komponenter/radiobutton/): RadioButton – komponent från @sk-web-gui/forms.
+- [Select](https://ui.sundsvall.dev/komponenter/select/): Select – komponent från @sk-web-gui/forms.
+- [Spinner](https://ui.sundsvall.dev/komponenter/spinner/): Spinner – komponent från @sk-web-gui/spinner.
+- [Switch](https://ui.sundsvall.dev/komponenter/switch/): Switch – komponent från @sk-web-gui/forms.
+- [Textarea](https://ui.sundsvall.dev/komponenter/textarea/): Textarea – komponent från @sk-web-gui/forms.
+- [TextField](https://ui.sundsvall.dev/komponenter/textfield/): TextField – komponent från @sk-web-gui/forms.
 
 ## Tokens
 
-- [Översikt](https://ui.sundsvall.dev/tokens/oversikt/): Sundsvalls designsystem använder design tokens i W3C-format. Allt visuellt – färg, typografi, avstånd – kommer härifrån.
+- [Översikt](https://ui.sundsvall.dev/tokens/oversikt/): Hur designtokens fungerar i Sundsvalls designsystem. Värdena hämtas live från @sk-web-gui/theme och kompileras till CSS-variabler.
 

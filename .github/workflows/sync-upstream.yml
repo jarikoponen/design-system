@@ -1,0 +1,56 @@
+name: Sync upstream (web-shared-components)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodule)
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Bump submodule to upstream main
+        run: |
+          git submodule update --remote vendor/sk-web-gui
+          echo "UPSTREAM_SHA=$(git -C vendor/sk-web-gui rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install
+        run: |
+          npm ci
+          # Bump @sk-web-gui/theme to its latest published version so the
+          # token sync matches the submodule HEAD as closely as possible.
+          npm install --save-dev @sk-web-gui/theme@latest
+
+      - name: Run sync
+        run: npm run sync
+
+      - name: Open PR if there are changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'chore(sync): upstream@${{ env.UPSTREAM_SHA }}'
+          title: 'chore(sync): upstream@${{ env.UPSTREAM_SHA }}'
+          body: |
+            Auto-genererad PR från `Sync upstream`-workflow.
+
+            - Submodul `vendor/sk-web-gui` bumpad till SHA `${{ env.UPSTREAM_SHA }}`
+            - `@sk-web-gui/theme` uppdaterad till senaste publicerade versionen
+            - `npm run sync` har körts — tokens, komponenter och tokens.css regenererade
+
+            Granska diffen innan merge. Push till `main` triggar Dokploy-deploy automatiskt.
+          branch: chore/sync-upstream
+          delete-branch: true
+          base: main

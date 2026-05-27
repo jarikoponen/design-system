@@ -13,7 +13,10 @@
     "preview": "astro preview",
     "astro": "astro",
     "tokens:build": "style-dictionary build --config style-dictionary.config.mjs",
-    "llms:build": "node scripts/build-llms-txt.mjs"
+    "llms:build": "node scripts/build-llms-txt.mjs",
+    "tokens:sync": "node scripts/sync-tokens.mjs",
+    "components:sync": "node scripts/sync-components.mjs",
+    "sync": "npm run tokens:sync && npm run components:sync && npm run tokens:build"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.39.2",
@@ -21,8 +24,10 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@sk-web-gui/theme": "^2.7.1",
     "glob": "^11.0.0",
     "gray-matter": "^4.0.3",
-    "style-dictionary": "^4.3.0"
+    "style-dictionary": "^4.3.0",
+    "ts-morph": "^28.0.0"
   }
 }
