@@ -1,0 +1,50 @@
+{
+  "color": {
+    "brand": {
+      "primary": {
+        "$value": "#005aa0",
+        "$type": "color",
+        "$description": "Sundsvalls primära varumärkesfärg. Används på primärknappar, länkar och fokusramar."
+      },
+      "primary-hover": {
+        "$value": "#004a85",
+        "$type": "color",
+        "$description": "Mörkare variant av primary för hover- och pressade tillstånd."
+      },
+      "accent": {
+        "$value": "#e8a13a",
+        "$type": "color",
+        "$description": "Accentfärg för utvalda budskap och illustrativa element. Använd sparsamt."
+      }
+    },
+    "neutral": {
+      "0": { "$value": "#ffffff", "$type": "color", "$description": "Vit – bakgrund för ytor med högsta kontrast." },
+      "50": { "$value": "#f6f7f9", "$type": "color", "$description": "Mycket ljus grå – sektionsbakgrund." },
+      "100": { "$value": "#e7eaef", "$type": "color", "$description": "Ljusgrå – avgränsare och inaktiv yta." },
+      "300": { "$value": "#9aa3af", "$type": "color", "$description": "Medelgrå – inaktiva ikoner och placeholder." },
+      "600": { "$value": "#4b5563", "$type": "color", "$description": "Mörkgrå – sekundär brödtext." },
+      "900": { "$value": "#111827", "$type": "color", "$description": "Nästan svart – primär brödtext." }
+    },
+    "status": {
+      "success": { "$value": "#1f7a3c", "$type": "color", "$description": "Bekräftelse, godkänd, klart." },
+      "warning": { "$value": "#b6620c", "$type": "color", "$description": "Varning som inte blockerar." },
+      "error":   { "$value": "#a8201c", "$type": "color", "$description": "Fel, blockerande validering." },
+      "info":    { "$value": "#1e5fa4", "$type": "color", "$description": "Neutralt informativt budskap." }
+    },
+    "semantic": {
+      "text": {
+        "default":   { "$value": "{color.neutral.900}", "$type": "color", "$description": "Brödtext på ljus bakgrund." },
+        "muted":     { "$value": "{color.neutral.600}", "$type": "color", "$description": "Sekundär brödtext, metadata." },
+        "on-brand":  { "$value": "{color.neutral.0}",   "$type": "color", "$description": "Text på primary-bakgrund." }
+      },
+      "surface": {
+        "default": { "$value": "{color.neutral.0}",  "$type": "color", "$description": "Standard ytfärg." },
+        "subtle":  { "$value": "{color.neutral.50}", "$type": "color", "$description": "Subtilt avgränsad sektion." }
+      },
+      "border": {
+        "default": { "$value": "{color.neutral.100}", "$type": "color", "$description": "Standardram och avgränsare." }
+      },
+      "focus":    { "$value": "{color.brand.primary}", "$type": "color", "$description": "Fokusring för tangentbordsfokus." }
+    }
+  }
+}

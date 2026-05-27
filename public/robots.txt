@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ui.sundsvall.dev/sitemap-index.xml

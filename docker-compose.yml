@@ -1,0 +1,19 @@
+# Dokploy konsumerar detta direkt. Lokalt kan du köra `docker compose up`.
+# Traefik-labels är medvetet utelämnade – Dokploy lägger till sina egna via Domains-UI:t.
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ui-sundsvall:latest
+    container_name: ui-sundsvall
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

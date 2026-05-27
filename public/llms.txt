@@ -1,0 +1,27 @@
+# Sundsvalls designsystem
+
+> AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer på predikterbara URL:er.
+
+Den här filen följer llmstxt.org-konventionen. Varje länk pekar på sidans HTML-version; varje sida finns även som rå markdown via samma URL med suffixet `.md`.
+
+## För AI-agenter
+
+- [För AI-agenter](https://ui.sundsvall.dev/for-ai/): Hur en AI-assistent läser och använder Sundsvalls designsystem.
+
+## Riktlinjer
+
+- [Tillgänglighet](https://ui.sundsvall.dev/guidelines/tillganglighet/): Sundsvalls kommun följer WCAG 2.2 AA. Detta är de praktiska reglerna utvecklare och designers ska följa.
+- [Tonalitet och språk](https://ui.sundsvall.dev/guidelines/tonalitet/): Hur Sundsvalls kommun pratar i sina digitala tjänster. Klarspråk, du-tilltal och verb i imperativ på knappar.
+
+## Översikt
+
+- [Sundsvalls designsystem](https://ui.sundsvall.dev/): AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer i ett predikterbart format som både människor och AI-agenter kan läsa.
+
+## Komponenter
+
+- [Knapp (Button)](https://ui.sundsvall.dev/komponenter/button/): Primär interaktiv komponent för åtgärder. Använd för allt som triggar en handling – navigering använder länkar.
+
+## Tokens
+
+- [Översikt](https://ui.sundsvall.dev/tokens/oversikt/): Sundsvalls designsystem använder design tokens i W3C-format. Allt visuellt – färg, typografi, avstånd – kommer härifrån.
+

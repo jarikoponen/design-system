@@ -1,0 +1,54 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-brand-primary: #005aa0; /** Sundsvalls primära varumärkesfärg. Används på primärknappar, länkar och fokusramar. */
+  --color-brand-primary-hover: #004a85; /** Mörkare variant av primary för hover- och pressade tillstånd. */
+  --color-brand-accent: #e8a13a; /** Accentfärg för utvalda budskap och illustrativa element. Använd sparsamt. */
+  --color-neutral-0: #ffffff; /** Vit – bakgrund för ytor med högsta kontrast. */
+  --color-neutral-50: #f6f7f9; /** Mycket ljus grå – sektionsbakgrund. */
+  --color-neutral-100: #e7eaef; /** Ljusgrå – avgränsare och inaktiv yta. */
+  --color-neutral-300: #9aa3af; /** Medelgrå – inaktiva ikoner och placeholder. */
+  --color-neutral-600: #4b5563; /** Mörkgrå – sekundär brödtext. */
+  --color-neutral-900: #111827; /** Nästan svart – primär brödtext. */
+  --color-status-success: #1f7a3c; /** Bekräftelse, godkänd, klart. */
+  --color-status-warning: #b6620c; /** Varning som inte blockerar. */
+  --color-status-error: #a8201c; /** Fel, blockerande validering. */
+  --color-status-info: #1e5fa4; /** Neutralt informativt budskap. */
+  --space-0: 0; /** Inget mellanrum. */
+  --space-1: 0.25rem; /** 4px – minsta visuella separation. */
+  --space-2: 0.5rem; /** 8px – tät gruppering. */
+  --space-3: 0.75rem; /** 12px – inom kompakta komponenter. */
+  --space-4: 1rem; /** 16px – standardavstånd mellan element. */
+  --space-5: 1.5rem; /** 24px – mellan grupper. */
+  --space-6: 2rem; /** 32px – mellan sektioner. */
+  --space-7: 3rem; /** 48px – mellan stora sektioner. */
+  --space-8: 4rem; /** 64px – sidmarginal/hero-yta. */
+  --radius-none: 0; /** Skarp kant. */
+  --radius-sm: 0.25rem; /** Subtilt rundad – inputs. */
+  --radius-md: 0.5rem; /** Standard – kort, kapsel. */
+  --radius-lg: 0.75rem; /** Stora ytor, modaler. */
+  --radius-full: 9999px; /** Helt rundat – avatar, chip. */
+  --font-family-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; /** Bröd- och UI-text. Inter när tillgängligt, annars systemets sans-serif. */
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, monospace; /** Kod, tabeller med fasta kolumner. */
+  --font-size-xs: 0.75rem; /** Metadata, etiketter. */
+  --font-size-sm: 0.875rem; /** Sekundär text. */
+  --font-size-md: 1rem; /** Standard brödtext. */
+  --font-size-lg: 1.125rem; /** Ingress. */
+  --font-size-xl: 1.5rem; /** Rubrik nivå 3. */
+  --font-size-2xl: 2rem; /** Rubrik nivå 2. */
+  --font-size-3xl: 2.5rem; /** Rubrik nivå 1. */
+  --font-weight-regular: 400; /** Normal vikt för brödtext. */
+  --font-weight-medium: 500; /** Knappar, mellanrubriker. */
+  --font-weight-semibold: 600; /** Rubriker. */
+  --font-line-height-tight: 1.2; /** Rubriker. */
+  --font-line-height-normal: 1.5; /** Brödtext. */
+  --color-semantic-text-default: var(--color-neutral-900); /** Brödtext på ljus bakgrund. */
+  --color-semantic-text-muted: var(--color-neutral-600); /** Sekundär brödtext, metadata. */
+  --color-semantic-text-on-brand: var(--color-neutral-0); /** Text på primary-bakgrund. */
+  --color-semantic-surface-default: var(--color-neutral-0); /** Standard ytfärg. */
+  --color-semantic-surface-subtle: var(--color-neutral-50); /** Subtilt avgränsad sektion. */
+  --color-semantic-border-default: var(--color-neutral-100); /** Standardram och avgränsare. */
+  --color-semantic-focus: var(--color-brand-primary); /** Fokusring för tangentbordsfokus. */
+}

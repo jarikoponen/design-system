@@ -1,0 +1,332 @@
+# Sundsvalls designsystem
+
+AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer på predikterbara URL:er.
+
+Hela portalens innehåll i en fil. Bäst för att klistra in i en AI-assistent som engångskontext.
+
+
+
+---
+
+# För AI-agenter
+
+> Hur en AI-assistent läser och använder Sundsvalls designsystem.
+
+URL: https://ui.sundsvall.dev/for-ai/
+Källa (markdown): https://ui.sundsvall.dev/for-ai.md
+
+Den här portalen är byggd för att en AI-agent (Claude, Cursor, Copilot, ChatGPT m.fl.) ska kunna producera kod som följer Sundsvalls kommuns designsystem utan mänsklig redigering i mellanled.
+
+## Vad du kan peka din AI mot
+
+- **`https://ui.sundsvall.dev/llms.txt`** – kortfattad innehållsöversikt enligt llms.txt-konventionen.
+- **`https://ui.sundsvall.dev/llms-full.txt`** – hela portalens innehåll i en fil. Bäst för en engångsuppladdning i kontexten.
+- **Rå markdown per sida** – varje HTML-sida har en `.md`-variant på samma URL. Exempel: `/komponenter/button/` ↔ `/komponenter/button.md`.
+
+## Rekommenderad prompt-mall
+
+> Läs `https://ui.sundsvall.dev/llms-full.txt` och bygg [uppgift] som följer Sundsvalls kommuns designsystem. Använd endast tokens och komponenter som dokumenteras där. Skriv på svenska. Knapptexter ska vara verb i imperativ.
+
+## Tekniska detaljer
+
+- `robots.txt` tillåter all crawling.
+- Sökmotor: Pagefind (för människor). AI:n läser markdown direkt.
+- Sajten har `Content-Type: text/markdown` på `.md`-filer så att verktyg som Claude och ChatGPT plockar upp dem korrekt.
+- Cache-Control: `no-cache` på `llms.txt`/`llms-full.txt` så att AI alltid får senaste version.
+
+
+---
+
+# Tillgänglighet
+
+> Sundsvalls kommun följer WCAG 2.2 AA. Detta är de praktiska reglerna utvecklare och designers ska följa.
+
+URL: https://ui.sundsvall.dev/guidelines/tillganglighet/
+Källa (markdown): https://ui.sundsvall.dev/guidelines/tillganglighet.md
+
+Sundsvalls kommun är en offentlig aktör och omfattas av **Lagen om tillgänglighet till digital offentlig service (DOS-lagen, 2018:1937)**. Alla digitala tjänster ska uppfylla **WCAG 2.2 nivå AA**.
+
+## Grundkrav
+
+- **Tangentbordsnavigering** måste fungera för all interaktion. Inget ska kräva mus eller pekskärm.
+- **Synligt fokus** på alla interaktiva element. Använd token `--color-semantic-focus` med minst 2 px ringbredd.
+- **Färgkontrast**: brödtext ≥ 4.5:1 mot bakgrund, stor text (≥ 24 px regular eller ≥ 19 px bold) ≥ 3:1.
+- **Formulärfält** har alltid en synlig `<label>`. Placeholder ersätter aldrig en label.
+- **Felmeddelanden** är knutna till sitt fält med `aria-describedby` och har röd ikon + text – aldrig enbart färg som signal.
+- **Bilder** har `alt`-attribut. Dekorbilder får `alt=""`.
+- **Rörelse**: respektera `prefers-reduced-motion` – ingen autospelande animation över 5 sekunder.
+
+## Specifikt för komponenter
+
+- **Knappar**: använd `<button>` för åtgärder, `<a>` för navigering. Aldrig en `<div onClick>`.
+- **Modaler**: fokus flyttas in vid öppning, fångas tills stängning, återgår till triggern vid stängning. Esc stänger.
+- **Tabeller** har `<th scope="col">` eller `<th scope="row">`.
+- **Ikon-knappar** har `aria-label` med den åtgärd ikonen utför ("Stäng", inte "X").
+
+## Verifiering
+
+Innan en sida publiceras:
+
+1. Kör automatiserad granskning med axe DevTools eller Lighthouse – 0 fel på "Accessibility".
+2. Tabba igenom hela sidan utan mus.
+3. Testa med skärmläsare (NVDA på Windows eller VoiceOver på Mac).
+4. Kör testet med 200 % zoom – inget innehåll får klippas eller överlappa.
+
+
+---
+
+# Tonalitet och språk
+
+> Hur Sundsvalls kommun pratar i sina digitala tjänster. Klarspråk, du-tilltal och verb i imperativ på knappar.
+
+URL: https://ui.sundsvall.dev/guidelines/tonalitet/
+Källa (markdown): https://ui.sundsvall.dev/guidelines/tonalitet.md
+
+Sundsvalls kommun följer **Språklagen (2009:600)** och **klarspråksprincipen**: texten ska vara begriplig vid första genomläsningen för den som inte är expert.
+
+## Grundregler
+
+- **Du-tilltal**, aldrig "ni" eller passiv form. ("Du kan ansöka" – inte "Ansökan kan göras".)
+- **Aktiv form** framför passiv. Klargör vem som gör vad.
+- **Korta meningar.** Max ett huvudbudskap per mening.
+- **Vanliga ord.** Skriv "lämna" hellre än "inkomma med".
+- **Förkortningar** skrivs ut första gången, t.ex. "Bygg- och miljönämnden (BMN)".
+
+## Knappar och länkar
+
+- **Knapptext = verb i imperativ.** "Skicka ansökan", "Logga in", "Spara ändringar". Inte "OK", "Klicka här" eller substantiv som "Inloggning".
+- **Länktext beskriver målet.** "Läs mer om bygglov", inte "Läs mer".
+- **Maxlängd:** primärknappar 1–3 ord när det går.
+
+## Rubriker
+
+- **H1** beskriver hela sidan. En per sida.
+- **H2** används för huvudsektioner. Skriv som en mini-rubrik ur läsarens perspektiv: "När behöver jag bygglov?" snarare än "Bygglovsregler".
+
+## Felmeddelanden
+
+- Säg **vad som är fel och vad användaren kan göra**. Inte vad systemet inte kan.
+- Ja: "E-postadressen saknar ett snabel-a." Nej: "Ogiltig inmatning."
+- Skuld läggs inte på användaren.
+
+## Datum, klockslag, siffror
+
+- Datum: `2026-05-27` eller "27 maj 2026". Inte amerikansk ordning.
+- Klockslag: 24-timmarsformat, `14:30`.
+- Telefonnummer: `060-19 10 00`.
+
+
+---
+
+# Sundsvalls designsystem
+
+> AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer i ett predikterbart format som både människor och AI-agenter kan läsa.
+
+URL: https://ui.sundsvall.dev/
+Källa (markdown): https://ui.sundsvall.dev/index.md
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Vad finns här
+
+<CardGrid>
+	<Card title="Tokens" icon="seti:json">
+		Designvariabler för färg, typografi och avstånd. Källan är W3C-formaterad JSON som kompileras till CSS-variabler.
+	</Card>
+	<Card title="Komponenter" icon="puzzle">
+		Dokumentation per komponent: när, hur, varianter, tillgänglighet och kodexempel.
+	</Card>
+	<Card title="Riktlinjer" icon="open-book">
+		Tillgänglighet enligt WCAG 2.2 AA, tonalitet, språkbruk och beslutsstöd.
+	</Card>
+	<Card title="För AI-agenter" icon="rocket">
+		`llms.txt`, rå markdown på varje URL och tillåten crawling. Bygg rätt från start med en AI-assistent.
+	</Card>
+</CardGrid>
+
+## Snabblänkar
+
+<CardGrid>
+	<LinkCard title="llms.txt" href="/llms.txt" description="Maskinläsbar innehållsöversikt." />
+	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Komplett innehåll på en sida." />
+	<LinkCard title="Tillgänglighet" href="/guidelines/tillganglighet/" description="Lagkrav och kommunens regler." />
+	<LinkCard title="Knapp" href="/komponenter/button/" description="Primär komponent. Exempel och API." />
+</CardGrid>
+
+
+---
+
+# Knapp (Button)
+
+> Primär interaktiv komponent för åtgärder. Använd för allt som triggar en handling – navigering använder länkar.
+
+URL: https://ui.sundsvall.dev/komponenter/button/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/button.md
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+Knappen utför en åtgärd – skickar ett formulär, öppnar en dialog, kör en operation. För navigering till en annan sida används istället en länk.
+
+## När använda
+
+- Användaren ska utföra en åtgärd ("Skicka", "Spara", "Bekräfta").
+- Du behöver framhäva *en* primär åtgärd per kontext.
+
+## När inte använda
+
+- För att navigera till en annan sida – använd `<a>`/länk.
+- För att toggla visning av text – använd `<details>`/`<summary>` när det räcker.
+- För destruktiva åtgärder utan bekräftelse – kombinera alltid med en dialog.
+
+## Varianter
+
+| Variant     | När                                                           |
+|-------------|---------------------------------------------------------------|
+| `primary`   | Den viktigaste åtgärden i kontexten. Max en per skärm.        |
+| `secondary` | Alternativ åtgärd, t.ex. "Avbryt" bredvid "Skicka".           |
+| `ghost`     | Lågprioriterade åtgärder i täta gränssnitt.                    |
+| `danger`    | Destruktiva åtgärder ("Ta bort", "Avsluta konto").            |
+
+## API
+
+| Prop       | Typ                                                  | Standard    | Beskrivning                                              |
+|------------|------------------------------------------------------|-------------|----------------------------------------------------------|
+| `variant`  | `'primary' \| 'secondary' \| 'ghost' \| 'danger'`    | `'primary'` | Visuell hierarki.                                        |
+| `size`     | `'sm' \| 'md' \| 'lg'`                               | `'md'`      | Storlek. `md` är default.                                |
+| `disabled` | `boolean`                                            | `false`     | Inaktiverar knappen. Ange alltid orsak i hjälptext.      |
+| `type`     | `'button' \| 'submit' \| 'reset'`                    | `'button'`  | HTML-typ. Sätt `submit` för formulärsändning.            |
+
+## Exempel
+
+<Tabs>
+<TabItem label="React">
+
+```tsx
+import { Button } from '@sundsvall/ui';
+
+export function Exempel() {
+	return (
+		<form>
+			<Button variant="primary" type="submit">
+				Skicka ansökan
+			</Button>
+			<Button variant="secondary" type="button">
+				Avbryt
+			</Button>
+		</form>
+	);
+}
+```
+
+</TabItem>
+<TabItem label="HTML + tokens">
+
+```html
+<button class="btn btn-primary" type="submit">Skicka ansökan</button>
+
+<style>
+	.btn {
+		font-family: var(--font-family-sans);
+		font-weight: var(--font-weight-medium);
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius-md);
+		border: 0;
+		cursor: pointer;
+	}
+	.btn-primary {
+		background: var(--color-brand-primary);
+		color: var(--color-semantic-text-on-brand);
+	}
+	.btn-primary:hover {
+		background: var(--color-brand-primary-hover);
+	}
+	.btn:focus-visible {
+		outline: 2px solid var(--color-semantic-focus);
+		outline-offset: 2px;
+	}
+</style>
+```
+
+</TabItem>
+</Tabs>
+
+## Do / Don't
+
+✅ **Do:** "Spara ändringar", "Skicka ansökan", "Logga in" – verb i imperativ.
+
+❌ **Don't:** "OK", "Klicka här", "Mer info" – säger inget om vad som händer.
+
+✅ **Do:** En primärknapp per kontext.
+
+❌ **Don't:** Två eller fler primärknappar bredvid varandra – användaren kan inte avgöra hjälphierarki.
+
+## Tillgänglighet
+
+- Använd alltid HTML-elementet `<button>`. Aldrig `<div onClick>`.
+- Sätt `type="button"` på knappar i formulär som *inte* ska skicka.
+- Inaktiverade knappar måste förklara varför – placera en text bredvid eller använd `aria-describedby`.
+- Knappar med endast ikon kräver `aria-label`.
+
+<Aside type="caution" title="Fokus alltid synligt">
+	Ta aldrig bort `:focus-visible`-stilen. Den är ett WCAG-krav, inte en estetisk fråga.
+</Aside>
+
+## Implementation
+
+Komponenten finns referensimplementerad i `@sundsvall/ui` (kommande npm-paket). I prototypstadiet ska du bygga den direkt mot tokens enligt HTML-exemplet ovan.
+
+
+---
+
+# Översikt
+
+> Sundsvalls designsystem använder design tokens i W3C-format. Allt visuellt – färg, typografi, avstånd – kommer härifrån.
+
+URL: https://ui.sundsvall.dev/tokens/oversikt/
+Källa (markdown): https://ui.sundsvall.dev/tokens/oversikt.md
+
+Tokens är källan till sanning för allt visuellt i Sundsvalls designsystem. De definieras i `tokens-src/*.json` (W3C Design Tokens-format) och kompileras med [Style Dictionary](https://styledictionary.com/) till CSS custom properties som komponenter konsumerar.
+
+## Hur du använder dem
+
+I CSS:
+
+```css
+.knapp-primary {
+	background: var(--color-brand-primary);
+	color: var(--color-semantic-text-on-brand);
+	padding: var(--space-3) var(--space-4);
+	border-radius: var(--radius-md);
+	font-family: var(--font-family-sans);
+	font-weight: var(--font-weight-medium);
+}
+```
+
+**Aldrig** hårdkoda färger eller storlekar. Om värdet du behöver inte finns – lägg till en ny token, dokumentera den, och använd referensen.
+
+## Tre nivåer
+
+1. **Primitiver** – råa värden (`color.neutral.900`, `space.4`).
+2. **Semantiska** – meningsbärande alias (`color.semantic.text.default`, `color.semantic.focus`). **Föredra dessa i komponentkod.**
+3. **Komponent-specifika** – om en komponent behöver egna tokens, prefixa med komponentnamnet.
+
+## Tokens som finns nu
+
+### Färger
+
+- **Varumärke**: `--color-brand-primary`, `--color-brand-primary-hover`, `--color-brand-accent`
+- **Neutrala**: `--color-neutral-0` … `--color-neutral-900`
+- **Status**: `--color-status-success`, `--color-status-warning`, `--color-status-error`, `--color-status-info`
+- **Semantiska**: `--color-semantic-text-default`, `--color-semantic-text-muted`, `--color-semantic-text-on-brand`, `--color-semantic-surface-default`, `--color-semantic-surface-subtle`, `--color-semantic-border-default`, `--color-semantic-focus`
+
+### Avstånd och radius
+
+- **Avstånd**: `--space-0` … `--space-8` (skala 0 → 64 px)
+- **Hörnradier**: `--radius-none`, `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-full`
+
+### Typografi
+
+- **Familjer**: `--font-family-sans`, `--font-family-mono`
+- **Storlekar**: `--font-size-xs` … `--font-size-3xl`
+- **Vikter**: `--font-weight-regular`, `--font-weight-medium`, `--font-weight-semibold`
+- **Radhöjder**: `--font-line-height-tight`, `--font-line-height-normal`

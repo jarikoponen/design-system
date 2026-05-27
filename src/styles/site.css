@@ -1,0 +1,4 @@
+/* Egna stilar utöver Starlight. Fyll på i Fas 3+. */
+:root {
+	--sl-color-accent: var(--color-brand-primary, #005aa0);
+}

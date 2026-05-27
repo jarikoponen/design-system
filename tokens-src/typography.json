@@ -1,0 +1,34 @@
+{
+  "font": {
+    "family": {
+      "sans": {
+        "$value": "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Bröd- och UI-text. Inter när tillgängligt, annars systemets sans-serif."
+      },
+      "mono": {
+        "$value": "ui-monospace, SFMono-Regular, Menlo, monospace",
+        "$type": "fontFamily",
+        "$description": "Kod, tabeller med fasta kolumner."
+      }
+    },
+    "size": {
+      "xs":   { "$value": "0.75rem",  "$type": "dimension", "$description": "Metadata, etiketter." },
+      "sm":   { "$value": "0.875rem", "$type": "dimension", "$description": "Sekundär text." },
+      "md":   { "$value": "1rem",     "$type": "dimension", "$description": "Standard brödtext." },
+      "lg":   { "$value": "1.125rem", "$type": "dimension", "$description": "Ingress." },
+      "xl":   { "$value": "1.5rem",   "$type": "dimension", "$description": "Rubrik nivå 3." },
+      "2xl":  { "$value": "2rem",     "$type": "dimension", "$description": "Rubrik nivå 2." },
+      "3xl":  { "$value": "2.5rem",   "$type": "dimension", "$description": "Rubrik nivå 1." }
+    },
+    "weight": {
+      "regular":  { "$value": "400", "$type": "fontWeight", "$description": "Normal vikt för brödtext." },
+      "medium":   { "$value": "500", "$type": "fontWeight", "$description": "Knappar, mellanrubriker." },
+      "semibold": { "$value": "600", "$type": "fontWeight", "$description": "Rubriker." }
+    },
+    "line-height": {
+      "tight":  { "$value": "1.2", "$type": "number", "$description": "Rubriker." },
+      "normal": { "$value": "1.5", "$type": "number", "$description": "Brödtext." }
+    }
+  }
+}

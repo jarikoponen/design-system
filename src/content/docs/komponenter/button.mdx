@@ -1,0 +1,128 @@
+---
+title: Knapp (Button)
+description: Primär interaktiv komponent för åtgärder. Använd för allt som triggar en handling – navigering använder länkar.
+status: stabil
+version: 0.1.0
+tokens-used:
+  - color.brand.primary
+  - color.brand.primary-hover
+  - color.semantic.text.on-brand
+  - color.semantic.focus
+  - space.3
+  - space.4
+  - radius.md
+  - font.family.sans
+  - font.weight.medium
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+Knappen utför en åtgärd – skickar ett formulär, öppnar en dialog, kör en operation. För navigering till en annan sida används istället en länk.
+
+## När använda
+
+- Användaren ska utföra en åtgärd ("Skicka", "Spara", "Bekräfta").
+- Du behöver framhäva *en* primär åtgärd per kontext.
+
+## När inte använda
+
+- För att navigera till en annan sida – använd `<a>`/länk.
+- För att toggla visning av text – använd `<details>`/`<summary>` när det räcker.
+- För destruktiva åtgärder utan bekräftelse – kombinera alltid med en dialog.
+
+## Varianter
+
+| Variant     | När                                                           |
+|-------------|---------------------------------------------------------------|
+| `primary`   | Den viktigaste åtgärden i kontexten. Max en per skärm.        |
+| `secondary` | Alternativ åtgärd, t.ex. "Avbryt" bredvid "Skicka".           |
+| `ghost`     | Lågprioriterade åtgärder i täta gränssnitt.                    |
+| `danger`    | Destruktiva åtgärder ("Ta bort", "Avsluta konto").            |
+
+## API
+
+| Prop       | Typ                                                  | Standard    | Beskrivning                                              |
+|------------|------------------------------------------------------|-------------|----------------------------------------------------------|
+| `variant`  | `'primary' \| 'secondary' \| 'ghost' \| 'danger'`    | `'primary'` | Visuell hierarki.                                        |
+| `size`     | `'sm' \| 'md' \| 'lg'`                               | `'md'`      | Storlek. `md` är default.                                |
+| `disabled` | `boolean`                                            | `false`     | Inaktiverar knappen. Ange alltid orsak i hjälptext.      |
+| `type`     | `'button' \| 'submit' \| 'reset'`                    | `'button'`  | HTML-typ. Sätt `submit` för formulärsändning.            |
+
+## Exempel
+
+<Tabs>
+<TabItem label="React">
+
+```tsx
+import { Button } from '@sundsvall/ui';
+
+export function Exempel() {
+	return (
+		<form>
+			<Button variant="primary" type="submit">
+				Skicka ansökan
+			</Button>
+			<Button variant="secondary" type="button">
+				Avbryt
+			</Button>
+		</form>
+	);
+}
+```
+
+</TabItem>
+<TabItem label="HTML + tokens">
+
+```html
+<button class="btn btn-primary" type="submit">Skicka ansökan</button>
+
+<style>
+	.btn {
+		font-family: var(--font-family-sans);
+		font-weight: var(--font-weight-medium);
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius-md);
+		border: 0;
+		cursor: pointer;
+	}
+	.btn-primary {
+		background: var(--color-brand-primary);
+		color: var(--color-semantic-text-on-brand);
+	}
+	.btn-primary:hover {
+		background: var(--color-brand-primary-hover);
+	}
+	.btn:focus-visible {
+		outline: 2px solid var(--color-semantic-focus);
+		outline-offset: 2px;
+	}
+</style>
+```
+
+</TabItem>
+</Tabs>
+
+## Do / Don't
+
+✅ **Do:** "Spara ändringar", "Skicka ansökan", "Logga in" – verb i imperativ.
+
+❌ **Don't:** "OK", "Klicka här", "Mer info" – säger inget om vad som händer.
+
+✅ **Do:** En primärknapp per kontext.
+
+❌ **Don't:** Två eller fler primärknappar bredvid varandra – användaren kan inte avgöra hjälphierarki.
+
+## Tillgänglighet
+
+- Använd alltid HTML-elementet `<button>`. Aldrig `<div onClick>`.
+- Sätt `type="button"` på knappar i formulär som *inte* ska skicka.
+- Inaktiverade knappar måste förklara varför – placera en text bredvid eller använd `aria-describedby`.
+- Knappar med endast ikon kräver `aria-label`.
+
+<Aside type="caution" title="Fokus alltid synligt">
+	Ta aldrig bort `:focus-visible`-stilen. Den är ett WCAG-krav, inte en estetisk fråga.
+</Aside>
+
+## Implementation
+
+Komponenten finns referensimplementerad i `@sundsvall/ui` (kommande npm-paket). I prototypstadiet ska du bygga den direkt mot tokens enligt HTML-exemplet ovan.

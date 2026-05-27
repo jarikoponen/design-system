@@ -1,0 +1,44 @@
+---
+title: Sundsvalls designsystem
+description: AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer i ett predikterbart format som både människor och AI-agenter kan läsa.
+template: splash
+hero:
+  title: Designsystem för Sundsvalls kommun
+  tagline: Tokens, komponenter och riktlinjer. Sökbart för människor. Maskinläsbart för AI-agenter.
+  actions:
+    - text: Läs riktlinjerna
+      link: /guidelines/tillganglighet/
+      icon: right-arrow
+      variant: primary
+    - text: För AI-agenter
+      link: /for-ai/
+      icon: external
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Vad finns här
+
+<CardGrid>
+	<Card title="Tokens" icon="seti:json">
+		Designvariabler för färg, typografi och avstånd. Källan är W3C-formaterad JSON som kompileras till CSS-variabler.
+	</Card>
+	<Card title="Komponenter" icon="puzzle">
+		Dokumentation per komponent: när, hur, varianter, tillgänglighet och kodexempel.
+	</Card>
+	<Card title="Riktlinjer" icon="open-book">
+		Tillgänglighet enligt WCAG 2.2 AA, tonalitet, språkbruk och beslutsstöd.
+	</Card>
+	<Card title="För AI-agenter" icon="rocket">
+		`llms.txt`, rå markdown på varje URL och tillåten crawling. Bygg rätt från start med en AI-assistent.
+	</Card>
+</CardGrid>
+
+## Snabblänkar
+
+<CardGrid>
+	<LinkCard title="llms.txt" href="/llms.txt" description="Maskinläsbar innehållsöversikt." />
+	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Komplett innehåll på en sida." />
+	<LinkCard title="Tillgänglighet" href="/guidelines/tillganglighet/" description="Lagkrav och kommunens regler." />
+	<LinkCard title="Knapp" href="/komponenter/button/" description="Primär komponent. Exempel och API." />
+</CardGrid>

@@ -1,0 +1,28 @@
+{
+  "name": "ui-sundsvall-dev",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "predev": "npm run tokens:build",
+    "build": "astro build",
+    "prebuild": "npm run tokens:build && npm run llms:build",
+    "postbuild": "node scripts/copy-markdown-sources.mjs",
+    "preview": "astro preview",
+    "astro": "astro",
+    "tokens:build": "style-dictionary build --config style-dictionary.config.mjs",
+    "llms:build": "node scripts/build-llms-txt.mjs"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.39.2",
+    "astro": "^6.3.1",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "glob": "^11.0.0",
+    "gray-matter": "^4.0.3",
+    "style-dictionary": "^4.3.0"
+  }
+}
