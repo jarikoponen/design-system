@@ -1,0 +1,75 @@
+{
+  "$description": "__auto-generated__ från @sk-web-gui/theme@2.7.1. Ändra i upstream eller i descriptions-overlay/, aldrig direkt här.",
+  "screen": {
+    "phone": {
+      "DEFAULT": {
+        "$value": "320px",
+        "$type": "dimension"
+      },
+      "min": {
+        "$value": "320px",
+        "$type": "dimension"
+      },
+      "max": {
+        "$value": "479px",
+        "$type": "dimension"
+      }
+    },
+    "small-device": {
+      "DEFAULT": {
+        "$value": "480px",
+        "$type": "dimension"
+      },
+      "min": {
+        "$value": "480px",
+        "$type": "dimension"
+      },
+      "max": {
+        "$value": "767px",
+        "$type": "dimension"
+      }
+    },
+    "medium-device": {
+      "DEFAULT": {
+        "$value": "768px",
+        "$type": "dimension"
+      },
+      "min": {
+        "$value": "768px",
+        "$type": "dimension"
+      },
+      "max": {
+        "$value": "1023px",
+        "$type": "dimension"
+      }
+    },
+    "large-device": {
+      "DEFAULT": {
+        "$value": "1024px",
+        "$type": "dimension"
+      },
+      "min": {
+        "$value": "1024px",
+        "$type": "dimension"
+      },
+      "max": {
+        "$value": "1365px",
+        "$type": "dimension"
+      }
+    },
+    "desktop": {
+      "DEFAULT": {
+        "$value": "1366px",
+        "$type": "dimension"
+      },
+      "min": {
+        "$value": "1366px",
+        "$type": "dimension"
+      },
+      "max": {
+        "$value": "1600px",
+        "$type": "dimension"
+      }
+    }
+  }
+}

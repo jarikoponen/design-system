@@ -1,0 +1,47 @@
+---
+title: Ikoner
+description: Sundsvalls designsystem använder Lucide som primärt ikonbibliotek, integrerat via @sk-web-gui/icon och @sk-web-gui/lucide-icon.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Sundsvalls designsystem använder **[Lucide](https://lucide.dev/icons/)** som primärt ikonbibliotek. Det är ett open source-bibliotek (ISC-licens) med över 1500 ikoner, designat med konsekvent stroke-bredd och tydlig läsbarhet vid små storlekar.
+
+## Snabbstart
+
+Det finns två ikon-paket:
+
+| Paket                       | När använda                                                        |
+|-----------------------------|--------------------------------------------------------------------|
+| `@sk-web-gui/lucide-icon`   | Vanliga fallet. Tar en Lucide-komponent som prop och stylar den.   |
+| `@sk-web-gui/icon`          | Generisk wrapper för valfri SVG-React-komponent (inte bara Lucide).|
+
+## Exempel
+
+```tsx
+import { LucideIcon } from '@sk-web-gui/react';
+import { Heart, Search, Menu } from 'lucide-react';
+
+// Standard – ärver färg från förälder
+<LucideIcon name={Heart} />
+
+// Med specifik storlek
+<LucideIcon name={Search} size={24} />
+
+// Padded variant
+<LucideIcon.Padded name={Menu} />
+```
+
+## Storlekar och färg
+
+Ikoner ärver `color` och `font-size` från sin förälder. När en `<Button leftIcon={...}>` renderar en ikon skalas den automatiskt mot knappens storlek.
+
+## Tillgänglighet
+
+- **Funktionella ikoner** (knappar med endast ikon, ikonlänkar): kräver `aria-label` med åtgärden i imperativ, inte ikonens namn. `"Stäng"`, inte `"X"`.
+- **Dekorativa ikoner** (bredvid text): `aria-hidden="true"`. Texten gör jobbet.
+
+## Källa
+
+- Komponent: [packages/lucide-icon](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/lucide-icon)
+- Ikonkatalog: [lucide.dev/icons](https://lucide.dev/icons/)

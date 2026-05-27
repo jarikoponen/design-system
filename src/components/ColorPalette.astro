@@ -1,0 +1,40 @@
+---
+import tokens from '../data/tokens.json';
+import ColorSwatch from './ColorSwatch.astro';
+
+interface Props {
+	/** Group name like "Blue", "Green", "Vattjom" */
+	group: string;
+	/** Token key prefix in flat tokens.json, e.g. "ColorPrimitivesBlue" */
+	prefix: string;
+	/** Steps to render, e.g. ["50", "100", ...] */
+	steps?: string[];
+}
+const { group, prefix, steps = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'] } = Astro.props;
+
+const entries = steps
+	.map((step) => {
+		const key = `${prefix}${step}`;
+		// @ts-expect-error – tokens is a flat record
+		const value = tokens[key];
+		return value ? { step, value } : null;
+	})
+	.filter(Boolean);
+---
+
+<section class="palette">
+	<h3>{group}</h3>
+	<div class="grid">
+		{entries.map((e) => <ColorSwatch name={`${group} ${e!.step}`} value={e!.value} />)}
+	</div>
+</section>
+
+<style>
+	.palette { margin: 2rem 0; }
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+		gap: 0.5rem;
+	}
+	h3 { margin-bottom: 0.5rem; }
+</style>

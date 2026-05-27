@@ -1,0 +1,43 @@
+---
+interface Props {
+	fontFamily?: string;
+	fontWeight?: string | number;
+	sizes?: Array<string | number>;
+	sampleText?: string;
+}
+const {
+	fontFamily = 'Raleway, Arial, sans-serif',
+	fontWeight = 400,
+	sizes = [52, 40, 32, 24, 20, 18],
+	sampleText = 'The alternative to good design is bad design',
+} = Astro.props;
+---
+
+<div class="typeset" style={`font-family: ${fontFamily}; font-weight: ${fontWeight};`}>
+	{sizes.map((s) => (
+		<div class="row">
+			<span class="meta">{typeof s === 'number' ? `${s}px` : s}</span>
+			<span class="sample" style={`font-size: ${typeof s === 'number' ? `${s}px` : s};`}>
+				{sampleText}
+			</span>
+		</div>
+	))}
+</div>
+
+<style>
+	.typeset { margin: 1.5rem 0; }
+	.row {
+		display: grid;
+		grid-template-columns: 4rem 1fr;
+		align-items: baseline;
+		gap: 1rem;
+		padding: 0.25rem 0;
+		border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+	}
+	.meta {
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.75rem;
+		opacity: 0.6;
+	}
+	.sample { line-height: 1.1; }
+</style>

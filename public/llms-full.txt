@@ -118,9 +118,316 @@ Sundsvalls kommun följer **Språklagen (2009:600)** och **klarspråksprincipen*
 
 ---
 
+# Färger
+
+> Sundsvalls kommuns färgpalett. Primitiver per kulör och de fyra varumärkesteman vattjom, grönsta, juniskär och björnstigen.
+
+URL: https://ui.sundsvall.dev/identitet/farger/
+Källa (markdown): https://ui.sundsvall.dev/identitet/farger.md
+
+import ColorPalette from '../../../components/ColorPalette.astro';
+import ColorSwatch from '../../../components/ColorSwatch.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+Sundsvalls designsystem bygger på en bred färgpalett av **primitiver** (rena kulörskalor i 10 steg, 50–900) och **semantiska teman** som mappar primitiverna mot meningsbärande färger för olika kontexter. Värden hämtas live från `@sk-web-gui/theme`.
+
+<Aside type="caution" title="Aldrig hårdkoda hex">
+	Använd CSS-variabler (`var(--color-primitives-blue-700)`, `var(--color-light-vattjom-surface-primary-default)`) eller Tailwind-klasser från `@sk-web-gui/core`. Hex direkt i kod gör det omöjligt att stödja dark mode och varumärkesuppdateringar.
+</Aside>
+
+## Primitiver
+
+Detta är basskalorna. Använd dem för att bygga semantik, inte direkt i komponentkod.
+
+<ColorPalette group="Gray" prefix="ColorPrimitivesGray" />
+<ColorPalette group="Blue" prefix="ColorPrimitivesBlue" />
+<ColorPalette group="Green" prefix="ColorPrimitivesGreen" />
+<ColorPalette group="Purple" prefix="ColorPrimitivesPurple" />
+<ColorPalette group="Pink" prefix="ColorPrimitivesPink" />
+<ColorPalette group="Orange" prefix="ColorPrimitivesOrange" />
+<ColorPalette group="Red" prefix="ColorPrimitivesRed" />
+
+## Varumärkesteman
+
+Sundsvall har fyra teman uppkallade efter platser i kommunen. Varje tema har en `surface.primary`, `surface.accent`, `text` och tre `background`-nyanser. På Button-komponenten exponeras dem som `color="vattjom"` etc.
+
+### Vattjom – blå
+
+Det primära varumärkestemat. Används för standard primärknappar, länkar och fokusringar.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#005595" />
+	<ColorSwatch name="surface.primary hover" value="#004070" />
+	<ColorSwatch name="surface.accent" value="#cfe0ec" />
+	<ColorSwatch name="surface.accent hover" value="#e1ecf4" />
+	<ColorSwatch name="text" value="#004c85" />
+	<ColorSwatch name="background 100" value="#f0f5f9" />
+</div>
+
+### Grönsta – grön
+
+För framgångsindikationer, miljö- och hållbarhetsbudskap.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#00733b" />
+	<ColorSwatch name="surface.primary hover" value="#00592d" />
+	<ColorSwatch name="surface.accent" value="#c9e4d7" />
+	<ColorSwatch name="text" value="#00592d" />
+	<ColorSwatch name="background 100" value="#f1f9f5" />
+</div>
+
+### Juniskär – orange
+
+För framträdande, expressiva ytor – men sparsamt.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#b94e18" />
+	<ColorSwatch name="surface.accent" value="#ffd3a8" />
+</div>
+
+### Björnstigen – lila
+
+För att differentiera sekundära flöden från huvudbudskapet.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="surface.primary" value="#5b1f78" />
+	<ColorSwatch name="surface.accent" value="#e4d8e9" />
+</div>
+
+## Status
+
+Funktionella färger för meddelanden.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:0.5rem;">
+	<ColorSwatch name="success" value="#00733b" />
+	<ColorSwatch name="warning" value="#b6620c" />
+	<ColorSwatch name="error" value="#a90074" />
+	<ColorSwatch name="info" value="#005595" />
+</div>
+
+## Källa
+
+Färgerna definieras i [packages/theme/src/colors.ts](https://github.com/Sundsvallskommun/web-shared-components/blob/main/packages/theme/src/colors.ts) i web-shared-components. Importeras i runtime via `@sk-web-gui/theme`. CSS-variabler genereras av `@sk-web-gui/core`.
+
+
+---
+
+# Ikoner
+
+> Sundsvalls designsystem använder Lucide som primärt ikonbibliotek, integrerat via @sk-web-gui/icon och @sk-web-gui/lucide-icon.
+
+URL: https://ui.sundsvall.dev/identitet/ikoner/
+Källa (markdown): https://ui.sundsvall.dev/identitet/ikoner.md
+
+import { Aside } from '@astrojs/starlight/components';
+
+Sundsvalls designsystem använder **[Lucide](https://lucide.dev/icons/)** som primärt ikonbibliotek. Det är ett open source-bibliotek (ISC-licens) med över 1500 ikoner, designat med konsekvent stroke-bredd och tydlig läsbarhet vid små storlekar.
+
+## Snabbstart
+
+Det finns två ikon-paket:
+
+| Paket                       | När använda                                                        |
+|-----------------------------|--------------------------------------------------------------------|
+| `@sk-web-gui/lucide-icon`   | Vanliga fallet. Tar en Lucide-komponent som prop och stylar den.   |
+| `@sk-web-gui/icon`          | Generisk wrapper för valfri SVG-React-komponent (inte bara Lucide).|
+
+## Exempel
+
+```tsx
+import { LucideIcon } from '@sk-web-gui/react';
+import { Heart, Search, Menu } from 'lucide-react';
+
+// Standard – ärver färg från förälder
+<LucideIcon name={Heart} />
+
+// Med specifik storlek
+<LucideIcon name={Search} size={24} />
+
+// Padded variant
+<LucideIcon.Padded name={Menu} />
+```
+
+## Storlekar och färg
+
+Ikoner ärver `color` och `font-size` från sin förälder. När en `<Button leftIcon={...}>` renderar en ikon skalas den automatiskt mot knappens storlek.
+
+## Tillgänglighet
+
+- **Funktionella ikoner** (knappar med endast ikon, ikonlänkar): kräver `aria-label` med åtgärden i imperativ, inte ikonens namn. `"Stäng"`, inte `"X"`.
+- **Dekorativa ikoner** (bredvid text): `aria-hidden="true"`. Texten gör jobbet.
+
+## Källa
+
+- Komponent: [packages/lucide-icon](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/lucide-icon)
+- Ikonkatalog: [lucide.dev/icons](https://lucide.dev/icons/)
+
+
+---
+
+# Logotyper
+
+> Sundsvalls kommuns logotyp – språkversioner, frizon, färgval och favicon-beskärning.
+
+URL: https://ui.sundsvall.dev/identitet/logotyper/
+Källa (markdown): https://ui.sundsvall.dev/identitet/logotyper.md
+
+import { Aside } from '@astrojs/starlight/components';
+
+Sundsvalls kommuns logotyp finns i tre språkversioner och fyra färgval. Den ska aldrig modifieras, lutas eller dekoreras.
+
+## Vad du behöver veta
+
+| Egenskap        | Regel                                                                                                  |
+|-----------------|--------------------------------------------------------------------------------------------------------|
+| **Frizon**      | Minst lika stor som logotypens "S" runt hela märket. Inget får placeras inom denna zon.                 |
+| **Minsta storlek** | Logotypen ska vara läsbar. Sätt aldrig under 16 px hög för digital användning.                       |
+| **Bakgrund**    | Använd den variant som har tillräcklig kontrast mot bakgrunden (4.5:1 minst).                            |
+| **Beskärning**  | Endast som favicon (16/32/64 px) får logotypen beskäras till "S"-märket utan kommunnamn.                 |
+
+<Aside type="caution" title="Aldrig">
+	- Aldrig rotera, luta eller spegla logotypen.
+	- Aldrig byta typsnitt eller färg utanför de godkända paletterna.
+	- Aldrig placera logotypen mot bakgrund med otillräcklig kontrast.
+</Aside>
+
+## Implementation
+
+Logotypen finns som React-komponent:
+
+```tsx
+import { Logo } from '@sk-web-gui/react';
+
+<Logo variant="primary" />
+```
+
+Se [Logo-komponenten](/komponenter/logo/) för API och varianter.
+
+## Källa
+
+- Riktlinjer: [stilguide.sundsvall.se → Identitet → Logotyper](https://stilguide.sundsvall.se/?path=/docs/identitet-logotyper--dokumentation)
+- Komponent: [packages/logo](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/logo)
+
+
+---
+
+# SiteVision-design
+
+> Designriktlinjer för Sundsvalls kommuns SiteVision-baserade webbplatser. Underhålls direkt i stilguiden.
+
+URL: https://ui.sundsvall.dev/identitet/sitevision/
+Källa (markdown): https://ui.sundsvall.dev/identitet/sitevision.md
+
+Sundsvalls kommun designar sina publika webbplatser i SiteVision. Detaljerade designriktlinjer för **desktop**- och **mobilvy** finns i den ursprungliga stilguiden och har inte importerats hit eftersom de innehåller hundratals megabyte med skärmbilder som inte gör nytta för AI-agenter som ska bygga kod.
+
+## Läs riktlinjerna direkt
+
+- **[Hur vi designar webbplatser för SiteVision – Webbvy](https://stilguide.sundsvall.se/?path=/docs/guider-hur-vi-designar-webbplatser-f%C3%B6r-sitevision-webbvy--dokumentation)**
+- **[Hur vi designar webbplatser för SiteVision – Mobilvy](https://stilguide.sundsvall.se/?path=/docs/guider-hur-vi-designar-webbplatser-f%C3%B6r-sitevision-mobilvy--dokumentation)**
+
+Använd den här portalen (`ui.sundsvall.dev`) för komponenter och tokens, och stilguidens egna sidor för SiteVision-specifik layout och redaktionellt arbete.
+
+
+---
+
+# Typografi
+
+> Sundsvalls kommun använder Raleway för rubriker och Arial för brödtext. Storlekarna är semantiska – ingen pixel-direktanvändning.
+
+URL: https://ui.sundsvall.dev/identitet/typografi/
+Källa (markdown): https://ui.sundsvall.dev/identitet/typografi.md
+
+import TypeSample from '../../../components/TypeSample.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+## Typsnitt
+
+Sundsvalls kommun använder **Raleway** för rubriker och display-text, och **Arial** för brödtext och UI. Båda används för att de redan finns installerade på de flesta system.
+
+| Stack            | Använd för                                | Token                          |
+|------------------|-------------------------------------------|--------------------------------|
+| Raleway, Arial   | Rubriker, hero, display                   | `--font-family-header`         |
+| Arial, Helvetica | Brödtext, knappar, formulär, navigering   | `--font-family-default`        |
+| monospace        | Kod, tabeller med fast bredd              | `--font-family-mono`           |
+
+<Aside type="tip" title="Webbfont">
+	Raleway laddas inte från CDN i `@sk-web-gui/core`-paketet. Det är upp till applikationen att inkludera den (t.ex. via Google Fonts eller självhost). Om Raleway saknas faller stacken tillbaka på Arial automatiskt.
+</Aside>
+
+## Rubriker (Raleway)
+
+<TypeSample
+	fontFamily="Raleway, Arial, sans-serif"
+	fontWeight={400}
+	sizes={[52, 40, 32, 24, 20, 18]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+### Raleway Bold
+
+<TypeSample
+	fontFamily="Raleway, Arial, sans-serif"
+	fontWeight={700}
+	sizes={[52, 40, 32, 24, 20, 18]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+## Brödtext (Arial)
+
+<TypeSample
+	fontFamily="Arial, Helvetica, sans-serif"
+	fontWeight={400}
+	sizes={[24, 20, 18, 16, 14, 12, 10]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+### Arial Bold
+
+<TypeSample
+	fontFamily="Arial, Helvetica, sans-serif"
+	fontWeight={700}
+	sizes={[24, 20, 18, 16, 14, 12, 10]}
+	sampleText="Den enda meningen om designsystem som inte finns"
+/>
+
+## Knapptext (Raleway Bold)
+
+<TypeSample
+	fontFamily="Raleway, Arial, sans-serif"
+	fontWeight={700}
+	sizes={[16, 14, 12]}
+	sampleText="Skicka ansökan"
+/>
+
+## Semantiska storlekar
+
+Designsystemets `fontSizes` är **semantiska**, inte numeriska. Använd dessa i kod – inte rå pixel-storlek.
+
+| Token                   | Värde      | När använda                           |
+|-------------------------|------------|---------------------------------------|
+| `font-size-display-1`   | 8rem       | Hero / landningssida                  |
+| `font-size-h-1`         | 4rem       | Sidans huvudrubrik                    |
+| `font-size-h-2`         | 3.2rem     | Sektionsrubrik                        |
+| `font-size-h-3`         | 2.6rem     | Underrubrik                           |
+| `font-size-h-4`         | 2.4rem     | Mindre rubrik                         |
+| `font-size-lead`        | 2rem       | Ingress                               |
+| `font-size-base`        | 1.6rem     | Brödtext (standard)                   |
+| `font-size-large`       | 1.8rem     | Större brödtext                       |
+| `font-size-small`       | 1.4rem     | Metadata, hjälptext                   |
+| `font-size-label-*`     | 1.2–1.8rem | Formuläretiketter (storlek per size)  |
+
+Storlekarna har responsiva varianter (`lg`, `md`, `sm`) — komponenterna i `@sk-web-gui/react` plockar rätt storlek per breakpoint automatiskt.
+
+## Källa
+
+Typsnittsstack: [packages/theme/src/fonts.ts](https://github.com/Sundsvallskommun/web-shared-components/blob/main/packages/theme/src/fonts.ts). Storlekar: [packages/theme/src/units.ts](https://github.com/Sundsvallskommun/web-shared-components/blob/main/packages/theme/src/units.ts).
+
+
+---
+
 # Sundsvalls designsystem
 
-> AI-vänlig designsystem-portal för Sundsvalls kommun. Tokens, komponenter och riktlinjer i ett predikterbart format som både människor och AI-agenter kan läsa.
+> AI-vänlig portal för Sundsvalls kommuns designsystem. Tokens, komponenter och riktlinjer hämtade direkt från @sk-web-gui på predikterbara URL:er.
 
 URL: https://ui.sundsvall.dev/
 Källa (markdown): https://ui.sundsvall.dev/index.md
@@ -130,14 +437,14 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 ## Vad finns här
 
 <CardGrid>
-	<Card title="Tokens" icon="seti:json">
-		Designvariabler för färg, typografi och avstånd. Källan är W3C-formaterad JSON som kompileras till CSS-variabler.
+	<Card title="Identitet" icon="approve-check">
+		Färger, typografi, ikoner och logotyper. Värdena hämtas live från `@sk-web-gui/theme`.
 	</Card>
 	<Card title="Komponenter" icon="puzzle">
-		Dokumentation per komponent: när, hur, varianter, tillgänglighet och kodexempel.
+		Auto-genererad dokumentation per komponent från `web-shared-components`-Storybook: props, varianter, källa-länkar.
 	</Card>
 	<Card title="Riktlinjer" icon="open-book">
-		Tillgänglighet enligt WCAG 2.2 AA, tonalitet, språkbruk och beslutsstöd.
+		Tillgänglighet (WCAG 2.2 AA), tonalitet och språkbruk för Sundsvalls digitala tjänster.
 	</Card>
 	<Card title="För AI-agenter" icon="rocket">
 		`llms.txt`, rå markdown på varje URL och tillåten crawling. Bygg rätt från start med en AI-assistent.
@@ -147,186 +454,1027 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 ## Snabblänkar
 
 <CardGrid>
-	<LinkCard title="llms.txt" href="/llms.txt" description="Maskinläsbar innehållsöversikt." />
-	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Komplett innehåll på en sida." />
-	<LinkCard title="Tillgänglighet" href="/guidelines/tillganglighet/" description="Lagkrav och kommunens regler." />
-	<LinkCard title="Knapp" href="/komponenter/button/" description="Primär komponent. Exempel och API." />
+	<LinkCard title="llms-full.txt" href="/llms-full.txt" description="Hela portalens innehåll i en fil – för engångsuppladdning i en AI-assistent." />
+	<LinkCard title="Färger" href="/identitet/farger/" description="Primitiver + de fyra varumärkesteman vattjom, grönsta, juniskär, björnstigen." />
+	<LinkCard title="Typografi" href="/identitet/typografi/" description="Raleway för rubriker, Arial för brödtext." />
+	<LinkCard title="Button" href="/komponenter/button/" description="Den primära interaktiva komponenten. Props, varianter, kodexempel." />
 </CardGrid>
+
+## Förhållande till stilguide.sundsvall.se
+
+Den här portalen speglar [`Sundsvallskommun/web-shared-components`](https://github.com/Sundsvallskommun/web-shared-components) i ett AI-vänligt format. Den **ursprungliga stilguiden** ([stilguide.sundsvall.se](https://stilguide.sundsvall.se)) är fortfarande den primära referensen för människor med interaktiv Storybook och fullständiga SiteVision-designriktlinjer. Den här portalen är optimerad för att en AI-assistent ska kunna producera korrekt kod direkt mot designsystemet, utan att människor i mellanled.
 
 
 ---
 
-# Knapp (Button)
+# Alert
 
-> Primär interaktiv komponent för åtgärder. Använd för allt som triggar en handling – navigering använder länkar.
+> Alert.Component – komponent från @sk-web-gui/alert.
+
+URL: https://ui.sundsvall.dev/komponenter/alert/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/alert.md
+
+{/* AUTO-GENERATED från @sk-web-gui/alert@1.1.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Alert.Component` finns i [`@sk-web-gui/alert`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/alert). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Alert.Component } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "type": "info",
+  "size": "md"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/alert](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/alert)
+- Storybook: [Alert](https://stilguide.sundsvall.se/?path=/docs/komponenter-alert--dokumentation)
+
+
+---
+
+# Button.Group
+
+> Button.Group – komponent från @sk-web-gui/button.
+
+URL: https://ui.sundsvall.dev/komponenter/button-button-group/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/button-button-group.md
+
+{/* AUTO-GENERATED från @sk-web-gui/button@2.1.10. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Button.Group` finns i [`@sk-web-gui/button`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/button). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Button.Group } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/button](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/button)
+- Storybook: [Button.Group](https://stilguide.sundsvall.se/?path=/docs/komponenter-button-button.group--dokumentation)
+
+
+---
+
+# Button
+
+> Button – komponent från @sk-web-gui/button.
 
 URL: https://ui.sundsvall.dev/komponenter/button/
 Källa (markdown): https://ui.sundsvall.dev/komponenter/button.md
 
-import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+{/* AUTO-GENERATED från @sk-web-gui/button@2.1.10. Manuella ändringar skrivs över vid nästa sync. */}
 
-Knappen utför en åtgärd – skickar ett formulär, öppnar en dialog, kör en operation. För navigering till en annan sida används istället en länk.
+import { Aside } from '@astrojs/starlight/components';
 
-## När använda
+<Aside type="tip" title="Källa">
+`Button` finns i [`@sk-web-gui/button`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/button). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
 
-- Användaren ska utföra en åtgärd ("Skicka", "Spara", "Bekräfta").
-- Du behöver framhäva *en* primär åtgärd per kontext.
+## Installation
 
-## När inte använda
+```bash
+npm install @sk-web-gui/react
+```
 
-- För att navigera till en annan sida – använd `<a>`/länk.
-- För att toggla visning av text – använd `<details>`/`<summary>` när det räcker.
-- För destruktiva åtgärder utan bekräftelse – kombinera alltid med en dialog.
+## Användning
 
-## Varianter
-
-| Variant     | När                                                           |
-|-------------|---------------------------------------------------------------|
-| `primary`   | Den viktigaste åtgärden i kontexten. Max en per skärm.        |
-| `secondary` | Alternativ åtgärd, t.ex. "Avbryt" bredvid "Skicka".           |
-| `ghost`     | Lågprioriterade åtgärder i täta gränssnitt.                    |
-| `danger`    | Destruktiva åtgärder ("Ta bort", "Avsluta konto").            |
+```tsx
+import { Button } from '@sk-web-gui/react';
+```
 
 ## API
 
-| Prop       | Typ                                                  | Standard    | Beskrivning                                              |
-|------------|------------------------------------------------------|-------------|----------------------------------------------------------|
-| `variant`  | `'primary' \| 'secondary' \| 'ghost' \| 'danger'`    | `'primary'` | Visuell hierarki.                                        |
-| `size`     | `'sm' \| 'md' \| 'lg'`                               | `'md'`      | Storlek. `md` är default.                                |
-| `disabled` | `boolean`                                            | `false`     | Inaktiverar knappen. Ange alltid orsak i hjälptext.      |
-| `type`     | `'button' \| 'submit' \| 'reset'`                    | `'button'`  | HTML-typ. Sätt `submit` för formulärsändning.            |
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `loading` | `boolean` | `false` | Sets loading spinner |
+| `disabled` | `boolean` | `false` | Sets disabled |
+| `active` | `boolean` | `–` | Makes button active |
+| `loadingText` | `string` | `` | Sets loading text |
+| `leftIcon` | `React.ReactElement` | `–` | Set the original html type of button Adds icon before button label |
+| `rightIcon` | `React.ReactElement` | `–` | Adds icon after button label |
+| `color` | `'info' \| 'success' \| 'primary' \| 'warning' \| 'error' \| 'vattjom' \| 'gronsta' \| 'bjornstigen' \| 'juniskar'` | `primary` | Sets color |
+| `size` | `'sm' \| 'md' \| 'lg'` | `md` | Sets size |
+| `variant` | `'link' \| 'primary' \| 'secondary' \| 'tertiary' \| 'ghost'` | `primary` | Sets variant |
+| `children` | `React.ReactNode` | `–` | React node |
+| `rounded` | `boolean` | `false` | Sets rounded variant |
+| `inverted` | `boolean` | `false` | Sets inverted style |
+| `iconButton` | `boolean` | `false` | Sets if icon button |
+| `aria-disabled` | `React.ButtonHTMLAttributes<HTMLButtonElement>['aria-disabled']` | `–` | Sets aria-disabled |
+| `showBackground` | `boolean` | `–` | If the background of the button should be shown @default true |
+| `as` | `React.ElementType` | `–` | @default button |
 
-## Exempel
+## Enum-värden
 
-<Tabs>
-<TabItem label="React">
+- **size**: `sm`, `md`, `lg`
+- **variant**: `link`, `primary`, `secondary`, `tertiary`
+- **type**: `reset`, `button`, `submit`
+- **color**: `undefined`, `primary`, `gronsta`, `vattjom`, `juniskar`, `bjornstigen`, `error`, `warning`, `success`
+- **aria-disabled**: `undefined`, `true`, `false`
 
-```tsx
-import { Button } from '@sundsvall/ui';
 
-export function Exempel() {
-	return (
-		<form>
-			<Button variant="primary" type="submit">
-				Skicka ansökan
-			</Button>
-			<Button variant="secondary" type="button">
-				Avbryt
-			</Button>
-		</form>
-	);
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "children": "Knapptext",
+  "color": "primary"
 }
 ```
 
-</TabItem>
-<TabItem label="HTML + tokens">
+## Storyvarianter
 
-```html
-<button class="btn btn-primary" type="submit">Skicka ansökan</button>
+- **Template** – standardstory
 
-<style>
-	.btn {
-		font-family: var(--font-family-sans);
-		font-weight: var(--font-weight-medium);
-		padding: var(--space-3) var(--space-4);
-		border-radius: var(--radius-md);
-		border: 0;
-		cursor: pointer;
-	}
-	.btn-primary {
-		background: var(--color-brand-primary);
-		color: var(--color-semantic-text-on-brand);
-	}
-	.btn-primary:hover {
-		background: var(--color-brand-primary-hover);
-	}
-	.btn:focus-visible {
-		outline: 2px solid var(--color-semantic-focus);
-		outline-offset: 2px;
-	}
-</style>
-```
+## Källa
 
-</TabItem>
-</Tabs>
+- Implementation: [@sk-web-gui/button](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/button)
+- Storybook: [Button](https://stilguide.sundsvall.se/?path=/docs/komponenter-button--dokumentation)
 
-## Do / Don't
 
-✅ **Do:** "Spara ändringar", "Skicka ansökan", "Logga in" – verb i imperativ.
+---
 
-❌ **Don't:** "OK", "Klicka här", "Mer info" – säger inget om vad som händer.
+# Checkbox.Group
 
-✅ **Do:** En primärknapp per kontext.
+> Checkbox.Group – komponent från @sk-web-gui/forms.
 
-❌ **Don't:** Två eller fler primärknappar bredvid varandra – användaren kan inte avgöra hjälphierarki.
+URL: https://ui.sundsvall.dev/komponenter/checkbox-checkbox-group/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/checkbox-checkbox-group.md
 
-## Tillgänglighet
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
 
-- Använd alltid HTML-elementet `<button>`. Aldrig `<div onClick>`.
-- Sätt `type="button"` på knappar i formulär som *inte* ska skicka.
-- Inaktiverade knappar måste förklara varför – placera en text bredvid eller använd `aria-describedby`.
-- Knappar med endast ikon kräver `aria-label`.
+import { Aside } from '@astrojs/starlight/components';
 
-<Aside type="caution" title="Fokus alltid synligt">
-	Ta aldrig bort `:focus-visible`-stilen. Den är ett WCAG-krav, inte en estetisk fråga.
+<Aside type="tip" title="Källa">
+`Checkbox.Group` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
 </Aside>
 
-## Implementation
+## Installation
 
-Komponenten finns referensimplementerad i `@sundsvall/ui` (kommande npm-paket). I prototypstadiet ska du bygga den direkt mot tokens enligt HTML-exemplet ovan.
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Checkbox.Group } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **ExampleWithForm** – standardstory
+- **ExampleWithState** – standardstory
+- **ExampleWithIndeterminate** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [Checkbox.Group](https://stilguide.sundsvall.se/?path=/docs/komponenter-checkbox-checkbox.group--dokumentation)
+
+
+---
+
+# Checkbox
+
+> Checkbox – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/checkbox/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/checkbox.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Checkbox` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Checkbox } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **ExampleWithForm** – standardstory
+- **Inaktiverad** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [Checkbox](https://stilguide.sundsvall.se/?path=/docs/komponenter-checkbox--dokumentation)
+
+
+---
+
+# Combobox
+
+> Combobox.Input – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/combobox/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/combobox.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Combobox.Input` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Combobox.Input } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "placeholder": "Välj en frukt",
+  "searchPlaceholder": "Skriv för att filtrera"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **WithOptionGroups** – standardstory
+- **CustomFilterHandler** – standardstory
+- **SingleChoiceWithForm** – standardstory
+- **MultipleChoicesWithForm** – standardstory
+- **MultipleChoicesWithFormAndAddFunction** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [Combobox](https://stilguide.sundsvall.se/?path=/docs/komponenter-combobox--dokumentation)
+
+
+---
+
+# DatePicker
+
+> DatePicker – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/datepicker/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/datepicker.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`DatePicker` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { DatePicker } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `type` | `'date' \| 'time' \| 'datetime-local'` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Disabled** – standardstory
+- **Invalid** – standardstory
+- **Storlekar** – standardstory
+- **Datum** – standardstory
+- **Tid** – standardstory
+- **DatumTid** – standardstory
+- **WithForms** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [DatePicker](https://stilguide.sundsvall.se/?path=/docs/komponenter-datepicker--dokumentation)
+
+
+---
+
+# FormControl
+
+> FormControl – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/formular-formcontrol/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/formular-formcontrol.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`FormControl` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { FormControl } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Storlekar** – standardstory
+- **Invaliderad** – standardstory
+- **Obligatorisk** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [FormControl](https://stilguide.sundsvall.se/?path=/docs/komponenter-formular-formcontrol--dokumentation)
+
+
+---
+
+# Formulär
+
+> Input – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/formular/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/formular.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Input` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Input } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `hideExtra` | `boolean` | `–` | If you want to hide native extra apperances, such as number arrows and icons @default true |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "placeholder": "Sök..."
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Disabled** – standardstory
+- **Invalid** – standardstory
+- **Storlekar** – standardstory
+- **Datum** – standardstory
+- **Tid** – standardstory
+- **DatumTid** – standardstory
+- **Addin** – standardstory
+- **Addon** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [Formulär](https://stilguide.sundsvall.se/?path=/docs/komponenter-formular--dokumentation)
+
+
+---
+
+# Link
+
+> Link – komponent från @sk-web-gui/link.
+
+URL: https://ui.sundsvall.dev/komponenter/link/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/link.md
+
+{/* AUTO-GENERATED från @sk-web-gui/link@1.2.9. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Link` finns i [`@sk-web-gui/link`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/link). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Link } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `disabled` | `boolean` | `false` | Sets disabled |
+| `external` | `boolean` | `false` | Sets external |
+| `children` | `React.ReactNode` | `–` | React node |
+| `hideExternalIcon` | `boolean` | `false` | Sets hideExternalIcon |
+| `size` | `'sm' \| 'md' \| 'lg' \| 'xl'` | `` | Sets size |
+| `strong` | `boolean` | `false` | Sets strong |
+| `variant` | `'primary' \| 'tertiary'` | `primary` | Sets variant |
+| `inverted` | `boolean` | `false` | Inverted colors |
+
+## Enum-värden
+
+- **size**: `undefined`, `sm`, `md`, `lg`, `xl`
+- **variant**: `primary`, `tertiary`
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "href": "#"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/link](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/link)
+- Storybook: [Link](https://stilguide.sundsvall.se/?path=/docs/komponenter-link--dokumentation)
+
+
+---
+
+# RadioButton.Group
+
+> RadioButton.Group – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/radiobutton-radiobutton-group/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/radiobutton-radiobutton-group.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`RadioButton.Group` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { RadioButton.Group } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **ExampleWithForm** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [RadioButton.Group](https://stilguide.sundsvall.se/?path=/docs/komponenter-radiobutton-radiobutton.group--dokumentation)
+
+
+---
+
+# RadioButton
+
+> RadioButton – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/radiobutton/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/radiobutton.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`RadioButton` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { RadioButton } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `invalid` | `boolean` | `–` | Makes radio invalid |
+| `required` | `React.InputHTMLAttributes<T>['required']` | `–` | Makes radio required |
+| `readOnly` | `React.InputHTMLAttributes<T>['readOnly']` | `–` | Makes radio readOnly |
+| `disabled` | `React.InputHTMLAttributes<T>['disabled']` | `–` | Makes radio disabled |
+| `defaultChecked` | `boolean` | `–` | If `true`, the radio will be initially checked. |
+| `checked` | `boolean` | `–` | If `true`, the radio will be checked. You'll need to pass `onChange` to update it's value (since it's now controlled) |
+| `onChange` | `React.ChangeEventHandler<HTMLInputElement>` | `–` | The callback invoked when the checked state of the `radio` changes.. |
+| `size` | `'sm' \| 'md' \| 'lg'` | `–` | Size of the radio @default md |
+| `children` | `React.ReactNode` | `–` | The children is the label to be displayed to the right of the radio. |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Invaliderad** – standardstory
+- **Inaktiverad** – standardstory
+- **Storlekar** – standardstory
+- **FormControlComp** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [RadioButton](https://stilguide.sundsvall.se/?path=/docs/komponenter-radiobutton--dokumentation)
+
+
+---
+
+# Select
+
+> Select – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/select/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/select.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Select` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Select } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "variant": "primary"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Inaktiverad** – standardstory
+- **Invaliderad** – standardstory
+- **Storlekar** – standardstory
+- **Grupp** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [Select](https://stilguide.sundsvall.se/?path=/docs/komponenter-select--dokumentation)
+
+
+---
+
+# Spinner
+
+> Spinner – komponent från @sk-web-gui/spinner.
+
+URL: https://ui.sundsvall.dev/komponenter/spinner/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/spinner.md
+
+{/* AUTO-GENERATED från @sk-web-gui/spinner@1.1.9. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Spinner` finns i [`@sk-web-gui/spinner`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/spinner). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Spinner } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `size` | `number` | `–` | Set size of the spinner in rem @default 4 |
+| `color` | `'tertiary' \| 'vattjom' \| 'gronsta' \| 'bjornstigen' \| 'juniskar' \| 'warning' \| 'info' \| 'success' \| 'error'` | `–` | Set color of the spinner @default tertiary |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/spinner](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/spinner)
+- Storybook: [Spinner](https://stilguide.sundsvall.se/?path=/docs/komponenter-spinner--dokumentation)
+
+
+---
+
+# Switch
+
+> Switch – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/switch/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/switch.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Switch` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Switch } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `color` | `'tertiary' \| 'gronsta'` | `–` | Set the switch color @default tertiary |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "disabled": false
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **WithForm** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [Switch](https://stilguide.sundsvall.se/?path=/docs/komponenter-switch--dokumentation)
+
+
+---
+
+# Textarea
+
+> Textarea – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/textarea/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/textarea.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Textarea` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Textarea } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `showCount` | `boolean` | `–` |  |
+| `maxLength` | `number` | `–` |  |
+| `maxLengthWarningText` | `string` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Disabled** – standardstory
+- **Readonly** – standardstory
+- **Invalid** – standardstory
+- **Counter** – standardstory
+- **WithUseForm** – standardstory
+- **TextareaGroup** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [Textarea](https://stilguide.sundsvall.se/?path=/docs/komponenter-textarea--dokumentation)
+
+
+---
+
+# TextField
+
+> TextField – komponent från @sk-web-gui/forms.
+
+URL: https://ui.sundsvall.dev/komponenter/textfield/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/textfield.md
+
+{/* AUTO-GENERATED från @sk-web-gui/forms@2.9.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`TextField` finns i [`@sk-web-gui/forms`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { TextField } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `type` | `'text' \| 'email' \| 'password' \| 'url'` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "placeholder": "Textfält"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Disabled** – standardstory
+- **Readonly** – standardstory
+- **Invalid** – standardstory
+- **Storlekar** – standardstory
+- **Addin** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
+- Storybook: [TextField](https://stilguide.sundsvall.se/?path=/docs/komponenter-textfield--dokumentation)
 
 
 ---
 
 # Översikt
 
-> Sundsvalls designsystem använder design tokens i W3C-format. Allt visuellt – färg, typografi, avstånd – kommer härifrån.
+> Hur designtokens fungerar i Sundsvalls designsystem. Värdena hämtas live från @sk-web-gui/theme och kompileras till CSS-variabler.
 
 URL: https://ui.sundsvall.dev/tokens/oversikt/
 Källa (markdown): https://ui.sundsvall.dev/tokens/oversikt.md
 
-Tokens är källan till sanning för allt visuellt i Sundsvalls designsystem. De definieras i `tokens-src/*.json` (W3C Design Tokens-format) och kompileras med [Style Dictionary](https://styledictionary.com/) till CSS custom properties som komponenter konsumerar.
+Sundsvalls designsystem definierar alla visuella värden – färger, typografi, avstånd, hörnradier, breakpoints – som **designtokens**. Tokens är källan till sanning. **Aldrig hårdkoda färg eller storlek**, alltid använd CSS-variabel eller Tailwind-klass.
 
-## Hur du använder dem
+## Hur portalen läser tokens
 
-I CSS:
+Den här portalen importerar tokens från npm-paketet `@sk-web-gui/theme` vid sync, konverterar till W3C Design Tokens-format i `tokens-src/*.json`, och kompilerar till `src/styles/tokens.css` via [Style Dictionary](https://styledictionary.com/). Resultatet är CSS-variabler i `:root`.
 
-```css
-.knapp-primary {
-	background: var(--color-brand-primary);
-	color: var(--color-semantic-text-on-brand);
-	padding: var(--space-3) var(--space-4);
-	border-radius: var(--radius-md);
-	font-family: var(--font-family-sans);
-	font-weight: var(--font-weight-medium);
-}
+## CSS-variabelnamn
+
+Mönstret är `--<kategori>-<grupp>-<nyans>`:
+
+| Mönster                                            | Exempel                                                 |
+|----------------------------------------------------|---------------------------------------------------------|
+| `--color-primitives-<kulör>-<steg>`                | `--color-primitives-blue-700` → `#005595`                |
+| `--color-light-<tema>-<roll>-<variant>`            | `--color-light-vattjom-surface-primary-default`          |
+| `--color-dark-<tema>-<roll>-<variant>`             | `--color-dark-vattjom-text-default`                      |
+| `--font-family-<stack>`                            | `--font-family-header` → `Raleway, Arial, ...`           |
+| `--font-size-<kategori>-<step>`                    | `--font-size-h-1-default` → `4rem`                       |
+| `--space-<n>`                                      | `--space-16` → `1.6rem`                                  |
+| `--radius-<roll>`                                  | `--radius-button-md` → `1.2rem`                          |
+
+## I React-kod
+
+Med `@sk-web-gui/react` får du tokens via komponent-props:
+
+```tsx
+import { Button } from '@sk-web-gui/react';
+
+<Button color="vattjom" variant="primary">Skicka</Button>
+<Button color="gronsta" variant="secondary">Spara</Button>
 ```
 
-**Aldrig** hårdkoda färger eller storlekar. Om värdet du behöver inte finns – lägg till en ny token, dokumentera den, och använd referensen.
+Eller via Tailwind (paketet `@sk-web-gui/core` exponerar en preset):
 
-## Tre nivåer
+```html
+<div class="bg-vattjom-surface-primary text-vattjom-text-DEFAULT p-4 rounded-button">
+  ...
+</div>
+```
 
-1. **Primitiver** – råa värden (`color.neutral.900`, `space.4`).
-2. **Semantiska** – meningsbärande alias (`color.semantic.text.default`, `color.semantic.focus`). **Föredra dessa i komponentkod.**
-3. **Komponent-specifika** – om en komponent behöver egna tokens, prefixa med komponentnamnet.
+## Mer
 
-## Tokens som finns nu
-
-### Färger
-
-- **Varumärke**: `--color-brand-primary`, `--color-brand-primary-hover`, `--color-brand-accent`
-- **Neutrala**: `--color-neutral-0` … `--color-neutral-900`
-- **Status**: `--color-status-success`, `--color-status-warning`, `--color-status-error`, `--color-status-info`
-- **Semantiska**: `--color-semantic-text-default`, `--color-semantic-text-muted`, `--color-semantic-text-on-brand`, `--color-semantic-surface-default`, `--color-semantic-surface-subtle`, `--color-semantic-border-default`, `--color-semantic-focus`
-
-### Avstånd och radius
-
-- **Avstånd**: `--space-0` … `--space-8` (skala 0 → 64 px)
-- **Hörnradier**: `--radius-none`, `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-full`
-
-### Typografi
-
-- **Familjer**: `--font-family-sans`, `--font-family-mono`
-- **Storlekar**: `--font-size-xs` … `--font-size-3xl`
-- **Vikter**: `--font-weight-regular`, `--font-weight-medium`, `--font-weight-semibold`
-- **Radhöjder**: `--font-line-height-tight`, `--font-line-height-normal`
+- **[Färger](/identitet/farger/)** – fullständig palett inkl. de fyra varumärkesteman
+- **[Typografi](/identitet/typografi/)** – Raleway + Arial, semantiska storlekar
+- Source code: [packages/theme](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/theme)
