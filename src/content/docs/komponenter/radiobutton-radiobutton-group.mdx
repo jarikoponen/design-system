@@ -30,7 +30,17 @@ import { RadioButton.Group } from '@sk-web-gui/react';
 
 ## API
 
-_Inga publika props extraherade från källan._
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `id` | `string` | `–` | The id of the radio group. |
+| `name` | `string` | `–` | The name of the radio group. This prop is passed to each checbox |
+| `children` | `React.ReactNode` | `–` | The content of the radio group. Must be the `Radio` component |
+| `defaultValue` | `RadioButtonProps['value']` | `–` | The initial value of the radio group |
+| `value` | `RadioButtonProps['value']` | `–` | The value of the radio group |
+| `size` | `RadioButtonProps['size']` | `–` | Size of all wrapped radio |
+| `color` | `RadioButtonProps['color']` | `–` | Color of all wrapped radio |
+| `onChange` | `(event: React.ChangeEvent<HTMLInputElement>, value: RadioButtonProps['value']) => void` | `–` | The callback fired when any children Radio is checked or unchecked |
+| `inline` | `boolean` | `–` | If `true`, the radio will aligned horizontally. |
 
 
 

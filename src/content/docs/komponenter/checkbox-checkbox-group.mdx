@@ -30,7 +30,17 @@ import { Checkbox.Group } from '@sk-web-gui/react';
 
 ## API
 
-_Inga publika props extraherade från källan._
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `id` | `CheckboxItemProps['id']` | `–` | The id of the checkbox group. |
+| `name` | `CheckboxItemProps['name']` | `–` | The name of the checkbox group. This prop is passed to each checbox |
+| `children` | `React.ReactNode` | `–` | The content of the checkbox group. Must be the `Checkbox` component |
+| `defaultValue` | `Array<CheckboxItemProps['value']>` | `–` | The initial value of the checkbox group |
+| `value` | `Array<CheckboxItemProps['value']>` | `–` | The value of the checkbox group |
+| `onChange` | `(value: Array<CheckboxItemProps['value']>) => void` | `–` | The callback fired when any children Checkbox is checked or unchecked |
+| `direction` | `'row' \| 'column'` | `–` | If `true`, the checkboxes will aligned horizontally. @default column |
+| `size` | `CheckboxItemProps['size']` | `–` | Size of all wrapped checkbox |
+| `color` | `CheckboxItemProps['color']` | `–` | Color of all wrapped checkbox |
 
 
 

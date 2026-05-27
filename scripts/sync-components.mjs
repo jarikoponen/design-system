@@ -29,34 +29,69 @@ function slugify(title) {
 		.replace(/-+/g, '-');
 }
 
-/** Find the component source file in a package given the component name (e.g. "Button"). */
-async function findComponentSource(pkgDir, componentName) {
+/** Compound names like "Button.Group" become "ButtonGroup". */
+function cleanComponentName(name) {
+	return String(name).replace(/\./g, '').replace(/[^A-Za-z0-9]/g, '');
+}
+
+/** Candidate interface names to try in order. */
+function propsCandidates(componentName) {
+	const c = cleanComponentName(componentName);
+	const last = c.replace(/^.*?([A-Z][a-z0-9]*)$/, '$1'); // last PascalCase segment
+	return [
+		`${c}Props`,
+		`${c}ComponentProps`,
+		`I${c}Props`,
+		`${c}OwnProps`,
+		// e.g. ButtonGroup -> GroupProps (for cases where compound suffix alone is used)
+		c !== last ? `${last}Props` : null,
+	].filter(Boolean);
+}
+
+/**
+ * Find candidate source files in a package that might contain the props interface.
+ * Returns an array of file paths ranked: regex-matches first, then filename match, then all src files.
+ */
+async function findComponentSources(pkgDir, componentName) {
 	const srcDir = path.join(pkgDir, 'src');
-	if (!existsSync(srcDir)) return null;
-	const candidates = [];
+	if (!existsSync(srcDir)) return [];
+	const allFiles = [];
 
 	async function walk(dir) {
 		const entries = await readdir(dir, { withFileTypes: true });
 		for (const entry of entries) {
 			const full = path.join(dir, entry.name);
 			if (entry.isDirectory()) await walk(full);
-			else if (/\.tsx?$/.test(entry.name) && !entry.name.endsWith('.d.ts')) candidates.push(full);
+			else if (/\.tsx?$/.test(entry.name) && !entry.name.endsWith('.d.ts')) allFiles.push(full);
 		}
 	}
 	await walk(srcDir);
 
-	// Heuristic: prefer file containing `export interface <Name>Props`
-	const target = `${componentName}Props`;
-	for (const f of candidates) {
+	const candidates = propsCandidates(componentName);
+	const ranked = new Map(); // path -> rank (lower is better)
+
+	for (const f of allFiles) {
 		const content = await readFile(f, 'utf8');
-		if (new RegExp(`export\\s+interface\\s+${target}\\b`).test(content)) return f;
+		for (const [i, name] of candidates.entries()) {
+			if (new RegExp(`export\\s+(interface|type)\\s+${name}\\b`).test(content)) {
+				const existing = ranked.get(f);
+				if (existing === undefined || i < existing) ranked.set(f, i);
+			}
+		}
 	}
-	// Fallback: file with same base name (kebab-case)
-	const kebab = componentName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-	for (const f of candidates) {
-		if (path.basename(f, path.extname(f)) === kebab) return f;
-	}
-	return null;
+
+	const sorted = Array.from(ranked.entries())
+		.sort((a, b) => a[1] - b[1])
+		.map(([f]) => f);
+
+	if (sorted.length) return sorted;
+
+	// Fallback: filename matches kebab-case of componentName
+	const kebab = cleanComponentName(componentName).replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+	const exact = allFiles.find((f) => path.basename(f, path.extname(f)) === kebab);
+	if (exact) return [exact, ...allFiles.filter((f) => f !== exact)];
+
+	return allFiles;
 }
 
 async function processPackage(project, pkgName) {
@@ -84,10 +119,14 @@ async function processPackage(project, pkgName) {
 			const componentName = story.meta.component;
 			let props = [];
 			if (componentName) {
-				const srcFile = await findComponentSource(pkgDir, componentName);
-				if (srcFile) {
-					const result = parsePropsFromFile(project, srcFile, `${componentName}Props`);
-					props = result.props;
+				const sources = await findComponentSources(pkgDir, componentName);
+				const candidates = propsCandidates(componentName);
+				for (const srcFile of sources) {
+					const result = parsePropsFromFile(project, srcFile, candidates);
+					if (result.props.length) {
+						props = result.props;
+						break;
+					}
 				}
 			}
 

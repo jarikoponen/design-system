@@ -55,45 +55,109 @@ function findExportedType(sourceFile, name) {
 	return null;
 }
 
-/**
- * Parse a component file and return an array of props.
- * Returns { props: [{ name, type, optional, jsDoc }], propsInterfaceName }
- */
-export function parsePropsFromFile(project, filePath, interfaceName) {
-	const sourceFile = project.addSourceFileAtPath(filePath);
-	const iface = findExportedType(sourceFile, interfaceName);
-	if (!iface) return { props: [], propsInterfaceName: interfaceName };
-
+/** Extract PropertySignature members from a typeLiteralNode or interface body. */
+function membersToProps(members) {
 	const props = [];
+	for (const member of members) {
+		if (Node.isPropertySignature(member)) {
+			props.push({
+				name: member.getName().replace(/^['"]|['"]$/g, ''),
+				type: getTypeText(member),
+				optional: member.hasQuestionToken(),
+				jsDoc: extractJsDoc(member),
+			});
+		}
+	}
+	return props;
+}
 
-	if (Node.isInterfaceDeclaration(iface)) {
-		for (const member of iface.getMembers()) {
-			if (Node.isPropertySignature(member)) {
-				props.push({
-					name: member.getName().replace(/^['"]|['"]$/g, ''),
-					type: getTypeText(member),
-					optional: member.hasQuestionToken(),
-					jsDoc: extractJsDoc(member),
-				});
+/** Dedupe props by name, keeping the first occurrence. */
+function dedupe(props) {
+	const seen = new Set();
+	return props.filter((p) => (seen.has(p.name) ? false : (seen.add(p.name), true)));
+}
+
+/**
+ * Resolve a type node into a list of props. Handles:
+ * - Type literal { ... }
+ * - Type reference (e.g. AnotherInterface) – follows into same source file
+ * - Intersection type A & B – merges members from both sides
+ * - Union type A | B – merges members from both sides (lossy but better than nothing)
+ *
+ * Returns props, possibly empty if the type can't be resolved.
+ */
+function resolveTypeToProps(typeNode, sourceFile, depth = 0) {
+	if (!typeNode || depth > 4) return [];
+	const kind = typeNode.getKind();
+
+	if (kind === SyntaxKind.TypeLiteral) {
+		return membersToProps(typeNode.getMembers());
+	}
+
+	if (kind === SyntaxKind.IntersectionType || kind === SyntaxKind.UnionType) {
+		const collected = [];
+		for (const part of typeNode.getTypeNodes()) {
+			collected.push(...resolveTypeToProps(part, sourceFile, depth + 1));
+		}
+		return dedupe(collected);
+	}
+
+	if (kind === SyntaxKind.TypeReference) {
+		const refName = typeNode.getTypeName().getText();
+		const ref = findExportedType(sourceFile, refName) || sourceFile.getInterface(refName) || sourceFile.getTypeAlias(refName);
+		if (ref) {
+			if (Node.isInterfaceDeclaration(ref)) {
+				const members = membersToProps(ref.getMembers());
+				const extended = [];
+				for (const ext of ref.getExtends()) {
+					const extName = ext.getExpression().getText();
+					const extRef = findExportedType(sourceFile, extName) || sourceFile.getInterface(extName);
+					if (extRef && Node.isInterfaceDeclaration(extRef)) {
+						extended.push(...membersToProps(extRef.getMembers()));
+					}
+				}
+				return dedupe([...members, ...extended]);
+			}
+			if (Node.isTypeAliasDeclaration(ref)) {
+				return resolveTypeToProps(ref.getTypeNode(), sourceFile, depth + 1);
 			}
 		}
 	}
-	// Type aliases: only handle if they alias a type literal { ... }
-	if (Node.isTypeAliasDeclaration(iface)) {
-		const typeNode = iface.getTypeNode();
-		if (typeNode && Node.isTypeLiteral(typeNode)) {
-			for (const member of typeNode.getMembers()) {
-				if (Node.isPropertySignature(member)) {
-					props.push({
-						name: member.getName().replace(/^['"]|['"]$/g, ''),
-						type: getTypeText(member),
-						optional: member.hasQuestionToken(),
-						jsDoc: extractJsDoc(member),
-					});
+
+	return [];
+}
+
+/**
+ * Parse a component file and try every candidate interface name.
+ * Returns { props, propsInterfaceName } where propsInterfaceName is the one that resolved.
+ */
+export function parsePropsFromFile(project, filePath, candidateNames) {
+	const names = Array.isArray(candidateNames) ? candidateNames : [candidateNames];
+	const sourceFile = project.addSourceFileAtPath(filePath);
+
+	for (const name of names) {
+		const iface = findExportedType(sourceFile, name);
+		if (!iface) continue;
+
+		let props = [];
+
+		if (Node.isInterfaceDeclaration(iface)) {
+			props = membersToProps(iface.getMembers());
+			// Follow extends clauses one level deep to pick up DefaultProps members.
+			for (const ext of iface.getExtends()) {
+				const extName = ext.getExpression().getText();
+				const extRef = findExportedType(sourceFile, extName) || sourceFile.getInterface(extName);
+				if (extRef && Node.isInterfaceDeclaration(extRef)) {
+					props.push(...membersToProps(extRef.getMembers()));
 				}
 			}
+			props = dedupe(props);
+		} else if (Node.isTypeAliasDeclaration(iface)) {
+			props = resolveTypeToProps(iface.getTypeNode(), sourceFile);
 		}
+
+		if (props.length) return { props, propsInterfaceName: name };
 	}
 
-	return { props, propsInterfaceName: interfaceName };
+	return { props: [], propsInterfaceName: names[0] };
 }
