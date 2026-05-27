@@ -6,6 +6,10 @@ dist/
 # dependencies
 node_modules/
 
+# nested apps (intro-app etc.) — keep their own .gitignore but ensure these never leak
+apps/*/node_modules/
+apps/*/dist/
+
 # logs
 npm-debug.log*
 yarn-debug.log*
