@@ -78,6 +78,19 @@ public/                  ← Statiska assets som kopieras orörda till dist/.
 - Skriv på svenska. Hänvisa till lag/standard när relevant (WCAG, DOS-lagen,
   Språklagen).
 
+## Deploy-flöde
+
+- **Produktion:** `https://ui.sundsvall.dev` driftas av Dokploy som en
+  Docker Compose-tjänst med **Isolated Deployment** aktiverat.
+- **Auto-deploy:** En GitHub-webhook triggar Dokploy vid varje push till
+  `main`. Push till main = produktionssläpp. För större ändringar – arbeta
+  i feature branch och öppna PR.
+- **Compose-filen** använder `expose` (inte `ports`) eftersom Dokploys
+  Traefik redan binder host-portarna. Container-porten (8080) konfigureras
+  i Dokploys *Domains*-UI där också HTTPS/Let's Encrypt sätts upp.
+- **Felsökning:** Dokploy UI → Application → Logs. Trigga om manuellt om
+  webhook hänger.
+
 ## Pre-deploy-checklista
 
 Innan en PR mergas till `main`:
