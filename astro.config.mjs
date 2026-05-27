@@ -46,6 +46,10 @@ export default defineConfig({
 					label: 'Komponenter',
 					items: [{ autogenerate: { directory: 'komponenter' } }],
 				},
+				{
+					label: 'AI-komponenter',
+					items: [{ autogenerate: { directory: 'ai-komponenter' } }],
+				},
 			],
 		}),
 	],

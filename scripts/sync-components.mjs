@@ -12,17 +12,24 @@ import { parsePropsFromFile } from './lib/parse-props.mjs';
 import { renderComponentMdx } from './templates/component.mdx.tmpl.mjs';
 
 const VENDOR = 'vendor/sk-web-gui';
-const OUT_DIR = 'src/content/docs/komponenter';
+const OUT_DIR_COMPONENTS = 'src/content/docs/komponenter';
+const OUT_DIR_AI = 'src/content/docs/ai-komponenter';
 
 // Infrastruktur-paket – ingen story, ingen MDX.
 const DENY = new Set([
 	'core', 'theme', 'react', 'utils',
 	'next', 'next-card', 'next-link',
 	'toast', 'toasted-notes',
-	// AI-paketet har egen toppgrupp i Storybook ("AI/Komponenter/...") och 19 stories.
-	// Importeras separat när vi vill ha en AI-sektion i portalen.
-	'ai',
 ]);
+
+/** Pick output dir + slug-prefix based on Meta.title. */
+function routeFromTitle(title) {
+	const t = String(title).toLowerCase();
+	if (t.startsWith('ai/')) {
+		return { dir: OUT_DIR_AI, stripPrefix: /^ai\/komponenter\// };
+	}
+	return { dir: OUT_DIR_COMPONENTS, stripPrefix: /^komponenter\// };
+}
 
 async function discoverPackages() {
 	const entries = await readdir(path.join(VENDOR, 'packages'), { withFileTypes: true });
@@ -36,12 +43,12 @@ async function discoverPackages() {
 }
 
 /** Slugify a Meta.title for filename. */
-function slugify(title) {
+function slugify(title, stripPrefix = /^komponenter\//) {
 	return String(title)
 		.toLowerCase()
 		.replace(/[åä]/g, 'a')
 		.replace(/ö/g, 'o')
-		.replace(/^komponenter\//, '')
+		.replace(stripPrefix, '')
 		.replace(/\./g, '-')
 		.replace(/[^a-z0-9/-]+/g, '-')
 		.replace(/^[/-]+|[/-]+$/g, '')
@@ -150,7 +157,8 @@ async function processPackage(project, pkgName) {
 				}
 			}
 
-			const storyIdSlug = slugify(story.meta.title);
+			const route = routeFromTitle(story.meta.title);
+			const storyIdSlug = slugify(story.meta.title, route.stripPrefix);
 			const storybookUrl = `https://stilguide.sundsvall.se/?path=/docs/${story.meta.title
 				.toLowerCase()
 				.replace(/\s+/g, '-')
@@ -161,7 +169,7 @@ async function processPackage(project, pkgName) {
 
 			const mdx = renderComponentMdx({ pkg, story, props, sourceUrl, storybookUrl });
 
-			const outFile = path.join(OUT_DIR, `${storyIdSlug}.mdx`);
+			const outFile = path.join(route.dir, `${storyIdSlug}.mdx`);
 			await mkdir(path.dirname(outFile), { recursive: true });
 			await writeFile(outFile, mdx, 'utf8');
 			written.push(outFile);
@@ -182,7 +190,9 @@ async function main() {
 		const written = await processPackage(project, pkgName);
 		allWritten.push(...written);
 	}
-	console.log(`[components:sync] Klar – ${allWritten.length} MDX-filer skrivna i ${OUT_DIR}/`);
+	const inComponents = allWritten.filter((f) => f.startsWith(OUT_DIR_COMPONENTS)).length;
+	const inAi = allWritten.filter((f) => f.startsWith(OUT_DIR_AI)).length;
+	console.log(`[components:sync] Klar – ${allWritten.length} MDX-filer (${inComponents} komponenter + ${inAi} AI-komponenter)`);
 }
 
 await main();

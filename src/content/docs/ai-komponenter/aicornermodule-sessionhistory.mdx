@@ -1,0 +1,52 @@
+---
+title: SessionHistory
+description: "AICornerModuleSessionHistory – komponent från @sk-web-gui/ai."
+status: stabil
+version: 4.4.2
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule-sessionhistory--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AICornerModuleSessionHistory` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AICornerModuleSessionHistory } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `sessions` | `SessionHistory` | `–` |  |
+| `title` | `string` | `–` |  |
+| `current` | `string` | `–` | Id of the current (opened) session |
+| `onSelectSession` | `(sessionId: string) => void` | `–` |  |
+| `onKeyNext` | `(currentId: string) => void` | `–` |  |
+| `onKeyPrev` | `(currentId: string) => void` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [SessionHistory](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule-sessionhistory--dokumentation)

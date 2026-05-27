@@ -4,6 +4,28 @@
 
 Den här filen följer llmstxt.org-konventionen. Varje länk pekar på sidans HTML-version; varje sida finns även som rå markdown via samma URL med suffixet `.md`.
 
+## ai-komponenter
+
+- [AssistantLibrary](https://ui.sundsvall.dev/ai-komponenter/aicornermodule-assistantlibrary/): AICornerModuleAssistantLibrary – komponent från @sk-web-gui/ai.
+- [Header](https://ui.sundsvall.dev/ai-komponenter/aicornermodule-header/): AICornerModuleHeader – komponent från @sk-web-gui/ai.
+- [HeaderMenu](https://ui.sundsvall.dev/ai-komponenter/aicornermodule-headermenu/): AICornerModuleHeaderMenu – komponent från @sk-web-gui/ai.
+- [SessionHistory](https://ui.sundsvall.dev/ai-komponenter/aicornermodule-sessionhistory/): AICornerModuleSessionHistory – komponent från @sk-web-gui/ai.
+- [Sessions](https://ui.sundsvall.dev/ai-komponenter/aicornermodule-sessions/): AICornerModuleSessions – komponent från @sk-web-gui/ai.
+- [AICornerModule](https://ui.sundsvall.dev/ai-komponenter/aicornermodule/): AICornerModule – komponent från @sk-web-gui/ai.
+- [AIFeed](https://ui.sundsvall.dev/ai-komponenter/aifeed/): AIFeed – komponent från @sk-web-gui/ai.
+- [Assistant](https://ui.sundsvall.dev/ai-komponenter/aiservicemodule-assistant/): AIServiceModule.Assistant – komponent från @sk-web-gui/ai.
+- [Questions](https://ui.sundsvall.dev/ai-komponenter/aiservicemodule-questions/): AIServiceModule.Questions – komponent från @sk-web-gui/ai.
+- [AIServiceModule](https://ui.sundsvall.dev/ai-komponenter/aiservicemodule/): AIServiceModule – komponent från @sk-web-gui/ai.
+- [AssistantPresentation](https://ui.sundsvall.dev/ai-komponenter/assistantpresentation/): AssistantPresentation – komponent från @sk-web-gui/ai.
+- [AssistantSwitch](https://ui.sundsvall.dev/ai-komponenter/assistantswitch/): AssistantSwitch – komponent från @sk-web-gui/ai.
+- [Bubble](https://ui.sundsvall.dev/ai-komponenter/bubble/): Bubble – komponent från @sk-web-gui/ai.
+- [ChatInput](https://ui.sundsvall.dev/ai-komponenter/chatinput/): ChatInput – komponent från @sk-web-gui/ai.
+- [Feedback](https://ui.sundsvall.dev/ai-komponenter/feedback/): Feedback – komponent från @sk-web-gui/ai.
+- [InputSection](https://ui.sundsvall.dev/ai-komponenter/inputsection/): InputSection – komponent från @sk-web-gui/ai.
+- [NewSessionButton](https://ui.sundsvall.dev/ai-komponenter/newsessionbutton/): NewSessionButton – komponent från @sk-web-gui/ai.
+- [TypingBubble](https://ui.sundsvall.dev/ai-komponenter/typingbubble/): TypingBubble – komponent från @sk-web-gui/ai.
+- [TypingSequence](https://ui.sundsvall.dev/ai-komponenter/typingsequence/): TypingSequence – komponent från @sk-web-gui/ai.
+
 ## För AI-agenter
 
 - [För AI-agenter](https://ui.sundsvall.dev/for-ai/): Hur en AI-assistent läser och använder Sundsvalls designsystem.

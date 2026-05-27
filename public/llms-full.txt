@@ -8,6 +8,1090 @@ Hela portalens innehåll i en fil. Bäst för att klistra in i en AI-assistent s
 
 ---
 
+# AssistantLibrary
+
+> AICornerModuleAssistantLibrary – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aicornermodule-assistantlibrary/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aicornermodule-assistantlibrary.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AICornerModuleAssistantLibrary` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AICornerModuleAssistantLibrary } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `assistants` | `Assistant[]` | `–` |  |
+| `current` | `string` | `–` | Id of current assistant |
+| `onSelectAssistant` | `(id: string) => void` | `–` |  |
+| `onClose` | `() => void` | `–` |  |
+| `closeText` | `string` | `–` | Text to describe closebutton. @default Stäng |
+| `autofocus` | `boolean` | `–` | Will autofocus current or first item |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [AssistantLibrary](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule-assistantlibrary--dokumentation)
+
+
+---
+
+# Header
+
+> AICornerModuleHeader – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aicornermodule-header/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aicornermodule-header.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AICornerModuleHeader` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AICornerModuleHeader } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `variant` | `'default' \| 'alt'` | `–` |  |
+| `assistant` | `AssistantInfo` | `–` |  |
+| `assistants` | `Assistant[]` | `–` |  |
+| `onOpenHistory` | `() => void` | `–` |  |
+| `onCloseHistory` | `() => void` | `–` |  |
+| `historyOpen` | `boolean` | `–` |  |
+| `avatar` | `AIFeedAvatar` | `–` |  |
+| `assistantSwitchProps` | `Omit<AssistantSwitchProps, 'assistant' \| 'avatar'>` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [Header](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule-header--dokumentation)
+
+
+---
+
+# HeaderMenu
+
+> AICornerModuleHeaderMenu – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aicornermodule-headermenu/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aicornermodule-headermenu.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AICornerModuleHeaderMenu` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AICornerModuleHeaderMenu } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `historyOpen` | `AICornerModuleHeaderProps['historyOpen']` | `–` |  |
+| `onOpenHistory` | `AICornerModuleHeaderProps['onOpenHistory']` | `–` |  |
+| `onCloseHistory` | `AICornerModuleHeaderProps['onCloseHistory']` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [HeaderMenu](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule-headermenu--dokumentation)
+
+
+---
+
+# SessionHistory
+
+> AICornerModuleSessionHistory – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aicornermodule-sessionhistory/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aicornermodule-sessionhistory.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AICornerModuleSessionHistory` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AICornerModuleSessionHistory } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `sessions` | `SessionHistory` | `–` |  |
+| `title` | `string` | `–` |  |
+| `current` | `string` | `–` | Id of the current (opened) session |
+| `onSelectSession` | `(sessionId: string) => void` | `–` |  |
+| `onKeyNext` | `(currentId: string) => void` | `–` |  |
+| `onKeyPrev` | `(currentId: string) => void` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [SessionHistory](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule-sessionhistory--dokumentation)
+
+
+---
+
+# Sessions
+
+> AICornerModuleSessions – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aicornermodule-sessions/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aicornermodule-sessions.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AICornerModuleSessions` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AICornerModuleSessions } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `sessions` | `SessionHistory` | `–` |  |
+| `itemsBefore` | `React.JSX.Element[]` | `–` |  |
+| `itemsAfter` | `React.JSX.Element[]` | `–` |  |
+| `focus` | `boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [Sessions](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule-sessions--dokumentation)
+
+
+---
+
+# AICornerModule
+
+> AICornerModule – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aicornermodule/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aicornermodule.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AICornerModule` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AICornerModule } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `sessionId` | `string` | `–` |  |
+| `assistant` | `AssistantInfo` | `–` | Current assistant |
+| `assistants` | `Assistant[]` | `–` | Avalable assistants |
+| `questions` | `string[]` | `–` |  |
+| `questionsTitle` | `string` | `–` |  |
+| `sessionHistory` | `SessionHistory` | `–` |  |
+| `readmore` | `InfoLink` | `–` |  |
+| `onSendQuery` | `(query: string) => void` | `–` |  |
+| `onChangeSession` | `(sessionId: string) => void` | `–` |  |
+| `onSelectQuestion` | `(question: string) => void` | `–` |  |
+| `showFeedback` | `boolean` | `–` | @default true |
+| `avatars` | `AIFeedAvatarMap` | `–` |  |
+| `originTitles` | `OriginTitleMap` | `–` |  |
+| `onChangeAssistant` | `(assistantId: string) => void` | `–` |  |
+| `showNewSession` | `boolean` | `–` | @default true |
+| `docked` | `boolean` | `–` |  |
+| `color` | `string` | `–` |  |
+| `fullscreen` | `boolean` | `–` |  |
+| `session` | `AssistantSession` | `–` |  |
+| `disableFullscreen` | `boolean` | `–` | @default false |
+| `isMobile` | `boolean` | `–` |  |
+| `showSessionHistory` | `boolean` | `–` | @default true |
+| `onOpen` | `() => void` | `–` |  |
+| `onClose` | `() => void` | `–` |  |
+| `onFullScreen` | `() => void` | `–` |  |
+| `onCloseFullScreen` | `() => void` | `–` |  |
+| `onNewSession` | `() => void` | `–` |  |
+| `title` | `string` | `–` | Title shown in header @default assistant.name |
+| `subtitle` | `string` | `–` | Subtitle shown in header when closed @default assistant.title |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "readmore": {
+    "url": "https://www.sundsvall.se/AI",
+    "description": "Hur Sundsvalls kommun använder artificiell intelligens (AI): www.sundsvall.se/AI"
+  },
+  "questionsTitle": "Vad kan jag hjälpa dig med?",
+  "questions": [
+    "Vad är Querty?",
+    "Jag har tappat bort mitt passerkort",
+    "Vilka dagar jobbar vi halvdag"
+  ]
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **WithHistory** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [AICornerModule](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aicornermodule--dokumentation)
+
+
+---
+
+# AIFeed
+
+> AIFeed – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aifeed/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aifeed.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AIFeed` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AIFeed } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `history` | `ChatHistory` | `–` |  |
+| `showReferences` | `boolean` | `–` |  |
+| `sessionId` | `string` | `–` |  |
+| `avatars` | `AIFeedAvatarMap` | `–` |  |
+| `showFeedback` | `boolean` | `–` |  |
+| `showTitles` | `boolean` | `–` |  |
+| `onGiveFeedback` | `(value: SessionFeedbackValueEnum) => void` | `–` |  |
+| `size` | `'sm' \| 'lg'` | `–` |  |
+| `inverted` | `boolean` | `–` |  |
+| `titles` | `OriginTitleMap` | `–` |  |
+| `getAssistantInfoFromHistory` | `boolean` | `–` | Get assistant info from history, if existing. |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **InlineReferences** – standardstory
+- **InlineReferencesWithoutUrl** – standardstory
+- **InlineReferencesHidden** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [AIFeed](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aifeed--dokumentation)
+
+
+---
+
+# Assistant
+
+> AIServiceModule.Assistant – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aiservicemodule-assistant/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aiservicemodule-assistant.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AIServiceModule.Assistant` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AIServiceModule.Assistant } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `history` | `ChatHistory` | `–` |  |
+| `value` | `string` | `–` |  |
+| `onValueChange` | `React.ComponentPropsWithoutRef<'input'>['onChange']` | `–` |  |
+| `sessionId` | `string` | `–` |  |
+| `onSubmit` | `(event: React.FormEvent<HTMLFormElement>) => void` | `–` |  |
+| `assistant` | `AssistantInfo` | `–` |  |
+| `label` | `string` | `–` | Form label @default "Ställ en fråga till vår AI-assistent" |
+| `formError` | `string` | `–` | Form error |
+| `readmore` | `ReadMore` | `–` |  |
+| `helperText` | `HelperText` | `–` |  |
+| `onSendQuery` | `(query: string) => void` | `–` |  |
+| `onNewSession` | `() => void` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Expanded** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [Assistant](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aiservicemodule-assistant--dokumentation)
+
+
+---
+
+# Questions
+
+> AIServiceModule.Questions – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aiservicemodule-questions/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aiservicemodule-questions.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AIServiceModule.Questions` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AIServiceModule.Questions } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "questions": [
+    {
+      "question": "Can I ask in my native language?",
+      "lang": "en"
+    },
+    "Vad är vuxenutbildning?",
+    "Hur ansöker jag till en kurs?",
+    "Kan jag få studievägledning?"
+  ]
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [Questions](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aiservicemodule-questions--dokumentation)
+
+
+---
+
+# AIServiceModule
+
+> AIServiceModule – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/aiservicemodule/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/aiservicemodule.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AIServiceModule` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AIServiceModule } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `header` | `React.ReactNode` | `–` | Heading / Title. Will be wrapped in `&lt;h2&gt;` if no element is provided. |
+| `assistant` | `AssistantInfo` | `–` |  |
+| `session` | `AssistantSession` | `–` |  |
+| `isMobile` | `boolean` | `–` | @default false |
+| `originTitles` | `OriginTitleMap` | `–` |  |
+| `headerIcon` | `React.JSX.Element` | `–` | Header-icon shown in secondary variant |
+| `color` | `string` | `–` | @default vattjom |
+| `inverted` | `boolean` | `–` | @default false |
+| `variant` | `'primary' \| 'secondary'` | `–` | @default primary |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "questions": [
+    {
+      "question": "Can I ask in my native language?",
+      "lang": "en"
+    },
+    "Vad är vuxenutbildning?",
+    "Hur ansöker jag till en kurs?",
+    "Kan jag få studievägledning?"
+  ]
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **SecondaryStyle** – standardstory
+- **ManualWithHistory** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [AIServiceModule](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aiservicemodule--dokumentation)
+
+
+---
+
+# AssistantPresentation
+
+> AssistantPresentation – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/assistantpresentation/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/assistantpresentation.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AssistantPresentation` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AssistantPresentation } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `assistant` | `AssistantInfo` | `–` |  |
+| `size` | `'lg' \| 'sm'` | `–` |  |
+| `avatar` | `AIFeedAvatar` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [AssistantPresentation](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-assistantpresentation--dokumentation)
+
+
+---
+
+# AssistantSwitch
+
+> AssistantSwitch – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/assistantswitch/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/assistantswitch.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AssistantSwitch` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AssistantSwitch } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `assistant` | `AssistantInfo` | `–` |  |
+| `avatar` | `AIFeedAvatar` | `–` |  |
+| `pressed` | `boolean` | `–` | If the button is pressed (active) or not @default false |
+| `pressedText` | `string` | `–` | Text to be displayed when pressed @default "Byt assistent" |
+| `pressedIcon` | `React.JSX.Element` | `–` | Icon to be displayed when pressed @default ArrowDownUp |
+| `inverted` | `boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [AssistantSwitch](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-assistantswitch--dokumentation)
+
+
+---
+
+# Bubble
+
+> Bubble – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/bubble/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/bubble.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Bubble` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Bubble } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `color` | `string` | `–` | @default vattjom |
+| `inverted` | `boolean` | `–` | @default false |
+| `variant` | `'default' \| 'simple'` | `–` | Variant. default or simple (without extra decoration) @default default |
+| `hideIcon` | `boolean` | `–` | @default false |
+| `icon` | `React.ReactElement` | `–` | Trailing icon. @default &lt;ArrowRight/&gt; |
+| `shadow` | `boolean` | `–` | @default true |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [Bubble](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-bubble--dokumentation)
+
+
+---
+
+# ChatInput
+
+> ChatInput – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/chatinput/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/chatinput.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`ChatInput` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { ChatInput } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `onSend` | `(value: string) => void` | `–` | Overrides the default send function |
+| `value` | `string` | `–` | Overrides the internal value |
+| `onChangeValue` | `ChatInputTextareaProps['onChange']` | `–` |  |
+| `toolbar` | `ChatToolbarGroup[]` | `–` | List of toolbar groups. Each groups is seperated by a divider |
+| `disabled` | `boolean` | `–` |  |
+| `placeholder` | `ChatInputTextareaProps['placeholder']` | `–` |  |
+| `size` | `'sm' \| 'md' \| 'lg'` | `–` |  |
+| `textareaRef` | `React.RefObject<HTMLTextAreaElement \| null>` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **WithToolbar** – standardstory
+- **Custom** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [ChatInput](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-chatinput--dokumentation)
+
+
+---
+
+# Feedback
+
+> Feedback – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/feedback/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/feedback.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Feedback` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Feedback } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `sessionId` | `string` | `–` |  |
+| `reasons` | `string[]` | `–` |  |
+| `onGiveFeedback` | `(value: SessionFeedbackValueEnum) => void` | `–` |  |
+| `inverted` | `boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [Feedback](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-feedback--dokumentation)
+
+
+---
+
+# InputSection
+
+> InputSection – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/inputsection/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/inputsection.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`InputSection` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { InputSection } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `sessionId` | `string` | `–` |  |
+| `onSendQuery` | `(query: string) => void` | `–` |  |
+| `placeholder` | `InputSectionInputProps['placeholder']` | `–` |  |
+| `onChangeValue` | `InputSectionInputProps['onChange'] \| ChatInputProps['onChangeValue']` | `–` |  |
+| `value` | `string` | `–` |  |
+| `button` | `React.JSX.Element` | `–` |  |
+| `autoFocus` | `boolean` | `–` |  |
+| `toolbar` | `ChatInputProps['toolbar']` | `–` | Toolbar - only available with variant "multiline" |
+| `shadow` | `boolean` | `–` | @default true |
+| `variant` | `'multiline' \| 'singleline'` | `–` | @default multiline |
+| `isMobile` | `boolean` | `–` | @default false |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [InputSection](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-inputsection--dokumentation)
+
+
+---
+
+# NewSessionButton
+
+> NewSessionButton – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/newsessionbutton/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/newsessionbutton.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`NewSessionButton` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { NewSessionButton } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `helperText` | `string` | `–` |  |
+| `wrapperClassName` | `string` | `–` |  |
+| `helperTextClassName` | `string` | `–` |  |
+| `icon` | `React.JSX.Element` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [NewSessionButton](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-newsessionbutton--dokumentation)
+
+
+---
+
+# TypingBubble
+
+> TypingBubble – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/typingbubble/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/typingbubble.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`TypingBubble` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { TypingBubble } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `position` | `'left' \| 'right'` | `–` | position of the bubble @default right |
+| `inverted` | `boolean` | `–` | Inverts colors (light mode as dark mode colors and vice versa) |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [TypingBubble](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-typingbubble--dokumentation)
+
+
+---
+
+# TypingSequence
+
+> TypingSequence – komponent från @sk-web-gui/ai.
+
+URL: https://ui.sundsvall.dev/ai-komponenter/typingsequence/
+Källa (markdown): https://ui.sundsvall.dev/ai-komponenter/typingsequence.md
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`TypingSequence` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { TypingSequence } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `color` | `string` | `–` |  |
+| `inverted` | `boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [TypingSequence](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-typingsequence--dokumentation)
+
+
+---
+
 # För AI-agenter
 
 > Hur en AI-assistent läser och använder Sundsvalls designsystem.

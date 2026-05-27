@@ -1,0 +1,59 @@
+---
+title: Assistant
+description: "AIServiceModule.Assistant – komponent från @sk-web-gui/ai."
+status: stabil
+version: 4.4.2
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aiservicemodule-assistant--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/ai@4.4.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AIServiceModule.Assistant` finns i [`@sk-web-gui/ai`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AIServiceModule.Assistant } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `history` | `ChatHistory` | `–` |  |
+| `value` | `string` | `–` |  |
+| `onValueChange` | `React.ComponentPropsWithoutRef<'input'>['onChange']` | `–` |  |
+| `sessionId` | `string` | `–` |  |
+| `onSubmit` | `(event: React.FormEvent<HTMLFormElement>) => void` | `–` |  |
+| `assistant` | `AssistantInfo` | `–` |  |
+| `label` | `string` | `–` | Form label @default "Ställ en fråga till vår AI-assistent" |
+| `formError` | `string` | `–` | Form error |
+| `readmore` | `ReadMore` | `–` |  |
+| `helperText` | `HelperText` | `–` |  |
+| `onSendQuery` | `(query: string) => void` | `–` |  |
+| `onNewSession` | `() => void` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Expanded** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/ai](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/ai)
+- Storybook: [Assistant](https://stilguide.sundsvall.se/?path=/docs/ai-komponenter-aiservicemodule-assistant--dokumentation)
