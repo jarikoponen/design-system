@@ -1,5 +1,6 @@
-# Dokploy konsumerar detta direkt. Lokalt kan du köra `docker compose up`.
-# Traefik-labels är medvetet utelämnade – Dokploy lägger till sina egna via Domains-UI:t.
+# Dokploy konsumerar detta direkt. Traefik (som Dokploy kör) routar till
+# containern via internt Docker-nätverk – därför `expose` istället för `ports`.
+# Lokal test: `docker run --rm -p 8080:8080 ui-sundsvall:latest` efter `docker build`.
 
 services:
   web:
@@ -9,8 +10,8 @@ services:
     image: ui-sundsvall:latest
     container_name: ui-sundsvall
     restart: unless-stopped
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080"
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:8080/"]
       interval: 30s
