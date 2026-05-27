@@ -4,7 +4,12 @@
 const SK_REACT_PKG = '@sk-web-gui/react';
 
 function escapeMdx(s) {
-	return String(s ?? '').replace(/\|/g, '\\|');
+	// Escape pipes (markdown table) and angle brackets (MDX/JSX parser).
+	// Angle brackets in JSDoc like "@default <Text/>" otherwise get interpreted as components.
+	return String(s ?? '')
+		.replace(/\|/g, '\\|')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;');
 }
 
 function formatType(t) {

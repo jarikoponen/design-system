@@ -13,7 +13,27 @@ import { renderComponentMdx } from './templates/component.mdx.tmpl.mjs';
 
 const VENDOR = 'vendor/sk-web-gui';
 const OUT_DIR = 'src/content/docs/komponenter';
-const PACKAGES = ['button', 'link', 'alert', 'spinner', 'forms'];
+
+// Infrastruktur-paket – ingen story, ingen MDX.
+const DENY = new Set([
+	'core', 'theme', 'react', 'utils',
+	'next', 'next-card', 'next-link',
+	'toast', 'toasted-notes',
+	// AI-paketet har egen toppgrupp i Storybook ("AI/Komponenter/...") och 19 stories.
+	// Importeras separat när vi vill ha en AI-sektion i portalen.
+	'ai',
+]);
+
+async function discoverPackages() {
+	const entries = await readdir(path.join(VENDOR, 'packages'), { withFileTypes: true });
+	const pkgs = [];
+	for (const e of entries) {
+		if (!e.isDirectory() || DENY.has(e.name)) continue;
+		const storiesDir = path.join(VENDOR, 'packages', e.name, 'stories');
+		if (existsSync(storiesDir)) pkgs.push(e.name);
+	}
+	return pkgs.sort();
+}
 
 /** Slugify a Meta.title for filename. */
 function slugify(title) {
@@ -155,9 +175,10 @@ async function processPackage(project, pkgName) {
 
 async function main() {
 	const project = createProject();
+	const packages = await discoverPackages();
+	console.log(`[components:sync] Hittade ${packages.length} paket med stories: ${packages.join(', ')}`);
 	const allWritten = [];
-	for (const pkgName of PACKAGES) {
-		console.log(`[components:sync] Bearbetar ${pkgName}`);
+	for (const pkgName of packages) {
 		const written = await processPackage(project, pkgName);
 		allWritten.push(...written);
 	}

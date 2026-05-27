@@ -1,0 +1,72 @@
+---
+title: Pagination
+description: "Pagination – komponent från @sk-web-gui/pagination."
+status: stabil
+version: 1.1.17
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/pagination"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/komponenter-pagination--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/pagination@1.1.17. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Pagination` finns i [`@sk-web-gui/pagination`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/pagination). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Pagination } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `pages` | `number` | `–` | Total amount of pages |
+| `activePage` | `number` | `–` | Currently active page |
+| `changePage` | `(page: number) => void` | `–` | Handles page number change |
+| `pagesBefore` | `number` | `–` | Number of pages shown before current page |
+| `pagesAfter` | `number` | `–` | Number of pages shown after current page |
+| `showFirst` | `boolean` | `–` | Always show first page |
+| `showLast` | `boolean` | `–` | Always show last page |
+| `nextLabel` | `string` | `–` | Label on next button |
+| `prevLabel` | `string` | `–` | Label on previous button |
+| `hidePrevNextLabel` | `boolean` | `–` | Hides the text on prev and next buttons |
+| `fitContainer` | `boolean` | `–` | Stretch width to fit container |
+| `showConstantPages` | `boolean` | `–` | Always show same number of pages |
+| `asSelect` | `boolean` | `–` | Show as select |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "pages": 11,
+  "activePage": 1,
+  "showFirst": true,
+  "showLast": true,
+  "pagesBefore": 1,
+  "pagesAfter": 1
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/pagination](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/pagination)
+- Storybook: [Pagination](https://stilguide.sundsvall.se/?path=/docs/komponenter-pagination--dokumentation)

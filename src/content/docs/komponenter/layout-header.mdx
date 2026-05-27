@@ -1,0 +1,66 @@
+---
+title: Header
+description: "Header – komponent från @sk-web-gui/layout."
+status: stabil
+version: 3.0.1
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/layout"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/layout-header--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/layout@3.0.1. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Header` finns i [`@sk-web-gui/layout`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/layout). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Header } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `title` | `string` | `–` | Title for main page |
+| `subtitle` | `string` | `–` | Subtitle for page- optional |
+| `children` | `React.ReactNode` | `–` | React node |
+| `logoLinkOnClick` | `() => void` | `–` | onClick for Logo-link Not in use if alternative logo is used. |
+| `notificationsAlert` | `React.ReactNode` | `–` | NotificationsAlert component |
+| `userMenu` | `React.ReactNode` | `–` | UserMenu component |
+| `wrapperClasses` | `string` | `–` | CSS-classes for top parent node |
+| `userMenuClasses` | `string` | `–` | CSS-classes for usermenu |
+| `mainMenu` | `React.ReactNode` | `–` | Main menu component |
+| `mobileMenu` | `React.ReactNode` | `–` | Mobile menu component |
+| `logo` | `React.ReactNode` | `–` | Alternative logo  If you want a linked logo, wrap it in a link component. |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "title": "E-tjänster",
+  "subtitle": "Sundsvalls kommun"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/layout](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/layout)
+- Storybook: [Header](https://stilguide.sundsvall.se/?path=/docs/layout-header--dokumentation)

@@ -1,0 +1,57 @@
+---
+title: TextEditor
+description: "TextEditor – komponent från @sk-web-gui/text-editor."
+status: stabil
+version: 2.1.0
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/text-editor"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/komponenter-texteditor--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/text-editor@2.1.0. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`TextEditor` finns i [`@sk-web-gui/text-editor`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/text-editor). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { TextEditor } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `name` | `string` | `–` |  |
+| `readOnly` | `boolean` | `–` |  |
+| `value` | `TextEditorValue` | `–` |  |
+| `disableToolbar` | `boolean` | `–` |  |
+| `className` | `string` | `–` |  |
+| `toolbar` | `ToolbarConfig` | `–` |  |
+| `visualZoom` | `boolean` | `–` | Show visual zoom controls (+/-) in the toolbar. Does not affect exported content. |
+| `onTextChange` | `(delta: Delta, oldDelta: Delta, source: string) => void` | `–` |  |
+| `onSelectionChange` | `(range: Range, oldRange: Range, source: string) => void` | `–` |  |
+| `onChange` | `(event: CustomOnChangeEvent<TextEditorValue, HTMLInputElement>) => void` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **InsertText** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/text-editor](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/text-editor)
+- Storybook: [TextEditor](https://stilguide.sundsvall.se/?path=/docs/komponenter-texteditor--dokumentation)

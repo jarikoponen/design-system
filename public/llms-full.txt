@@ -537,6 +537,343 @@ Den här portalen speglar [`Sundsvallskommun/web-shared-components`](https://git
 
 ---
 
+# Button
+
+> Disclosure.Button – komponent från @sk-web-gui/accordion.
+
+URL: https://ui.sundsvall.dev/komponenter/accordion-disclosure-button/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/accordion-disclosure-button.md
+
+{/* AUTO-GENERATED från @sk-web-gui/accordion@3.0.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Disclosure.Button` finns i [`@sk-web-gui/accordion`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Disclosure.Button } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **CustomButton** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/accordion](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion)
+- Storybook: [Button](https://stilguide.sundsvall.se/?path=/docs/komponenter-accordion-disclosure-button--dokumentation)
+
+
+---
+
+# Content
+
+> Disclosure.Content – komponent från @sk-web-gui/accordion.
+
+URL: https://ui.sundsvall.dev/komponenter/accordion-disclosure-content/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/accordion-disclosure-content.md
+
+{/* AUTO-GENERATED från @sk-web-gui/accordion@3.0.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Disclosure.Content` finns i [`@sk-web-gui/accordion`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Disclosure.Content } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/accordion](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion)
+- Storybook: [Content](https://stilguide.sundsvall.se/?path=/docs/komponenter-accordion-disclosure-content--dokumentation)
+
+
+---
+
+# Header
+
+> Disclosure.Header – komponent från @sk-web-gui/accordion.
+
+URL: https://ui.sundsvall.dev/komponenter/accordion-disclosure-header/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/accordion-disclosure-header.md
+
+{/* AUTO-GENERATED från @sk-web-gui/accordion@3.0.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Disclosure.Header` finns i [`@sk-web-gui/accordion`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Disclosure.Header } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **AlternativeVariant** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/accordion](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion)
+- Storybook: [Header](https://stilguide.sundsvall.se/?path=/docs/komponenter-accordion-disclosure-header--dokumentation)
+
+
+---
+
+# Icon
+
+> Disclosure.Icon – komponent från @sk-web-gui/accordion.
+
+URL: https://ui.sundsvall.dev/komponenter/accordion-disclosure-icon/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/accordion-disclosure-icon.md
+
+{/* AUTO-GENERATED från @sk-web-gui/accordion@3.0.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Disclosure.Icon` finns i [`@sk-web-gui/accordion`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Disclosure.Icon } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "icon": {
+    "__raw": "<Bus />"
+  }
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/accordion](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion)
+- Storybook: [Icon](https://stilguide.sundsvall.se/?path=/docs/komponenter-accordion-disclosure-icon--dokumentation)
+
+
+---
+
+# Title
+
+> Disclosure.Title – komponent från @sk-web-gui/accordion.
+
+URL: https://ui.sundsvall.dev/komponenter/accordion-disclosure-title/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/accordion-disclosure-title.md
+
+{/* AUTO-GENERATED från @sk-web-gui/accordion@3.0.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Disclosure.Title` finns i [`@sk-web-gui/accordion`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Disclosure.Title } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/accordion](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion)
+- Storybook: [Title](https://stilguide.sundsvall.se/?path=/docs/komponenter-accordion-disclosure-title--dokumentation)
+
+
+---
+
+# Disclosure
+
+> Disclosure.Component – komponent från @sk-web-gui/accordion.
+
+URL: https://ui.sundsvall.dev/komponenter/accordion-disclosure/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/accordion-disclosure.md
+
+{/* AUTO-GENERATED från @sk-web-gui/accordion@3.0.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Disclosure.Component` finns i [`@sk-web-gui/accordion`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Disclosure.Component } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **AlternativeVariant** – standardstory
+- **WithLabel** – standardstory
+- **CustomButton** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/accordion](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion)
+- Storybook: [Disclosure](https://stilguide.sundsvall.se/?path=/docs/komponenter-accordion-disclosure--dokumentation)
+
+
+---
+
+# Accordion
+
+> Accordion.Component – komponent från @sk-web-gui/accordion.
+
+URL: https://ui.sundsvall.dev/komponenter/accordion/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/accordion.md
+
+{/* AUTO-GENERATED från @sk-web-gui/accordion@3.0.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Accordion.Component` finns i [`@sk-web-gui/accordion`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Accordion.Component } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/accordion](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/accordion)
+- Storybook: [Accordion](https://stilguide.sundsvall.se/?path=/docs/komponenter-accordion--dokumentation)
+
+
+---
+
 # Alert
 
 > Alert.Component – komponent från @sk-web-gui/alert.
@@ -592,6 +929,181 @@ import { Alert.Component } from '@sk-web-gui/react';
 
 - Implementation: [@sk-web-gui/alert](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/alert)
 - Storybook: [Alert](https://stilguide.sundsvall.se/?path=/docs/komponenter-alert--dokumentation)
+
+
+---
+
+# Avatar
+
+> Avatar – komponent från @sk-web-gui/avatar.
+
+URL: https://ui.sundsvall.dev/komponenter/avatar/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/avatar.md
+
+{/* AUTO-GENERATED från @sk-web-gui/avatar@1.2.4. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Avatar` finns i [`@sk-web-gui/avatar`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/avatar). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Avatar } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `imageAlt` | `string` | `–` |  |
+| `imageElement` | `React.JSX.Element` | `–` |  |
+| `placeholderImage` | `string` | `–` |  |
+| `imageUrl` | `string` | `–` |  |
+| `initials` | `string` | `–` |  |
+| `size` | `'xs'\| 'sm' \| 'md' \| 'lg'` | `–` |  |
+| `color` | `'juniskar' \| 'bjornstigen' \| 'gronsta' \| 'vattjom' \| string` | `–` |  |
+| `accent` | `boolean` | `–` |  |
+| `rounded` | `boolean` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "separator": "/"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/avatar](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/avatar)
+- Storybook: [Avatar](https://stilguide.sundsvall.se/?path=/docs/komponenter-avatar--dokumentation)
+
+
+---
+
+# Badge
+
+> Badge – komponent från @sk-web-gui/badge.
+
+URL: https://ui.sundsvall.dev/komponenter/badge/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/badge.md
+
+{/* AUTO-GENERATED från @sk-web-gui/badge@1.2.0. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Badge` finns i [`@sk-web-gui/badge`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/badge). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Badge } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `color` | `'tertiary' \| 'warning' \| 'error' \| 'vattjom' \| 'gronsta' \| 'bjornstigen' \| 'juniskar'` | `–` |  |
+| `counter` | `string \| number` | `–` |  |
+| `inverted` | `boolean` | `–` |  |
+| `rounded` | `boolean` | `–` |  |
+| `size` | `'sm' \| 'md'` | `–` | @default md |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "counter": "1"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/badge](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/badge)
+- Storybook: [Badge](https://stilguide.sundsvall.se/?path=/docs/komponenter-badge--dokumentation)
+
+
+---
+
+# Breadcrumbs
+
+> Breadcrumb – komponent från @sk-web-gui/breadcrumb.
+
+URL: https://ui.sundsvall.dev/komponenter/breadcrumbs/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/breadcrumbs.md
+
+{/* AUTO-GENERATED från @sk-web-gui/breadcrumb@1.1.9. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Breadcrumb` finns i [`@sk-web-gui/breadcrumb`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/breadcrumb). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Breadcrumb } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `separator` | `string \| React.ReactElement` | `–` | @default / |
+| `addSeparator` | `boolean` | `–` | @default true |
+| `color` | `'primary' \| 'vattjom'` | `–` | @default primary |
+| `children` | `React.ReactNode` | `–` | React Node |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/breadcrumb](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/breadcrumb)
+- Storybook: [Breadcrumbs](https://stilguide.sundsvall.se/?path=/docs/komponenter-breadcrumbs--dokumentation)
 
 
 ---
@@ -727,6 +1239,159 @@ import { Button } from '@sk-web-gui/react';
 
 ---
 
+# Callout
+
+> Callout – komponent från @sk-web-gui/callout.
+
+URL: https://ui.sundsvall.dev/komponenter/callout/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/callout.md
+
+{/* AUTO-GENERATED från @sk-web-gui/callout@1.2.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Callout` finns i [`@sk-web-gui/callout`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/callout). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Callout } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `color` | `'tertiary' \| 'warning' \| 'error' \| 'vattjom' \| 'gronsta' \| string` | `–` | @default tertiary |
+| `inverted` | `boolean` | `–` | @default false |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **OnButtonItem** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/callout](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/callout)
+- Storybook: [Callout](https://stilguide.sundsvall.se/?path=/docs/komponenter-callout--dokumentation)
+
+
+---
+
+# MetaCard
+
+> MetaCard – komponent från @sk-web-gui/card.
+
+URL: https://ui.sundsvall.dev/komponenter/card-metacard/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/card-metacard.md
+
+{/* AUTO-GENERATED från @sk-web-gui/card@2.0.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`MetaCard` finns i [`@sk-web-gui/card`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/card). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { MetaCard } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `children` | `React.ReactNode` | `–` | React node |
+| `color` | `'mono' \| 'vattjom'` | `–` | Set background color to card @default vattjom |
+| `useHoverEffect` | `boolean` | `–` | If the card should be clickable, will apply hover style @default false |
+| `href` | `string` | `–` | Make the card linkable |
+| `size` | `'sm' \| 'md'` | `–` | Size of the card @default sm |
+| `icon` | `React.JSX.Element` | `–` | Set icon @default &lt;Text/&gt; |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/card](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/card)
+- Storybook: [MetaCard](https://stilguide.sundsvall.se/?path=/docs/komponenter-card-metacard--dokumentation)
+
+
+---
+
+# Card
+
+> Card.Component – komponent från @sk-web-gui/card.
+
+URL: https://ui.sundsvall.dev/komponenter/card/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/card.md
+
+{/* AUTO-GENERATED från @sk-web-gui/card@2.0.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Card.Component` finns i [`@sk-web-gui/card`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/card). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Card.Component } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+## Enum-värden
+
+- **layout**: `undefined`, `vertical`, `horizontal`
+- **color**: `undefined`, `mono`, `tertiary`, `vattjom`, `gronsta`, `bjornstigen`, `juniskar`
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/card](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/card)
+- Storybook: [Card](https://stilguide.sundsvall.se/?path=/docs/komponenter-card--dokumentation)
+
+
+---
+
 # Checkbox.Group
 
 > Checkbox.Group – komponent från @sk-web-gui/forms.
@@ -837,6 +1502,57 @@ import { Checkbox } from '@sk-web-gui/react';
 
 ---
 
+# Chip
+
+> Chip – komponent från @sk-web-gui/chip.
+
+URL: https://ui.sundsvall.dev/komponenter/chip/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/chip.md
+
+{/* AUTO-GENERATED från @sk-web-gui/chip@1.2.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Chip` finns i [`@sk-web-gui/chip`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/chip). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Chip } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `strong` | `boolean` | `–` |  |
+| `inverted` | `boolean` | `–` |  |
+| `rounded` | `boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **AddAndRemove** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/chip](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/chip)
+- Storybook: [Chip](https://stilguide.sundsvall.se/?path=/docs/komponenter-chip--dokumentation)
+
+
+---
+
 # Combobox
 
 > Combobox.Input – komponent från @sk-web-gui/forms.
@@ -901,6 +1617,147 @@ import { Combobox.Input } from '@sk-web-gui/react';
 
 ---
 
+# CookieConsent
+
+> CookieConsent – komponent från @sk-web-gui/cookie-consent.
+
+URL: https://ui.sundsvall.dev/komponenter/cookieconsent/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/cookieconsent.md
+
+{/* AUTO-GENERATED från @sk-web-gui/cookie-consent@2.1.17. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`CookieConsent` finns i [`@sk-web-gui/cookie-consent`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/cookie-consent). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { CookieConsent } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `isOpen` | `boolean` | `–` |  |
+| `onConsent` | `(cookies: ConsentCookie[]) => void` | `–` |  |
+| `cookies` | `ConsentCookie[]` | `–` |  |
+| `title` | `string` | `–` |  |
+| `body` | `React.ReactNode` | `–` |  |
+| `resetConsentOnInit` | `boolean` | `–` |  |
+| `options` | `CookieSetOptions` | `–` |  |
+| `basePath` | `string` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "title": "Kakor på example.sundsvall.se",
+  "body": {
+    "__raw": "(\r\n      <>\r\n        <p>\r\n          Vi använder kakor, cookies, för att ge dig en förbättrad upplevelse, sammanställa statistik och för att viss\r\n          nödvändig funktionalitet ska fungera på webbplatsen.\r\n        </p>\r\n        <p>\r\n          <Link href=\"/kakor\">Läs mer om hur vi använder kakor</Link>\r\n        </p>\r\n      </>\r\n    )"
+  },
+  "cookies": [
+    {
+      "optional": false,
+      "displayName": "Nödvändiga kakor",
+      "description": "Dessa kakor är nödvändiga för att webbplatsen ska fungera och kan inte stängas av i våra system.",
+      "cookieName": "necessary"
+    },
+    {
+      "optional": true,
+      "displayName": "Funktionella kakor",
+      "description": " Dessa kakor ger förbättrade funktioner på webbplatsen.",
+      "cookieName": "func"
+    },
+    {
+      "optional": true,
+      "displayName": "Kakor för statistik",
+      "description": "Dessa kakor tillåter oss att räkna besök och trafikkällor, så att vi kan mäta och förbättra prestanda på vår webbplats.",
+      "cookieName": "stats"
+    }
+  ]
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/cookie-consent](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/cookie-consent)
+- Storybook: [CookieConsent](https://stilguide.sundsvall.se/?path=/docs/komponenter-cookieconsent--dokumentation)
+
+
+---
+
+# CountryCodeSelect
+
+> CountryCodeSelect – komponent från @sk-web-gui/countrycode-select.
+
+URL: https://ui.sundsvall.dev/komponenter/countrycodeselect/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/countrycodeselect.md
+
+{/* AUTO-GENERATED från @sk-web-gui/countrycode-select@1.1.1. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`CountryCodeSelect` finns i [`@sk-web-gui/countrycode-select`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/countrycode-select). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { CountryCodeSelect } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `onChangeCountryCode` | `(value: number \| undefined) => void` | `–` | Returns the country code as a number (e.g 46). onChange will hold the selected country's 2 digit ISO code (e.g SE). This is important to differentiate between countries with the same country code (e.g 1 for US and CA). |
+| `onChange` | `(event: React.ChangeEvent<HTMLSelectElement>) => void` | `–` | The event value holds the selected country's 2 digit ISO code (e.g SE) followed by a + and the country code Resulting in a string like "SE+46" |
+| `value` | `string` | `–` | The selected country's 2 digit ISO code (e.g SE) |
+| `placeholder` | `string` | `–` | Text displayed when no country is selected |
+| `countries` | `string[]` | `–` | Countries to be displayed in the select dropdown as an array of 2 digit ISO codes, e.g [SE, NO, FI] @default all countries |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Combobox** – standardstory
+- **InputWithSelect** – standardstory
+- **InputWithCombobox** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/countrycode-select](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/countrycode-select)
+- Storybook: [CountryCodeSelect](https://stilguide.sundsvall.se/?path=/docs/komponenter-countrycodeselect--dokumentation)
+
+
+---
+
 # DatePicker
 
 > DatePicker – komponent från @sk-web-gui/forms.
@@ -952,6 +1809,162 @@ import { DatePicker } from '@sk-web-gui/react';
 
 - Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
 - Storybook: [DatePicker](https://stilguide.sundsvall.se/?path=/docs/komponenter-datepicker--dokumentation)
+
+
+---
+
+# Divider.Section
+
+> Divider.Section – komponent från @sk-web-gui/divider.
+
+URL: https://ui.sundsvall.dev/komponenter/divider-divider-section/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/divider-divider-section.md
+
+{/* AUTO-GENERATED från @sk-web-gui/divider@1.1.8. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Divider.Section` finns i [`@sk-web-gui/divider`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/divider). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Divider.Section } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `size` | `'sm' \| 'md' \| 'lg'` | `–` | @default md |
+| `children` | `string \| React.ReactElement` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "children": "Section"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/divider](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/divider)
+- Storybook: [Divider.Section](https://stilguide.sundsvall.se/?path=/docs/komponenter-divider-divider.section--dokumentation)
+
+
+---
+
+# Divider
+
+> Divider – komponent från @sk-web-gui/divider.
+
+URL: https://ui.sundsvall.dev/komponenter/divider/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/divider.md
+
+{/* AUTO-GENERATED från @sk-web-gui/divider@1.1.8. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Divider` finns i [`@sk-web-gui/divider`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/divider). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Divider } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `orientation` | `'horizontal' \| 'vertical'` | `–` | The orientation |
+| `strong` | `boolean` | `–` | Thicker divider |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/divider](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/divider)
+- Storybook: [Divider](https://stilguide.sundsvall.se/?path=/docs/komponenter-divider--dokumentation)
+
+
+---
+
+# Filter
+
+> Filter – komponent från @sk-web-gui/filter.
+
+URL: https://ui.sundsvall.dev/komponenter/filter/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/filter.md
+
+{/* AUTO-GENERATED från @sk-web-gui/filter@1.2.17. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Filter` finns i [`@sk-web-gui/filter`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/filter). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Filter } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `Component` | `typeof FilterRoot` | `–` |  |
+| `Label` | `typeof FilterLabel` | `–` |  |
+| `Item` | `typeof FilterItem` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/filter](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/filter)
+- Storybook: [Filter](https://stilguide.sundsvall.se/?path=/docs/komponenter-filter--dokumentation)
 
 
 ---
@@ -1081,6 +2094,450 @@ import { Input } from '@sk-web-gui/react';
 
 ---
 
+# Icon.Padded
+
+> IconPadded – komponent från @sk-web-gui/icon.
+
+URL: https://ui.sundsvall.dev/komponenter/icon-icon-padded/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/icon-icon-padded.md
+
+{/* AUTO-GENERATED från @sk-web-gui/icon@3.1.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`IconPadded` finns i [`@sk-web-gui/icon`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/icon). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { IconPadded } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "icon": {
+    "__raw": "<Check />"
+  }
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/icon](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/icon)
+- Storybook: [Icon.Padded](https://stilguide.sundsvall.se/?path=/docs/komponenter-icon-icon.padded--dokumentation)
+
+
+---
+
+# Icon
+
+> Icon – komponent från @sk-web-gui/icon.
+
+URL: https://ui.sundsvall.dev/komponenter/icon-icon/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/icon-icon.md
+
+{/* AUTO-GENERATED från @sk-web-gui/icon@3.1.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Icon` finns i [`@sk-web-gui/icon`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/icon). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Icon } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `color` | `\| 'tertiary' \| 'info' \| 'success' \| 'primary' \| 'warning' \| 'error' \| 'vattjom' \| 'gronsta' \| 'bjornstigen' \| 'juniskar'` | `–` | @default primary |
+| `icon` | `React.ReactElement` | `–` |  |
+| `rounded` | `boolean` | `–` | @default false |
+| `inverted` | `boolean` | `–` | @default false |
+| `variant` | `'tertiary' \| 'ghost'` | `–` | @default tertiary |
+| `size` | `number \| string \| 'fit'` | `–` | @default 2.4rem |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "icon": {
+    "__raw": "<Check />"
+  }
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/icon](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/icon)
+- Storybook: [Icon](https://stilguide.sundsvall.se/?path=/docs/komponenter-icon-icon--dokumentation)
+
+
+---
+
+# LucideIcon.Padded
+
+> LucideIconPadded – komponent från @sk-web-gui/lucide-icon.
+
+URL: https://ui.sundsvall.dev/komponenter/icon-lucideicon-padded/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/icon-lucideicon-padded.md
+
+{/* AUTO-GENERATED från @sk-web-gui/lucide-icon@1.1.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`LucideIconPadded` finns i [`@sk-web-gui/lucide-icon`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/lucide-icon). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { LucideIconPadded } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "name": "check"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/lucide-icon](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/lucide-icon)
+- Storybook: [LucideIcon.Padded](https://stilguide.sundsvall.se/?path=/docs/komponenter-icon-lucideicon.padded--dokumentation)
+
+
+---
+
+# LucideIcon
+
+> LucideIcon – komponent från @sk-web-gui/lucide-icon.
+
+URL: https://ui.sundsvall.dev/komponenter/icon-lucideicon/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/icon-lucideicon.md
+
+{/* AUTO-GENERATED från @sk-web-gui/lucide-icon@1.1.3. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`LucideIcon` finns i [`@sk-web-gui/lucide-icon`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/lucide-icon). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { LucideIcon } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `name` | `IconName` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "name": "check"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/lucide-icon](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/lucide-icon)
+- Storybook: [LucideIcon](https://stilguide.sundsvall.se/?path=/docs/komponenter-icon-lucideicon--dokumentation)
+
+
+---
+
+# Image
+
+> Image – komponent från @sk-web-gui/image.
+
+URL: https://ui.sundsvall.dev/komponenter/image/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/image.md
+
+{/* AUTO-GENERATED från @sk-web-gui/image@1.1.8. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Image` finns i [`@sk-web-gui/image`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/image). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Image } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `fallbackSrc` | `string` | `–` |  |
+| `fallback` | `React.ReactElement` | `–` |  |
+| `loading` | `'eager' \| 'lazy'` | `–` |  |
+| `ignoreFallback` | `boolean` | `–` |  |
+| `as` | `React.ElementType` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/image](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/image)
+- Storybook: [Image](https://stilguide.sundsvall.se/?path=/docs/komponenter-image--dokumentation)
+
+
+---
+
+# Label
+
+> Label – komponent från @sk-web-gui/label.
+
+URL: https://ui.sundsvall.dev/komponenter/label/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/label.md
+
+{/* AUTO-GENERATED från @sk-web-gui/label@1.1.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Label` finns i [`@sk-web-gui/label`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/label). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Label } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `color` | `string` | `–` |  |
+| `rounded` | `boolean` | `–` |  |
+| `inverted` | `boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/label](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/label)
+- Storybook: [Label](https://stilguide.sundsvall.se/?path=/docs/komponenter-label--dokumentation)
+
+
+---
+
+# Footer
+
+> Footer – komponent från @sk-web-gui/layout.
+
+URL: https://ui.sundsvall.dev/komponenter/layout-footer/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/layout-footer.md
+
+{/* AUTO-GENERATED från @sk-web-gui/layout@3.0.1. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Footer` finns i [`@sk-web-gui/layout`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/layout). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Footer } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/layout](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/layout)
+- Storybook: [Footer](https://stilguide.sundsvall.se/?path=/docs/layout-footer--dokumentation)
+
+
+---
+
+# Header
+
+> Header – komponent från @sk-web-gui/layout.
+
+URL: https://ui.sundsvall.dev/komponenter/layout-header/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/layout-header.md
+
+{/* AUTO-GENERATED från @sk-web-gui/layout@3.0.1. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Header` finns i [`@sk-web-gui/layout`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/layout). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Header } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `title` | `string` | `–` | Title for main page |
+| `subtitle` | `string` | `–` | Subtitle for page- optional |
+| `children` | `React.ReactNode` | `–` | React node |
+| `logoLinkOnClick` | `() => void` | `–` | onClick for Logo-link Not in use if alternative logo is used. |
+| `notificationsAlert` | `React.ReactNode` | `–` | NotificationsAlert component |
+| `userMenu` | `React.ReactNode` | `–` | UserMenu component |
+| `wrapperClasses` | `string` | `–` | CSS-classes for top parent node |
+| `userMenuClasses` | `string` | `–` | CSS-classes for usermenu |
+| `mainMenu` | `React.ReactNode` | `–` | Main menu component |
+| `mobileMenu` | `React.ReactNode` | `–` | Mobile menu component |
+| `logo` | `React.ReactNode` | `–` | Alternative logo  If you want a linked logo, wrap it in a link component. |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "title": "E-tjänster",
+  "subtitle": "Sundsvalls kommun"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/layout](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/layout)
+- Storybook: [Header](https://stilguide.sundsvall.se/?path=/docs/layout-header--dokumentation)
+
+
+---
+
 # Link
 
 > Link – komponent från @sk-web-gui/link.
@@ -1144,6 +2601,670 @@ import { Link } from '@sk-web-gui/react';
 
 - Implementation: [@sk-web-gui/link](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/link)
 - Storybook: [Link](https://stilguide.sundsvall.se/?path=/docs/komponenter-link--dokumentation)
+
+
+---
+
+# List
+
+> List – komponent från @sk-web-gui/list.
+
+URL: https://ui.sundsvall.dev/komponenter/list/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/list.md
+
+{/* AUTO-GENERATED från @sk-web-gui/list@1.2.9. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`List` finns i [`@sk-web-gui/list`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/list). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { List } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `listStyle` | `'bullet' \| 'numbered' \| 'stroke'` | `–` | Select style of list. |
+| `children` | `React.ReactNode` | `–` | React Node |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/list](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/list)
+- Storybook: [List](https://stilguide.sundsvall.se/?path=/docs/komponenter-list--dokumentation)
+
+
+---
+
+# Logo
+
+> Logo – komponent från @sk-web-gui/logo.
+
+URL: https://ui.sundsvall.dev/komponenter/logo/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/logo.md
+
+{/* AUTO-GENERATED från @sk-web-gui/logo@1.2.6. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Logo` finns i [`@sk-web-gui/logo`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/logo). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Logo } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `variant` | `'service'` | `–` |  |
+| `title` | `string` | `–` |  |
+| `subtitle` | `string` | `–` |  |
+| `logo` | `React.ReactNode` | `–` | Controls which logo to display |
+| `symbol` | `React.ReactNode` | `–` | Controls which symbol to display |
+| `inverted` | `boolean` | `–` | Inverts the colors of the logo |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "title": "En service"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/logo](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/logo)
+- Storybook: [Logo](https://stilguide.sundsvall.se/?path=/docs/komponenter-logo--dokumentation)
+
+
+---
+
+# Menu-horizontal
+
+> NavigationBar – komponent från @sk-web-gui/navigationbar.
+
+URL: https://ui.sundsvall.dev/komponenter/menu-horizontal/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/menu-horizontal.md
+
+{/* AUTO-GENERATED från @sk-web-gui/navigation-bar@3.0.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`NavigationBar` finns i [`@sk-web-gui/navigationbar`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/navigation-bar). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { NavigationBar } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `showBackground` | `boolean` | `–` |  |
+| `size` | `'md' \| 'lg'` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/navigationbar](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/navigation-bar)
+- Storybook: [Menu-horizontal](https://stilguide.sundsvall.se/?path=/docs/komponenter-menu-horizontal--dokumentation)
+
+
+---
+
+# Menu-vertical
+
+> MenuVertical – komponent från @sk-web-gui/menu-vertical.
+
+URL: https://ui.sundsvall.dev/komponenter/menu-vertical/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/menu-vertical.md
+
+{/* AUTO-GENERATED från @sk-web-gui/menu-vertical@2.2.10. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`MenuVertical` finns i [`@sk-web-gui/menu-vertical`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/menu-vertical). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { MenuVertical } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/menu-vertical](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/menu-vertical)
+- Storybook: [Menu-vertical](https://stilguide.sundsvall.se/?path=/docs/komponenter-menu-vertical--dokumentation)
+
+
+---
+
+# Confirm
+
+> ConfirmationDialogContextProvider – komponent från @sk-web-gui/modal.
+
+URL: https://ui.sundsvall.dev/komponenter/modal-confirm/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/modal-confirm.md
+
+{/* AUTO-GENERATED från @sk-web-gui/modal@2.3.4. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`ConfirmationDialogContextProvider` finns i [`@sk-web-gui/modal`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/modal). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { ConfirmationDialogContextProvider } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `children` | `React.ReactNode` | `–` |  |
+
+## Enum-värden
+
+- **dialogType**: `warning`, `error`, `info`, `primary`, `null`
+- **icon**: `info`, `error`, `question`, `null`
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "title": "Dialog label",
+  "message": "Is this a confirmation dialog?"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **ConfirmWithType** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/modal](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/modal)
+- Storybook: [Confirm](https://stilguide.sundsvall.se/?path=/docs/komponenter-modal-confirm--dokumentation)
+
+
+---
+
+# Dialog
+
+> Dialog – komponent från @sk-web-gui/modal.
+
+URL: https://ui.sundsvall.dev/komponenter/modal-dialog/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/modal-dialog.md
+
+{/* AUTO-GENERATED från @sk-web-gui/modal@2.3.4. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Dialog` finns i [`@sk-web-gui/modal`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/modal). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Dialog } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `Component` | `typeof DialogComponent` | `–` |  |
+| `Buttons` | `typeof DialogButtons` | `–` |  |
+| `Content` | `typeof DialogContent` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/modal](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/modal)
+- Storybook: [Dialog](https://stilguide.sundsvall.se/?path=/docs/komponenter-modal-dialog--dokumentation)
+
+
+---
+
+# Modal
+
+> Modal – komponent från @sk-web-gui/modal.
+
+URL: https://ui.sundsvall.dev/komponenter/modal/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/modal.md
+
+{/* AUTO-GENERATED från @sk-web-gui/modal@2.3.4. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Modal` finns i [`@sk-web-gui/modal`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/modal). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Modal } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `show` | `boolean` | `–` |  |
+| `label` | `string \| React.JSX.Element` | `–` |  |
+| `closeLabel` | `string` | `–` |  |
+| `className` | `string` | `–` |  |
+| `onClose` | `() => void` | `–` |  |
+| `hideClosebutton` | `boolean` | `–` |  |
+| `closeButtonProps` | `React.ComponentProps<typeof Button>` | `–` |  |
+| `children` | `React.ReactNode` | `–` |  |
+| `disableCloseOutside` | `boolean` | `–` |  |
+| `as` | `React.ElementType` | `–` | @default article |
+| `labelAs` | `React.ElementType` | `–` |  |
+| `hideLabel` | `boolean` | `–` |  |
+| `aria-label` | `string` | `–` |  |
+| `overlayTransitionProps` | `React.ComponentPropsWithRef<typeof TransitionChild>` | `–` |  |
+| `contentTransitionProps` | `React.ComponentPropsWithRef<typeof TransitionChild>` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "label": "Title"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/modal](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/modal)
+- Storybook: [Modal](https://stilguide.sundsvall.se/?path=/docs/komponenter-modal--dokumentation)
+
+
+---
+
+# Pagination
+
+> Pagination – komponent från @sk-web-gui/pagination.
+
+URL: https://ui.sundsvall.dev/komponenter/pagination/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/pagination.md
+
+{/* AUTO-GENERATED från @sk-web-gui/pagination@1.1.17. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Pagination` finns i [`@sk-web-gui/pagination`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/pagination). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Pagination } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `pages` | `number` | `–` | Total amount of pages |
+| `activePage` | `number` | `–` | Currently active page |
+| `changePage` | `(page: number) => void` | `–` | Handles page number change |
+| `pagesBefore` | `number` | `–` | Number of pages shown before current page |
+| `pagesAfter` | `number` | `–` | Number of pages shown after current page |
+| `showFirst` | `boolean` | `–` | Always show first page |
+| `showLast` | `boolean` | `–` | Always show last page |
+| `nextLabel` | `string` | `–` | Label on next button |
+| `prevLabel` | `string` | `–` | Label on previous button |
+| `hidePrevNextLabel` | `boolean` | `–` | Hides the text on prev and next buttons |
+| `fitContainer` | `boolean` | `–` | Stretch width to fit container |
+| `showConstantPages` | `boolean` | `–` | Always show same number of pages |
+| `asSelect` | `boolean` | `–` | Show as select |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "pages": 11,
+  "activePage": 1,
+  "showFirst": true,
+  "showLast": true,
+  "pagesBefore": 1,
+  "pagesAfter": 1
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/pagination](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/pagination)
+- Storybook: [Pagination](https://stilguide.sundsvall.se/?path=/docs/komponenter-pagination--dokumentation)
+
+
+---
+
+# PopupMenu
+
+> PopupMenu – komponent från @sk-web-gui/popup-menu.
+
+URL: https://ui.sundsvall.dev/komponenter/popupmenu/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/popupmenu.md
+
+{/* AUTO-GENERATED från @sk-web-gui/popup-menu@3.1.10. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`PopupMenu` finns i [`@sk-web-gui/popup-menu`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/popup-menu). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { PopupMenu } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `children` | `\| [React.ReactComponentElement<typeof PopupMenuButton>, React.ReactComponentElement<typeof PopupMenuPanel>] \| React.ReactComponentElement<typeof PopupMenuPanel>` | `–` | PopupMenu.Button & PopupMenu.Panel |
+| `id` | `string` | `–` |  |
+| `open` | `boolean` | `–` | Set true to open the menu @default false |
+| `onToggleOpen` | `(open: boolean) => void` | `–` | Returns true or false when menu is opened or closed |
+| `size` | `'md' \| 'sm'` | `–` | Size of popup. Does not affect button size @default md |
+| `position` | `'under' \| 'over' \| 'left' \| 'right'` | `–` | Position of the popup relative to the button. @default under |
+| `align` | `'start' \| 'end'` | `–` | Alignment of the popup relative to the button. @default start |
+| `type` | `'dialog' \| 'menu'` | `–` | Type of popup. @default menu |
+| `autoAlign` | `boolean` | `–` | This will flip the alignment if the panel doesn't fit on screen @default true |
+| `autoPosition` | `boolean` | `–` | This will flip the position (under and over, left and right) if the panel doesn't fit on screen @default false |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "position": "under",
+  "autoPosition": false
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **CheckboxesAndFilter** – standardstory
+- **PopupMenuAsDialog** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/popup-menu](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/popup-menu)
+- Storybook: [PopupMenu](https://stilguide.sundsvall.se/?path=/docs/komponenter-popupmenu--dokumentation)
+
+
+---
+
+# ProgressBar
+
+> ProgressBar – komponent från @sk-web-gui/progress-bar.
+
+URL: https://ui.sundsvall.dev/komponenter/progressbar/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/progressbar.md
+
+{/* AUTO-GENERATED från @sk-web-gui/progress-bar@1.2.0. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`ProgressBar` finns i [`@sk-web-gui/progress-bar`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/progress-bar). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { ProgressBar } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `steps` | `number` | `–` | @default 100 |
+| `current` | `number` | `–` | Current step @default 0 |
+| `color` | `'tertiary' \| 'vattjom' \| 'gronsta' \| 'bjornstigen' \| 'juniskar'` | `primary` | Sets color |
+| `accent` | `boolean` | `false` | Sets accent |
+| `size` | `'sm' \| 'md'` | `sm` | Sets size |
+
+## Enum-värden
+
+- **color**: `undefined`, `tertiary`, `gronsta`, `vattjom`, `juniskar`, `bjornstigen`
+- **size**: `sm`, `md`
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "current": 40
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/progress-bar](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/progress-bar)
+- Storybook: [ProgressBar](https://stilguide.sundsvall.se/?path=/docs/komponenter-progressbar--dokumentation)
+
+
+---
+
+# ProgressStepper
+
+> ProgressStepper – komponent från @sk-web-gui/progress-stepper.
+
+URL: https://ui.sundsvall.dev/komponenter/progressstepper/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/progressstepper.md
+
+{/* AUTO-GENERATED från @sk-web-gui/progress-stepper@1.3.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`ProgressStepper` finns i [`@sk-web-gui/progress-stepper`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/progress-stepper). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { ProgressStepper } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `steps` | `string[]` | `–` | Array of labels |
+| `current` | `number` | `–` | Index of current step |
+| `rounded` | `boolean` | `–` |  |
+| `size` | `'sm' \| 'md'` | `–` |  |
+| `vertical` | `boolean` | `–` | If true, the stepper is displayed vertically |
+| `ellipsisLength` | `number` | `–` | If greater than 0, the given number will set the length of each label |
+| `noWrap` | `boolean` | `–` | True by default. Displays the label on a single row |
+| `labelPosition` | `StepLabelPosition` | `–` | Position of the label in relation to the icon (or number box) |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "steps": [
+    "Första steget",
+    "Andra steget",
+    "Sista steget"
+  ],
+  "current": 1,
+  "vertical": false,
+  "ellipsisLength": 0,
+  "noWrap": true,
+  "labelPosition": "right"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/progress-stepper](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/progress-stepper)
+- Storybook: [ProgressStepper](https://stilguide.sundsvall.se/?path=/docs/komponenter-progressstepper--dokumentation)
 
 
 ---
@@ -1265,6 +3386,114 @@ import { RadioButton } from '@sk-web-gui/react';
 
 ---
 
+# SearchFieldSuggestions
+
+> SearchField.Suggestions – komponent från @sk-web-gui/searchfield.
+
+URL: https://ui.sundsvall.dev/komponenter/searchfield-searchfieldsuggestions/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/searchfield-searchfieldsuggestions.md
+
+{/* AUTO-GENERATED från @sk-web-gui/searchfield@2.3.17. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`SearchField.Suggestions` finns i [`@sk-web-gui/searchfield`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/searchfield). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { SearchField.Suggestions } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "placeholder": "Sök"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/searchfield](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/searchfield)
+- Storybook: [SearchFieldSuggestions](https://stilguide.sundsvall.se/?path=/docs/komponenter-searchfield-searchfieldsuggestions--dokumentation)
+
+
+---
+
+# Searchfield
+
+> SearchField.Component – komponent från @sk-web-gui/searchfield.
+
+URL: https://ui.sundsvall.dev/komponenter/searchfield/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/searchfield.md
+
+{/* AUTO-GENERATED från @sk-web-gui/searchfield@2.3.17. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`SearchField.Component` finns i [`@sk-web-gui/searchfield`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/searchfield). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { SearchField.Component } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "placeholder": "Sök"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/searchfield](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/searchfield)
+- Storybook: [Searchfield](https://stilguide.sundsvall.se/?path=/docs/komponenter-searchfield--dokumentation)
+
+
+---
+
 # Select
 
 > Select – komponent från @sk-web-gui/forms.
@@ -1323,6 +3552,110 @@ import { Select } from '@sk-web-gui/react';
 
 - Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
 - Storybook: [Select](https://stilguide.sundsvall.se/?path=/docs/komponenter-select--dokumentation)
+
+
+---
+
+# Sidebar
+
+> MenuVertical – komponent från @sk-web-gui/menu-vertical.
+
+URL: https://ui.sundsvall.dev/komponenter/sidebar/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/sidebar.md
+
+{/* AUTO-GENERATED från @sk-web-gui/menu-vertical@2.2.10. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`MenuVertical` finns i [`@sk-web-gui/menu-vertical`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/menu-vertical). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { MenuVertical } from '@sk-web-gui/react';
+```
+
+## API
+
+_Inga publika props extraherade från källan._
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/menu-vertical](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/menu-vertical)
+- Storybook: [Sidebar](https://stilguide.sundsvall.se/?path=/docs/komponenter-sidebar--dokumentation)
+
+
+---
+
+# Snackbar
+
+> Snackbar – komponent från @sk-web-gui/snackbar.
+
+URL: https://ui.sundsvall.dev/komponenter/snackbar/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/snackbar.md
+
+{/* AUTO-GENERATED från @sk-web-gui/snackbar@2.3.1. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Snackbar` finns i [`@sk-web-gui/snackbar`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/snackbar). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Snackbar } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `actionCallback` | `(e: React.MouseEvent<HTMLButtonElement>) => void` | `–` |  |
+| `leadingIcon` | `boolean` | `–` |  |
+| `action` | `string` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "message": "Toast message goes here."
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/snackbar](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/snackbar)
+- Storybook: [Snackbar](https://stilguide.sundsvall.se/?path=/docs/komponenter-snackbar--dokumentation)
 
 
 ---
@@ -1433,6 +3766,177 @@ import { Switch } from '@sk-web-gui/react';
 
 ---
 
+# AutoTable
+
+> AutoTable – komponent från @sk-web-gui/table.
+
+URL: https://ui.sundsvall.dev/komponenter/table-autotable/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/table-autotable.md
+
+{/* AUTO-GENERATED från @sk-web-gui/table@3.2.18. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`AutoTable` finns i [`@sk-web-gui/table`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/table). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { AutoTable } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `autoheaders` | `Array<AutoTableHeader \| string>` | `–` |  |
+| `autodata` | `Array<TableItem>` | `–` |  |
+| `handleSort` | `(colIndex: number, asc: boolean) => void` | `–` |  |
+| `tableSortable` | `boolean` | `–` |  |
+| `sortedOrder` | `SortMode` | `–` |  |
+| `pageSize` | `number` | `–` | @default 5 |
+| `pageSizeEdit` | `'select' \| 'input' \| boolean` | `–` | @default select |
+| `pageSizeOptions` | `Array<number>` | `–` | @default [5,10,25,50,75,100] |
+| `rowHeightEdit` | `'select' \| boolean` | `–` | @default select |
+| `page` | `number` | `–` |  |
+| `captionTitle` | `string` | `–` |  |
+| `captionBody` | `string` | `–` |  |
+| `captionClassName` | `string` | `–` |  |
+| `captionShowPages` | `boolean` | `–` |  |
+| `highlightedItemIndex` | `number` | `–` |  |
+| `changePage` | `(page: number) => void` | `–` |  |
+| `footer` | `boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/table](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/table)
+- Storybook: [AutoTable](https://stilguide.sundsvall.se/?path=/docs/komponenter-table-autotable--dokumentation)
+
+
+---
+
+# Table
+
+> Table.Component – komponent från @sk-web-gui/table.
+
+URL: https://ui.sundsvall.dev/komponenter/table-table/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/table-table.md
+
+{/* AUTO-GENERATED från @sk-web-gui/table@3.2.18. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Table.Component` finns i [`@sk-web-gui/table`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/table). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Table.Component } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `background` | `boolean` | `–` |  |
+| `wrappingBorder` | `boolean` | `–` |  |
+| `dense` | `boolean` | `–` |  |
+| `scrollable` | `'x' \| 'y' \| boolean` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **DataTable** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/table](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/table)
+- Storybook: [Table](https://stilguide.sundsvall.se/?path=/docs/komponenter-table-table--dokumentation)
+
+
+---
+
+# Tabs
+
+> Tabs – komponent från @sk-web-gui/tabs.
+
+URL: https://ui.sundsvall.dev/komponenter/tabs/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/tabs.md
+
+{/* AUTO-GENERATED från @sk-web-gui/tabs@1.4.6. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Tabs` finns i [`@sk-web-gui/tabs`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/tabs). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Tabs } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `onTabChange` | `(index: number) => void` | `–` |  |
+| `tabslistClassName` | `string` | `–` |  |
+| `panelsClassName` | `string` | `–` |  |
+| `size` | `'sm' \| 'md' \| 'lg'` | `–` | @default md |
+| `underline` | `boolean` | `–` | @default false |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **StateControlled** – standardstory
+- **ControlOthers** – standardstory
+- **SeparatedButtonsAndContent** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/tabs](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/tabs)
+- Storybook: [Tabs](https://stilguide.sundsvall.se/?path=/docs/komponenter-tabs--dokumentation)
+
+
+---
+
 # Textarea
 
 > Textarea – komponent från @sk-web-gui/forms.
@@ -1485,6 +3989,64 @@ import { Textarea } from '@sk-web-gui/react';
 
 - Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
 - Storybook: [Textarea](https://stilguide.sundsvall.se/?path=/docs/komponenter-textarea--dokumentation)
+
+
+---
+
+# TextEditor
+
+> TextEditor – komponent från @sk-web-gui/text-editor.
+
+URL: https://ui.sundsvall.dev/komponenter/texteditor/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/texteditor.md
+
+{/* AUTO-GENERATED från @sk-web-gui/text-editor@2.1.0. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`TextEditor` finns i [`@sk-web-gui/text-editor`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/text-editor). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { TextEditor } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `name` | `string` | `–` |  |
+| `readOnly` | `boolean` | `–` |  |
+| `value` | `TextEditorValue` | `–` |  |
+| `disableToolbar` | `boolean` | `–` |  |
+| `className` | `string` | `–` |  |
+| `toolbar` | `ToolbarConfig` | `–` |  |
+| `visualZoom` | `boolean` | `–` | Show visual zoom controls (+/-) in the toolbar. Does not affect exported content. |
+| `onTextChange` | `(delta: Delta, oldDelta: Delta, source: string) => void` | `–` |  |
+| `onSelectionChange` | `(range: Range, oldRange: Range, source: string) => void` | `–` |  |
+| `onChange` | `(event: CustomOnChangeEvent<TextEditorValue, HTMLInputElement>) => void` | `–` |  |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **InsertText** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/text-editor](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/text-editor)
+- Storybook: [TextEditor](https://stilguide.sundsvall.se/?path=/docs/komponenter-texteditor--dokumentation)
 
 
 ---
@@ -1546,6 +4108,174 @@ import { TextField } from '@sk-web-gui/react';
 
 - Implementation: [@sk-web-gui/forms](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/forms)
 - Storybook: [TextField](https://stilguide.sundsvall.se/?path=/docs/komponenter-textfield--dokumentation)
+
+
+---
+
+# Tooltip
+
+> Tooltip – komponent från @sk-web-gui/tooltip.
+
+URL: https://ui.sundsvall.dev/komponenter/tooltip/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/tooltip.md
+
+{/* AUTO-GENERATED från @sk-web-gui/tooltip@1.1.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Tooltip` finns i [`@sk-web-gui/tooltip`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/tooltip). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Tooltip } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `position` | `'above' \| 'below' \| 'right' \| 'left'` | `–` | Select the position of the tooltip @default below |
+| `children` | `React.ReactNode` | `–` | React Node |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Example** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/tooltip](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/tooltip)
+- Storybook: [Tooltip](https://stilguide.sundsvall.se/?path=/docs/komponenter-tooltip--dokumentation)
+
+
+---
+
+# UserMenu
+
+> UserMenu – komponent från @sk-web-gui/user-menu.
+
+URL: https://ui.sundsvall.dev/komponenter/usermenu/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/usermenu.md
+
+{/* AUTO-GENERATED från @sk-web-gui/user-menu@1.1.10. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`UserMenu` finns i [`@sk-web-gui/user-menu`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/user-menu). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { UserMenu } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `menuTitle` | `string` | `–` |  |
+| `menuSubTitle` | `string` | `–` |  |
+| `initials` | `string` | `–` |  |
+| `image` | `string` | `–` |  |
+| `imageAlt` | `string` | `–` |  |
+| `placeholderImage` | `string` | `–` |  |
+| `imageElem` | `React.ReactElement` | `–` |  |
+| `menuGroups` | `MenuItemGroup[]` | `–` |  |
+| `buttonSize` | `React.ComponentProps<typeof Avatar>['size']` | `–` | Size of avatar button @default lg |
+| `buttonRounded` | `React.ComponentProps<typeof Avatar>['rounded']` | `–` | If avatar button should be rounded @default true |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "menuTitle": "Företagsbolaget AB",
+  "menuSubTitle": "Förnamn Efternamn som är lite längre"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/user-menu](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/user-menu)
+- Storybook: [UserMenu](https://stilguide.sundsvall.se/?path=/docs/komponenter-usermenu--dokumentation)
+
+
+---
+
+# Komponent
+
+> Text – komponent från @sk-web-gui/text.
+
+URL: https://ui.sundsvall.dev/komponenter/wip-komponenter-text-komponent/
+Källa (markdown): https://ui.sundsvall.dev/komponenter/wip-komponenter-text-komponent.md
+
+{/* AUTO-GENERATED från @sk-web-gui/text@1.1.9. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`Text` finns i [`@sk-web-gui/text`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/text). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { Text } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `urlAsLink` | `boolean` | `–` | If text looking like urls should be clickable links |
+| `externalLinks` | `boolean` | `–` | If links should be external or not |
+| `onLinkClick` | `(event: MouseEvent, url: string) => void` | `–` |  |
+| `children` | `React.ReactNode` | `–` | React node |
+| `as` | `React.ElementType` | `–` | The element or component to use in place of `div` |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/text](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/text)
+- Storybook: [Komponent](https://stilguide.sundsvall.se/?path=/docs/wip-komponenter-text-komponent--dokumentation)
 
 
 ---

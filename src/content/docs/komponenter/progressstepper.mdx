@@ -1,0 +1,71 @@
+---
+title: ProgressStepper
+description: "ProgressStepper – komponent från @sk-web-gui/progress-stepper."
+status: stabil
+version: 1.3.2
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/progress-stepper"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/komponenter-progressstepper--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/progress-stepper@1.3.2. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`ProgressStepper` finns i [`@sk-web-gui/progress-stepper`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/progress-stepper). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { ProgressStepper } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `steps` | `string[]` | `–` | Array of labels |
+| `current` | `number` | `–` | Index of current step |
+| `rounded` | `boolean` | `–` |  |
+| `size` | `'sm' \| 'md'` | `–` |  |
+| `vertical` | `boolean` | `–` | If true, the stepper is displayed vertically |
+| `ellipsisLength` | `number` | `–` | If greater than 0, the given number will set the length of each label |
+| `noWrap` | `boolean` | `–` | True by default. Displays the label on a single row |
+| `labelPosition` | `StepLabelPosition` | `–` | Position of the label in relation to the icon (or number box) |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "steps": [
+    "Första steget",
+    "Andra steget",
+    "Sista steget"
+  ],
+  "current": 1,
+  "vertical": false,
+  "ellipsisLength": 0,
+  "noWrap": true,
+  "labelPosition": "right"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/progress-stepper](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/progress-stepper)
+- Storybook: [ProgressStepper](https://stilguide.sundsvall.se/?path=/docs/komponenter-progressstepper--dokumentation)

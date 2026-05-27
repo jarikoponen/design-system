@@ -1,0 +1,65 @@
+---
+title: UserMenu
+description: "UserMenu – komponent från @sk-web-gui/user-menu."
+status: stabil
+version: 1.1.10
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/user-menu"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/komponenter-usermenu--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/user-menu@1.1.10. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`UserMenu` finns i [`@sk-web-gui/user-menu`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/user-menu). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { UserMenu } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `menuTitle` | `string` | `–` |  |
+| `menuSubTitle` | `string` | `–` |  |
+| `initials` | `string` | `–` |  |
+| `image` | `string` | `–` |  |
+| `imageAlt` | `string` | `–` |  |
+| `placeholderImage` | `string` | `–` |  |
+| `imageElem` | `React.ReactElement` | `–` |  |
+| `menuGroups` | `MenuItemGroup[]` | `–` |  |
+| `buttonSize` | `React.ComponentProps<typeof Avatar>['size']` | `–` | Size of avatar button @default lg |
+| `buttonRounded` | `React.ComponentProps<typeof Avatar>['rounded']` | `–` | If avatar button should be rounded @default true |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "menuTitle": "Företagsbolaget AB",
+  "menuSubTitle": "Förnamn Efternamn som är lite längre"
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/user-menu](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/user-menu)
+- Storybook: [UserMenu](https://stilguide.sundsvall.se/?path=/docs/komponenter-usermenu--dokumentation)

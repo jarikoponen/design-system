@@ -27,23 +27,72 @@ Den här filen följer llmstxt.org-konventionen. Varje länk pekar på sidans HT
 
 ## Komponenter
 
+- [Button](https://ui.sundsvall.dev/komponenter/accordion-disclosure-button/): Disclosure.Button – komponent från @sk-web-gui/accordion.
+- [Content](https://ui.sundsvall.dev/komponenter/accordion-disclosure-content/): Disclosure.Content – komponent från @sk-web-gui/accordion.
+- [Header](https://ui.sundsvall.dev/komponenter/accordion-disclosure-header/): Disclosure.Header – komponent från @sk-web-gui/accordion.
+- [Icon](https://ui.sundsvall.dev/komponenter/accordion-disclosure-icon/): Disclosure.Icon – komponent från @sk-web-gui/accordion.
+- [Title](https://ui.sundsvall.dev/komponenter/accordion-disclosure-title/): Disclosure.Title – komponent från @sk-web-gui/accordion.
+- [Disclosure](https://ui.sundsvall.dev/komponenter/accordion-disclosure/): Disclosure.Component – komponent från @sk-web-gui/accordion.
+- [Accordion](https://ui.sundsvall.dev/komponenter/accordion/): Accordion.Component – komponent från @sk-web-gui/accordion.
 - [Alert](https://ui.sundsvall.dev/komponenter/alert/): Alert.Component – komponent från @sk-web-gui/alert.
+- [Avatar](https://ui.sundsvall.dev/komponenter/avatar/): Avatar – komponent från @sk-web-gui/avatar.
+- [Badge](https://ui.sundsvall.dev/komponenter/badge/): Badge – komponent från @sk-web-gui/badge.
+- [Breadcrumbs](https://ui.sundsvall.dev/komponenter/breadcrumbs/): Breadcrumb – komponent från @sk-web-gui/breadcrumb.
 - [Button.Group](https://ui.sundsvall.dev/komponenter/button-button-group/): Button.Group – komponent från @sk-web-gui/button.
 - [Button](https://ui.sundsvall.dev/komponenter/button/): Button – komponent från @sk-web-gui/button.
+- [Callout](https://ui.sundsvall.dev/komponenter/callout/): Callout – komponent från @sk-web-gui/callout.
+- [MetaCard](https://ui.sundsvall.dev/komponenter/card-metacard/): MetaCard – komponent från @sk-web-gui/card.
+- [Card](https://ui.sundsvall.dev/komponenter/card/): Card.Component – komponent från @sk-web-gui/card.
 - [Checkbox.Group](https://ui.sundsvall.dev/komponenter/checkbox-checkbox-group/): Checkbox.Group – komponent från @sk-web-gui/forms.
 - [Checkbox](https://ui.sundsvall.dev/komponenter/checkbox/): Checkbox – komponent från @sk-web-gui/forms.
+- [Chip](https://ui.sundsvall.dev/komponenter/chip/): Chip – komponent från @sk-web-gui/chip.
 - [Combobox](https://ui.sundsvall.dev/komponenter/combobox/): Combobox.Input – komponent från @sk-web-gui/forms.
+- [CookieConsent](https://ui.sundsvall.dev/komponenter/cookieconsent/): CookieConsent – komponent från @sk-web-gui/cookie-consent.
+- [CountryCodeSelect](https://ui.sundsvall.dev/komponenter/countrycodeselect/): CountryCodeSelect – komponent från @sk-web-gui/countrycode-select.
 - [DatePicker](https://ui.sundsvall.dev/komponenter/datepicker/): DatePicker – komponent från @sk-web-gui/forms.
+- [Divider.Section](https://ui.sundsvall.dev/komponenter/divider-divider-section/): Divider.Section – komponent från @sk-web-gui/divider.
+- [Divider](https://ui.sundsvall.dev/komponenter/divider/): Divider – komponent från @sk-web-gui/divider.
+- [Filter](https://ui.sundsvall.dev/komponenter/filter/): Filter – komponent från @sk-web-gui/filter.
 - [FormControl](https://ui.sundsvall.dev/komponenter/formular-formcontrol/): FormControl – komponent från @sk-web-gui/forms.
 - [Formulär](https://ui.sundsvall.dev/komponenter/formular/): Input – komponent från @sk-web-gui/forms.
+- [Icon.Padded](https://ui.sundsvall.dev/komponenter/icon-icon-padded/): IconPadded – komponent från @sk-web-gui/icon.
+- [Icon](https://ui.sundsvall.dev/komponenter/icon-icon/): Icon – komponent från @sk-web-gui/icon.
+- [LucideIcon.Padded](https://ui.sundsvall.dev/komponenter/icon-lucideicon-padded/): LucideIconPadded – komponent från @sk-web-gui/lucide-icon.
+- [LucideIcon](https://ui.sundsvall.dev/komponenter/icon-lucideicon/): LucideIcon – komponent från @sk-web-gui/lucide-icon.
+- [Image](https://ui.sundsvall.dev/komponenter/image/): Image – komponent från @sk-web-gui/image.
+- [Label](https://ui.sundsvall.dev/komponenter/label/): Label – komponent från @sk-web-gui/label.
+- [Footer](https://ui.sundsvall.dev/komponenter/layout-footer/): Footer – komponent från @sk-web-gui/layout.
+- [Header](https://ui.sundsvall.dev/komponenter/layout-header/): Header – komponent från @sk-web-gui/layout.
 - [Link](https://ui.sundsvall.dev/komponenter/link/): Link – komponent från @sk-web-gui/link.
+- [List](https://ui.sundsvall.dev/komponenter/list/): List – komponent från @sk-web-gui/list.
+- [Logo](https://ui.sundsvall.dev/komponenter/logo/): Logo – komponent från @sk-web-gui/logo.
+- [Menu-horizontal](https://ui.sundsvall.dev/komponenter/menu-horizontal/): NavigationBar – komponent från @sk-web-gui/navigationbar.
+- [Menu-vertical](https://ui.sundsvall.dev/komponenter/menu-vertical/): MenuVertical – komponent från @sk-web-gui/menu-vertical.
+- [Confirm](https://ui.sundsvall.dev/komponenter/modal-confirm/): ConfirmationDialogContextProvider – komponent från @sk-web-gui/modal.
+- [Dialog](https://ui.sundsvall.dev/komponenter/modal-dialog/): Dialog – komponent från @sk-web-gui/modal.
+- [Modal](https://ui.sundsvall.dev/komponenter/modal/): Modal – komponent från @sk-web-gui/modal.
+- [Pagination](https://ui.sundsvall.dev/komponenter/pagination/): Pagination – komponent från @sk-web-gui/pagination.
+- [PopupMenu](https://ui.sundsvall.dev/komponenter/popupmenu/): PopupMenu – komponent från @sk-web-gui/popup-menu.
+- [ProgressBar](https://ui.sundsvall.dev/komponenter/progressbar/): ProgressBar – komponent från @sk-web-gui/progress-bar.
+- [ProgressStepper](https://ui.sundsvall.dev/komponenter/progressstepper/): ProgressStepper – komponent från @sk-web-gui/progress-stepper.
 - [RadioButton.Group](https://ui.sundsvall.dev/komponenter/radiobutton-radiobutton-group/): RadioButton.Group – komponent från @sk-web-gui/forms.
 - [RadioButton](https://ui.sundsvall.dev/komponenter/radiobutton/): RadioButton – komponent från @sk-web-gui/forms.
+- [SearchFieldSuggestions](https://ui.sundsvall.dev/komponenter/searchfield-searchfieldsuggestions/): SearchField.Suggestions – komponent från @sk-web-gui/searchfield.
+- [Searchfield](https://ui.sundsvall.dev/komponenter/searchfield/): SearchField.Component – komponent från @sk-web-gui/searchfield.
 - [Select](https://ui.sundsvall.dev/komponenter/select/): Select – komponent från @sk-web-gui/forms.
+- [Sidebar](https://ui.sundsvall.dev/komponenter/sidebar/): MenuVertical – komponent från @sk-web-gui/menu-vertical.
+- [Snackbar](https://ui.sundsvall.dev/komponenter/snackbar/): Snackbar – komponent från @sk-web-gui/snackbar.
 - [Spinner](https://ui.sundsvall.dev/komponenter/spinner/): Spinner – komponent från @sk-web-gui/spinner.
 - [Switch](https://ui.sundsvall.dev/komponenter/switch/): Switch – komponent från @sk-web-gui/forms.
+- [AutoTable](https://ui.sundsvall.dev/komponenter/table-autotable/): AutoTable – komponent från @sk-web-gui/table.
+- [Table](https://ui.sundsvall.dev/komponenter/table-table/): Table.Component – komponent från @sk-web-gui/table.
+- [Tabs](https://ui.sundsvall.dev/komponenter/tabs/): Tabs – komponent från @sk-web-gui/tabs.
 - [Textarea](https://ui.sundsvall.dev/komponenter/textarea/): Textarea – komponent från @sk-web-gui/forms.
+- [TextEditor](https://ui.sundsvall.dev/komponenter/texteditor/): TextEditor – komponent från @sk-web-gui/text-editor.
 - [TextField](https://ui.sundsvall.dev/komponenter/textfield/): TextField – komponent från @sk-web-gui/forms.
+- [Tooltip](https://ui.sundsvall.dev/komponenter/tooltip/): Tooltip – komponent från @sk-web-gui/tooltip.
+- [UserMenu](https://ui.sundsvall.dev/komponenter/usermenu/): UserMenu – komponent från @sk-web-gui/user-menu.
+- [Komponent](https://ui.sundsvall.dev/komponenter/wip-komponenter-text-komponent/): Text – komponent från @sk-web-gui/text.
 
 ## Tokens
 

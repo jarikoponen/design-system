@@ -1,0 +1,54 @@
+---
+title: CountryCodeSelect
+description: "CountryCodeSelect – komponent från @sk-web-gui/countrycode-select."
+status: stabil
+version: 1.1.1
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/countrycode-select"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/komponenter-countrycodeselect--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/countrycode-select@1.1.1. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`CountryCodeSelect` finns i [`@sk-web-gui/countrycode-select`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/countrycode-select). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { CountryCodeSelect } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `onChangeCountryCode` | `(value: number \| undefined) => void` | `–` | Returns the country code as a number (e.g 46). onChange will hold the selected country's 2 digit ISO code (e.g SE). This is important to differentiate between countries with the same country code (e.g 1 for US and CA). |
+| `onChange` | `(event: React.ChangeEvent<HTMLSelectElement>) => void` | `–` | The event value holds the selected country's 2 digit ISO code (e.g SE) followed by a + and the country code Resulting in a string like "SE+46" |
+| `value` | `string` | `–` | The selected country's 2 digit ISO code (e.g SE) |
+| `placeholder` | `string` | `–` | Text displayed when no country is selected |
+| `countries` | `string[]` | `–` | Countries to be displayed in the select dropdown as an array of 2 digit ISO codes, e.g [SE, NO, FI] @default all countries |
+
+
+
+
+## Storyvarianter
+
+- **Template** – standardstory
+- **Combobox** – standardstory
+- **InputWithSelect** – standardstory
+- **InputWithCombobox** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/countrycode-select](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/countrycode-select)
+- Storybook: [CountryCodeSelect](https://stilguide.sundsvall.se/?path=/docs/komponenter-countrycodeselect--dokumentation)

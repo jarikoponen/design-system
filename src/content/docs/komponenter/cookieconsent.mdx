@@ -1,0 +1,85 @@
+---
+title: CookieConsent
+description: "CookieConsent – komponent från @sk-web-gui/cookie-consent."
+status: stabil
+version: 2.1.17
+package: "@sk-web-gui/react"
+source: "https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/cookie-consent"
+storybook: "https://stilguide.sundsvall.se/?path=/docs/komponenter-cookieconsent--dokumentation"
+---
+
+{/* AUTO-GENERATED från @sk-web-gui/cookie-consent@2.1.17. Manuella ändringar skrivs över vid nästa sync. */}
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Källa">
+`CookieConsent` finns i [`@sk-web-gui/cookie-consent`](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/cookie-consent). Den exponeras också via paraply-paketet [`@sk-web-gui/react`](https://www.npmjs.com/package/@sk-web-gui/react).
+</Aside>
+
+## Installation
+
+```bash
+npm install @sk-web-gui/react
+```
+
+## Användning
+
+```tsx
+import { CookieConsent } from '@sk-web-gui/react';
+```
+
+## API
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `isOpen` | `boolean` | `–` |  |
+| `onConsent` | `(cookies: ConsentCookie[]) => void` | `–` |  |
+| `cookies` | `ConsentCookie[]` | `–` |  |
+| `title` | `string` | `–` |  |
+| `body` | `React.ReactNode` | `–` |  |
+| `resetConsentOnInit` | `boolean` | `–` |  |
+| `options` | `CookieSetOptions` | `–` |  |
+| `basePath` | `string` | `–` |  |
+
+
+
+
+## Standardargs (från Meta.args)
+
+```json
+{
+  "title": "Kakor på example.sundsvall.se",
+  "body": {
+    "__raw": "(\r\n      <>\r\n        <p>\r\n          Vi använder kakor, cookies, för att ge dig en förbättrad upplevelse, sammanställa statistik och för att viss\r\n          nödvändig funktionalitet ska fungera på webbplatsen.\r\n        </p>\r\n        <p>\r\n          <Link href=\"/kakor\">Läs mer om hur vi använder kakor</Link>\r\n        </p>\r\n      </>\r\n    )"
+  },
+  "cookies": [
+    {
+      "optional": false,
+      "displayName": "Nödvändiga kakor",
+      "description": "Dessa kakor är nödvändiga för att webbplatsen ska fungera och kan inte stängas av i våra system.",
+      "cookieName": "necessary"
+    },
+    {
+      "optional": true,
+      "displayName": "Funktionella kakor",
+      "description": " Dessa kakor ger förbättrade funktioner på webbplatsen.",
+      "cookieName": "func"
+    },
+    {
+      "optional": true,
+      "displayName": "Kakor för statistik",
+      "description": "Dessa kakor tillåter oss att räkna besök och trafikkällor, så att vi kan mäta och förbättra prestanda på vår webbplats.",
+      "cookieName": "stats"
+    }
+  ]
+}
+```
+
+## Storyvarianter
+
+- **Template** – standardstory
+
+## Källa
+
+- Implementation: [@sk-web-gui/cookie-consent](https://github.com/Sundsvallskommun/web-shared-components/tree/main/packages/cookie-consent)
+- Storybook: [CookieConsent](https://stilguide.sundsvall.se/?path=/docs/komponenter-cookieconsent--dokumentation)
