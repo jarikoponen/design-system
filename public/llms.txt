@@ -15,7 +15,7 @@ Den här filen följer llmstxt.org-konventionen. Varje länk pekar på sidans HT
 
 ## identitet
 
-- [Färger](https://ui.sundsvall.dev/identitet/farger/): Sundsvalls kommuns färgpalett. Primitiver per kulör och de fyra varumärkesteman vattjom, grönsta, juniskär och björnstigen.
+- [Färger](https://ui.sundsvall.dev/identitet/farger/): Sundsvalls kommuns färgpalett. Primitiver per kulör och de fyra varumärkesteman vattjom, grönsta, juniskär och björnstigen. Alla värden hämtas live från @sk-web-gui/theme.
 - [Ikoner](https://ui.sundsvall.dev/identitet/ikoner/): Sundsvalls designsystem använder Lucide som primärt ikonbibliotek, integrerat via @sk-web-gui/icon och @sk-web-gui/lucide-icon.
 - [Logotyper](https://ui.sundsvall.dev/identitet/logotyper/): Sundsvalls kommuns logotyp – språkversioner, frizon, färgval och favicon-beskärning.
 - [SiteVision-design](https://ui.sundsvall.dev/identitet/sitevision/): Designriktlinjer för Sundsvalls kommuns SiteVision-baserade webbplatser. Underhålls direkt i stilguiden.

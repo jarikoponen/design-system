@@ -1,0 +1,71 @@
+---
+import tokens from '../data/tokens.json';
+import ColorSwatch from './ColorSwatch.astro';
+
+interface Props {
+	/** Friendly heading like "Vattjom" or "Error" */
+	title: string;
+	/** Token key prefix in flat tokens.json, e.g. "ColorLightVattjom" */
+	prefix: string;
+	/** Short blurb shown under the heading */
+	description?: string;
+}
+const { title, prefix, description } = Astro.props;
+
+// Pick all flat keys that start with the prefix; convert to readable label.
+const entries: { label: string; value: string }[] = [];
+for (const [key, value] of Object.entries(tokens as Record<string, string>)) {
+	if (!key.startsWith(prefix)) continue;
+	const rest = key.slice(prefix.length);
+	// Split CamelCase into dot-notation: "SurfacePrimaryDefault" -> "surface.primary.default"
+	const label = rest
+		.replace(/([a-z0-9])([A-Z])/g, '$1.$2')
+		.replace(/([A-Z])([A-Z][a-z])/g, '$1.$2')
+		.toLowerCase();
+	entries.push({ label, value });
+}
+
+// Stable, useful ordering: backgrounds → surface.primary → surface.accent → text.
+function rank(label: string) {
+	if (label.startsWith('background')) return 0 + Number(label.replace(/\D/g, '') || 0) / 1000;
+	if (label.startsWith('surface.primary')) return 1 + (label.includes('hover') ? 0.5 : 0);
+	if (label.startsWith('surface.accent')) return 2 + (label.includes('hover') ? 0.5 : 0);
+	if (label.startsWith('text')) return 3 + (label.includes('secondary') ? 0.5 : 0);
+	if (label === 'default') return 4;
+	return 5;
+}
+entries.sort((a, b) => rank(a.label) - rank(b.label));
+---
+
+<section class="theme-palette">
+	<h3>{title}</h3>
+	{description && <p class="desc">{description}</p>}
+	<div class="grid">
+		{entries.map((e) => <ColorSwatch name={e.label} value={e.value} />)}
+	</div>
+	<p class="hint">
+		Använd token-namn, inte hex: <code>var(--{prefix.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()}-surface-primary-default)</code> osv.
+	</p>
+</section>
+
+<style>
+	.theme-palette { margin: 2rem 0 3rem; }
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+	.desc { margin: 0.25rem 0 0.75rem; opacity: 0.85; }
+	.hint {
+		font-size: 0.8125rem;
+		opacity: 0.7;
+		margin: 0;
+	}
+	.hint code {
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		background: color-mix(in srgb, currentColor 8%, transparent);
+		padding: 0 0.3em;
+		border-radius: 0.25em;
+	}
+</style>
