@@ -85,6 +85,26 @@ Innehållet i `tokens-src/*.json` och `src/content/docs/komponenter/*.mdx`
 via en import-pipeline. Redigera inte dessa filer direkt – ändringar
 skrivs över vid nästa sync.
 
+### Förhållningssätt till upstream (web-shared-components)
+
+Detta repo är en **experiment- och testmiljö** för att utforska hur en
+AI-vänlig spegling av designsystemet kan se ut. Det är *inte* en officiell
+kanal in i `Sundsvallskommun/web-shared-components`.
+
+**Vi gör bara läsoperationer mot upstream:**
+
+- ✅ Läsa via npm-paketet `@sk-web-gui/theme` (publik release)
+- ✅ Läsa filer i `vendor/sk-web-gui/` (git submodul, pinnad till SHA)
+- ✅ Bumpa submodulen via `git submodule update --remote vendor/sk-web-gui`
+- ❌ **Aldrig** committa inne i `vendor/sk-web-gui/` (ändringar i submodulen är förbjudna)
+- ❌ **Aldrig** pusha till `Sundsvallskommun/web-shared-components` (varken direkt eller via `git -C vendor/sk-web-gui push`)
+- ❌ **Aldrig** öppna PR, issue eller annan kommunikation mot upstream-repot via Claude Code
+
+Om en bugg eller förbättring upptäcks i designsystemet under arbetet här
+– rapportera det muntligt/skriftligt till användaren. Användaren beslutar
+själv om och hur det ska bidras tillbaka till upstream-repot, och i så
+fall görs det manuellt utanför denna miljö.
+
 ### Hur det fungerar
 
 - `vendor/sk-web-gui/` är en git-submodul pinnad till en specifik upstream-SHA.
